@@ -20,6 +20,7 @@ namespace Northwind
         private static PurchaseOrderForm newPurchaseOrderForm;
         private static ProductDetailsForm newProductDetailsForm;
         private static CustomerDetailsForm newCustomerDetailsForm;
+        private static SupplierDetailsForm newSupplierDetailsForm;
 
         public Home()
         {
@@ -32,6 +33,8 @@ namespace Northwind
             newProductDetailsForm.Hide();
             newCustomerDetailsForm = new CustomerDetailsForm();
             newCustomerDetailsForm.Hide();
+            newSupplierDetailsForm = new SupplierDetailsForm();
+            newSupplierDetailsForm.Hide();
             dialog.ShowDialog(this);
 
             InitializeComponent();
@@ -104,6 +107,10 @@ namespace Northwind
 
         private void suppliersLink_Click(object sender, EventArgs e)
         {
+            supplierView.DataSource = NorthwindDatabase.Context
+                .Sql("SELECT * FROM `supplier list`")
+                .QuerySingle<DataTable>();
+
             if (!mainTabControl.TabPages.Contains(supplierTab))
                 mainTabControl.TabPages.Add(supplierTab);
             mainTabControl.SelectedTab = supplierTab;
@@ -238,5 +245,24 @@ namespace Northwind
             newCustomerDetailsForm.Show();
             newCustomerDetailsForm.Activate();
         }
+
+        private void newSupplierLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newSupplierDetailsForm.loadSupplier(0);
+            newSupplierDetailsForm.Show();
+            newSupplierDetailsForm.Activate();
+        }
+
+        private void supplierView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            int id = 0;
+            if (Int32.TryParse(supplierView.Rows[e.RowIndex].Cells["ID"].Value.ToString(), out id))
+                newSupplierDetailsForm.loadSupplier(id);
+            newSupplierDetailsForm.Show();
+            newSupplierDetailsForm.Activate();
+        }
+
+
     }
 }

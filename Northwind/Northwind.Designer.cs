@@ -85,10 +85,9 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.supplierTab = new System.Windows.Forms.TabPage();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.supplierView = new System.Windows.Forms.DataGridView();
             this.header5 = new Northwind.Header();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.newSupplierLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.employeeTab = new System.Windows.Forms.TabPage();
@@ -130,7 +129,7 @@
             this.header4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.supplierTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierView)).BeginInit();
             this.header5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.employeeTab.SuspendLayout();
@@ -896,7 +895,7 @@
             // supplierTab
             // 
             this.supplierTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.supplierTab.Controls.Add(this.dataGridView5);
+            this.supplierTab.Controls.Add(this.supplierView);
             this.supplierTab.Controls.Add(this.header5);
             this.supplierTab.Location = new System.Drawing.Point(4, 22);
             this.supplierTab.Name = "supplierTab";
@@ -904,28 +903,28 @@
             this.supplierTab.TabIndex = 6;
             this.supplierTab.Text = "Supplier List";
             // 
-            // dataGridView5
+            // supplierView
             // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.supplierView.AllowUserToAddRows = false;
+            this.supplierView.AllowUserToDeleteRows = false;
+            this.supplierView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(0, 72);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.Size = new System.Drawing.Size(1074, 519);
-            this.dataGridView5.TabIndex = 16;
+            this.supplierView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.supplierView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.supplierView.Location = new System.Drawing.Point(0, 72);
+            this.supplierView.Name = "supplierView";
+            this.supplierView.ReadOnly = true;
+            this.supplierView.Size = new System.Drawing.Size(1074, 519);
+            this.supplierView.TabIndex = 16;
+            this.supplierView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.supplierView_CellDoubleClick);
             // 
             // header5
             // 
             this.header5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.header5.Controls.Add(this.label11);
-            this.header5.Controls.Add(this.label12);
+            this.header5.Controls.Add(this.newSupplierLink);
             this.header5.Controls.Add(this.pictureBox5);
             this.header5.Controls.Add(this.label13);
             this.header5.Location = new System.Drawing.Point(0, 0);
@@ -933,29 +932,22 @@
             this.header5.Size = new System.Drawing.Size(1082, 72);
             this.header5.TabIndex = 15;
             // 
-            // label11
+            // newSupplierLink
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(138, 50);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 14);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "View Invoice";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(17, 50);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 14);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "New Customer";
+            this.newSupplierLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.newSupplierLink.AutoSize = true;
+            this.newSupplierLink.BackColor = System.Drawing.Color.Transparent;
+            this.newSupplierLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newSupplierLink.ForeColor = System.Drawing.Color.White;
+            this.newSupplierLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.newSupplierLink.LinkColor = System.Drawing.Color.White;
+            this.newSupplierLink.Location = new System.Drawing.Point(17, 50);
+            this.newSupplierLink.Name = "newSupplierLink";
+            this.newSupplierLink.Size = new System.Drawing.Size(72, 14);
+            this.newSupplierLink.TabIndex = 9;
+            this.newSupplierLink.TabStop = true;
+            this.newSupplierLink.Text = "New Supplier";
+            this.newSupplierLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newSupplierLink_LinkClicked);
             // 
             // pictureBox5
             // 
@@ -1202,7 +1194,7 @@
             this.header4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.supplierTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierView)).EndInit();
             this.header5.ResumeLayout(false);
             this.header5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1274,10 +1266,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView supplierView;
         private Header header5;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView6;
@@ -1295,6 +1285,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.LinkLabel homeLabel;
         private System.Windows.Forms.LinkLabel addProductLabel;
+        private System.Windows.Forms.LinkLabel newSupplierLink;
     }
 }
 
