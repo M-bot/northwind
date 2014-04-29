@@ -19,6 +19,7 @@ namespace Northwind
         private static CustomerOrderForm newCustomerOrderForm;
         private static PurchaseOrderForm newPurchaseOrderForm;
         private static ProductDetailsForm newProductDetailsForm;
+        private static CustomerDetailsForm newCustomerDetailsForm;
 
         public Home()
         {
@@ -29,6 +30,8 @@ namespace Northwind
             newPurchaseOrderForm.Hide();
             newProductDetailsForm = new ProductDetailsForm();
             newProductDetailsForm.Hide();
+            newCustomerDetailsForm = new CustomerDetailsForm();
+            newCustomerDetailsForm.Hide();
             dialog.ShowDialog(this);
 
             InitializeComponent();
@@ -217,6 +220,23 @@ namespace Northwind
                 newProductDetailsForm.loadProduct(id);
             newProductDetailsForm.Show();
             newProductDetailsForm.Activate();
+        }
+
+        private void newCustomerLink_Click(object sender, EventArgs e)
+        {
+            newCustomerDetailsForm.loadCustomer(0);
+            newCustomerDetailsForm.Show();
+            newCustomerDetailsForm.Activate();
+        }
+
+        private void customerView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            int id = 0;
+            if (Int32.TryParse(customerView.Rows[e.RowIndex].Cells["ID"].Value.ToString(), out id))
+                newCustomerDetailsForm.loadCustomer(id);
+            newCustomerDetailsForm.Show();
+            newCustomerDetailsForm.Activate();
         }
     }
 }

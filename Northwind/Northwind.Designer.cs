@@ -66,15 +66,15 @@
             this.orderTab = new System.Windows.Forms.TabPage();
             this.ordersView = new System.Windows.Forms.DataGridView();
             this.header2 = new Northwind.Header();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.viewInvoiceLink = new System.Windows.Forms.LinkLabel();
+            this.addNewOrderLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.customerTab = new System.Windows.Forms.TabPage();
             this.customerView = new System.Windows.Forms.DataGridView();
             this.header3 = new Northwind.Header();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.viewInvoiceLink2 = new System.Windows.Forms.LinkLabel();
+            this.newCustomerLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.purchaseOrderTab = new System.Windows.Forms.TabPage();
@@ -648,8 +648,8 @@
             this.header2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.header2.Controls.Add(this.label2);
-            this.header2.Controls.Add(this.label3);
+            this.header2.Controls.Add(this.viewInvoiceLink);
+            this.header2.Controls.Add(this.addNewOrderLink);
             this.header2.Controls.Add(this.pictureBox2);
             this.header2.Controls.Add(this.label4);
             this.header2.Location = new System.Drawing.Point(0, 0);
@@ -657,29 +657,31 @@
             this.header2.Size = new System.Drawing.Size(1082, 72);
             this.header2.TabIndex = 10;
             // 
-            // label2
+            // viewInvoiceLink
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(138, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 14);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "View Invoice";
+            this.viewInvoiceLink.AutoSize = true;
+            this.viewInvoiceLink.BackColor = System.Drawing.Color.Transparent;
+            this.viewInvoiceLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewInvoiceLink.ForeColor = System.Drawing.Color.White;
+            this.viewInvoiceLink.Location = new System.Drawing.Point(138, 50);
+            this.viewInvoiceLink.Name = "viewInvoiceLink";
+            this.viewInvoiceLink.Size = new System.Drawing.Size(70, 14);
+            this.viewInvoiceLink.TabIndex = 10;
+            this.viewInvoiceLink.TabStop = true;
+            this.viewInvoiceLink.Text = "View Invoice";
             // 
-            // label3
+            // addNewOrderLink
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(17, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 14);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Add New Order";
+            this.addNewOrderLink.AutoSize = true;
+            this.addNewOrderLink.BackColor = System.Drawing.Color.Transparent;
+            this.addNewOrderLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewOrderLink.ForeColor = System.Drawing.Color.White;
+            this.addNewOrderLink.Location = new System.Drawing.Point(17, 50);
+            this.addNewOrderLink.Name = "addNewOrderLink";
+            this.addNewOrderLink.Size = new System.Drawing.Size(84, 14);
+            this.addNewOrderLink.TabIndex = 9;
+            this.addNewOrderLink.TabStop = true;
+            this.addNewOrderLink.Text = "Add New Order";
             // 
             // pictureBox2
             // 
@@ -730,14 +732,15 @@
             this.customerView.ReadOnly = true;
             this.customerView.Size = new System.Drawing.Size(1074, 519);
             this.customerView.TabIndex = 14;
+            this.customerView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerView_CellDoubleClick);
             // 
             // header3
             // 
             this.header3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.header3.Controls.Add(this.label1);
-            this.header3.Controls.Add(this.label5);
+            this.header3.Controls.Add(this.viewInvoiceLink2);
+            this.header3.Controls.Add(this.newCustomerLink);
             this.header3.Controls.Add(this.pictureBox3);
             this.header3.Controls.Add(this.label6);
             this.header3.Location = new System.Drawing.Point(0, 0);
@@ -745,29 +748,38 @@
             this.header3.Size = new System.Drawing.Size(1082, 72);
             this.header3.TabIndex = 13;
             // 
-            // label1
+            // viewInvoiceLink2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(138, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 14);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "View Invoice";
+            this.viewInvoiceLink2.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.viewInvoiceLink2.AutoSize = true;
+            this.viewInvoiceLink2.BackColor = System.Drawing.Color.Transparent;
+            this.viewInvoiceLink2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewInvoiceLink2.ForeColor = System.Drawing.Color.White;
+            this.viewInvoiceLink2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.viewInvoiceLink2.LinkColor = System.Drawing.Color.White;
+            this.viewInvoiceLink2.Location = new System.Drawing.Point(138, 50);
+            this.viewInvoiceLink2.Name = "viewInvoiceLink2";
+            this.viewInvoiceLink2.Size = new System.Drawing.Size(70, 14);
+            this.viewInvoiceLink2.TabIndex = 10;
+            this.viewInvoiceLink2.TabStop = true;
+            this.viewInvoiceLink2.Text = "View Invoice";
             // 
-            // label5
+            // newCustomerLink
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(17, 50);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 14);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "New Customer";
+            this.newCustomerLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.newCustomerLink.AutoSize = true;
+            this.newCustomerLink.BackColor = System.Drawing.Color.Transparent;
+            this.newCustomerLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newCustomerLink.ForeColor = System.Drawing.Color.White;
+            this.newCustomerLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.newCustomerLink.LinkColor = System.Drawing.Color.White;
+            this.newCustomerLink.Location = new System.Drawing.Point(17, 50);
+            this.newCustomerLink.Name = "newCustomerLink";
+            this.newCustomerLink.Size = new System.Drawing.Size(79, 14);
+            this.newCustomerLink.TabIndex = 9;
+            this.newCustomerLink.TabStop = true;
+            this.newCustomerLink.Text = "New Customer";
+            this.newCustomerLink.Click += new System.EventHandler(this.newCustomerLink_Click);
             // 
             // pictureBox3
             // 
@@ -1240,8 +1252,8 @@
         private System.Windows.Forms.DataGridView inventoryView;
         private System.Windows.Forms.TabPage orderTab;
         private Header header2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel viewInvoiceLink;
+        private System.Windows.Forms.LinkLabel addNewOrderLink;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabPage customerTab;
@@ -1252,8 +1264,8 @@
         private System.Windows.Forms.DataGridView ordersView;
         private System.Windows.Forms.DataGridView customerView;
         private Header header3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.LinkLabel viewInvoiceLink2;
+        private System.Windows.Forms.LinkLabel newCustomerLink;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView4;

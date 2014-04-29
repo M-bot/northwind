@@ -31,41 +31,42 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDetailsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.companyLabel = new System.Windows.Forms.Label();
-            this.primaryContactLabel = new System.Windows.Forms.Label();
-            this.firstNameLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.mobilePhoneLabel = new System.Windows.Forms.Label();
-            this.faxNumberLabel = new System.Windows.Forms.Label();
-            this.businessPhoneLabel = new System.Windows.Forms.Label();
-            this.phoneNumbersLabel = new System.Windows.Forms.Label();
-            this.streetLabel = new System.Windows.Forms.Label();
-            this.addressLabel = new System.Windows.Forms.Label();
+            this.webPageBox = new System.Windows.Forms.TextBox();
+            this.emailBox = new System.Windows.Forms.TextBox();
+            this.countryRegionBox = new System.Windows.Forms.TextBox();
+            this.zipPostalCodeBox = new System.Windows.Forms.TextBox();
+            this.stateProvinceBox = new System.Windows.Forms.TextBox();
+            this.cityBox = new System.Windows.Forms.TextBox();
+            this.streetBox = new System.Windows.Forms.TextBox();
+            this.faxNumberBox = new System.Windows.Forms.TextBox();
+            this.mobilePhoneBox = new System.Windows.Forms.TextBox();
+            this.businessPhoneBox = new System.Windows.Forms.TextBox();
+            this.jobTitleBox = new System.Windows.Forms.TextBox();
+            this.lastNameBox = new System.Windows.Forms.TextBox();
+            this.firstNameBox = new System.Windows.Forms.TextBox();
+            this.companyBox = new System.Windows.Forms.TextBox();
+            this.webPageLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.notesBox = new System.Windows.Forms.TextBox();
+            this.notesLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.zipPostalCodeLabel = new System.Windows.Forms.Label();
             this.countryRegionLabel = new System.Windows.Forms.Label();
             this.stateProvinceLabel = new System.Windows.Forms.Label();
             this.cityLabel = new System.Windows.Forms.Label();
-            this.notesLabel = new System.Windows.Forms.Label();
-            this.notesBox = new System.Windows.Forms.TextBox();
-            this.emailLabel = new System.Windows.Forms.Label();
-            this.webPageLabel = new System.Windows.Forms.Label();
-            this.companyBox = new System.Windows.Forms.TextBox();
-            this.firstNameBox = new System.Windows.Forms.TextBox();
-            this.lastNameBox = new System.Windows.Forms.TextBox();
-            this.jobTitleBox = new System.Windows.Forms.TextBox();
-            this.businessPhoneBox = new System.Windows.Forms.TextBox();
-            this.mobilePhoneBox = new System.Windows.Forms.TextBox();
-            this.faxNumberBox = new System.Windows.Forms.TextBox();
-            this.streetBox = new System.Windows.Forms.TextBox();
-            this.cityBox = new System.Windows.Forms.TextBox();
-            this.stateProvinceBox = new System.Windows.Forms.TextBox();
-            this.zipPostalCodeBox = new System.Windows.Forms.TextBox();
-            this.countryRegionBox = new System.Windows.Forms.TextBox();
-            this.emailBox = new System.Windows.Forms.TextBox();
-            this.webPageBox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.streetLabel = new System.Windows.Forms.Label();
+            this.addressLabel = new System.Windows.Forms.Label();
+            this.mobilePhoneLabel = new System.Windows.Forms.Label();
+            this.faxNumberLabel = new System.Windows.Forms.Label();
+            this.businessPhoneLabel = new System.Windows.Forms.Label();
+            this.phoneNumbersLabel = new System.Windows.Forms.Label();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.firstNameLabel = new System.Windows.Forms.Label();
+            this.primaryContactLabel = new System.Windows.Forms.Label();
+            this.companyLabel = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.customerOrders = new System.Windows.Forms.DataGridView();
             this.homeHeader = new Northwind.Header();
             this.newLink = new System.Windows.Forms.LinkLabel();
             this.createOutlookContactLabel = new System.Windows.Forms.LinkLabel();
@@ -73,15 +74,14 @@
             this.emailCustomerLink = new System.Windows.Forms.LinkLabel();
             this.saveLink = new System.Windows.Forms.LinkLabel();
             this.goToLabel = new System.Windows.Forms.Label();
-            this.headerTitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.headerImage = new System.Windows.Forms.PictureBox();
+            this.headerTitle = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.homeHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerOrders)).BeginInit();
+            this.homeHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,137 +139,153 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             // 
-            // tabPage2
+            // webPageBox
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(770, 491);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Orders";
+            this.webPageBox.Location = new System.Drawing.Point(545, 41);
+            this.webPageBox.Name = "webPageBox";
+            this.webPageBox.Size = new System.Drawing.Size(213, 20);
+            this.webPageBox.TabIndex = 51;
             // 
-            // companyLabel
+            // emailBox
             // 
-            this.companyLabel.AutoSize = true;
-            this.companyLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.companyLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.companyLabel.Location = new System.Drawing.Point(11, 18);
-            this.companyLabel.Name = "companyLabel";
-            this.companyLabel.Size = new System.Drawing.Size(60, 15);
-            this.companyLabel.TabIndex = 18;
-            this.companyLabel.Text = "Company";
+            this.emailBox.Location = new System.Drawing.Point(545, 16);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(213, 20);
+            this.emailBox.TabIndex = 50;
             // 
-            // primaryContactLabel
+            // countryRegionBox
             // 
-            this.primaryContactLabel.AutoSize = true;
-            this.primaryContactLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.primaryContactLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.primaryContactLabel.Location = new System.Drawing.Point(11, 67);
-            this.primaryContactLabel.Name = "primaryContactLabel";
-            this.primaryContactLabel.Size = new System.Drawing.Size(99, 15);
-            this.primaryContactLabel.TabIndex = 19;
-            this.primaryContactLabel.Text = "Primary Contact";
+            this.countryRegionBox.Location = new System.Drawing.Point(126, 462);
+            this.countryRegionBox.Name = "countryRegionBox";
+            this.countryRegionBox.Size = new System.Drawing.Size(228, 20);
+            this.countryRegionBox.TabIndex = 49;
             // 
-            // firstNameLabel
+            // zipPostalCodeBox
             // 
-            this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.firstNameLabel.Location = new System.Drawing.Point(11, 92);
-            this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(68, 15);
-            this.firstNameLabel.TabIndex = 20;
-            this.firstNameLabel.Text = "First Name";
+            this.zipPostalCodeBox.Location = new System.Drawing.Point(126, 436);
+            this.zipPostalCodeBox.Name = "zipPostalCodeBox";
+            this.zipPostalCodeBox.Size = new System.Drawing.Size(228, 20);
+            this.zipPostalCodeBox.TabIndex = 48;
             // 
-            // label3
+            // stateProvinceBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.label3.Location = new System.Drawing.Point(11, 143);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 15);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Job Title";
+            this.stateProvinceBox.Location = new System.Drawing.Point(126, 411);
+            this.stateProvinceBox.Name = "stateProvinceBox";
+            this.stateProvinceBox.Size = new System.Drawing.Size(228, 20);
+            this.stateProvinceBox.TabIndex = 47;
             // 
-            // lastNameLabel
+            // cityBox
             // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.lastNameLabel.Location = new System.Drawing.Point(11, 117);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(68, 15);
-            this.lastNameLabel.TabIndex = 22;
-            this.lastNameLabel.Text = "Last Name";
+            this.cityBox.Location = new System.Drawing.Point(126, 386);
+            this.cityBox.Name = "cityBox";
+            this.cityBox.Size = new System.Drawing.Size(228, 20);
+            this.cityBox.TabIndex = 46;
             // 
-            // mobilePhoneLabel
+            // streetBox
             // 
-            this.mobilePhoneLabel.AutoSize = true;
-            this.mobilePhoneLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mobilePhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.mobilePhoneLabel.Location = new System.Drawing.Point(11, 244);
-            this.mobilePhoneLabel.Name = "mobilePhoneLabel";
-            this.mobilePhoneLabel.Size = new System.Drawing.Size(82, 15);
-            this.mobilePhoneLabel.TabIndex = 26;
-            this.mobilePhoneLabel.Text = "Mobile Phone";
+            this.streetBox.Location = new System.Drawing.Point(126, 340);
+            this.streetBox.Multiline = true;
+            this.streetBox.Name = "streetBox";
+            this.streetBox.Size = new System.Drawing.Size(228, 40);
+            this.streetBox.TabIndex = 45;
             // 
-            // faxNumberLabel
+            // faxNumberBox
             // 
-            this.faxNumberLabel.AutoSize = true;
-            this.faxNumberLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.faxNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.faxNumberLabel.Location = new System.Drawing.Point(11, 270);
-            this.faxNumberLabel.Name = "faxNumberLabel";
-            this.faxNumberLabel.Size = new System.Drawing.Size(74, 15);
-            this.faxNumberLabel.TabIndex = 25;
-            this.faxNumberLabel.Text = "Fax Number";
+            this.faxNumberBox.Location = new System.Drawing.Point(126, 268);
+            this.faxNumberBox.Name = "faxNumberBox";
+            this.faxNumberBox.Size = new System.Drawing.Size(228, 20);
+            this.faxNumberBox.TabIndex = 44;
             // 
-            // businessPhoneLabel
+            // mobilePhoneBox
             // 
-            this.businessPhoneLabel.AutoSize = true;
-            this.businessPhoneLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessPhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.businessPhoneLabel.Location = new System.Drawing.Point(11, 219);
-            this.businessPhoneLabel.Name = "businessPhoneLabel";
-            this.businessPhoneLabel.Size = new System.Drawing.Size(99, 15);
-            this.businessPhoneLabel.TabIndex = 24;
-            this.businessPhoneLabel.Text = "Business Phone";
+            this.mobilePhoneBox.Location = new System.Drawing.Point(126, 242);
+            this.mobilePhoneBox.Name = "mobilePhoneBox";
+            this.mobilePhoneBox.Size = new System.Drawing.Size(228, 20);
+            this.mobilePhoneBox.TabIndex = 43;
             // 
-            // phoneNumbersLabel
+            // businessPhoneBox
             // 
-            this.phoneNumbersLabel.AutoSize = true;
-            this.phoneNumbersLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneNumbersLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.phoneNumbersLabel.Location = new System.Drawing.Point(11, 194);
-            this.phoneNumbersLabel.Name = "phoneNumbersLabel";
-            this.phoneNumbersLabel.Size = new System.Drawing.Size(98, 15);
-            this.phoneNumbersLabel.TabIndex = 23;
-            this.phoneNumbersLabel.Text = "Phone Numbers";
+            this.businessPhoneBox.Location = new System.Drawing.Point(126, 217);
+            this.businessPhoneBox.Name = "businessPhoneBox";
+            this.businessPhoneBox.Size = new System.Drawing.Size(228, 20);
+            this.businessPhoneBox.TabIndex = 42;
             // 
-            // streetLabel
+            // jobTitleBox
             // 
-            this.streetLabel.AutoSize = true;
-            this.streetLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.streetLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.streetLabel.Location = new System.Drawing.Point(11, 342);
-            this.streetLabel.Name = "streetLabel";
-            this.streetLabel.Size = new System.Drawing.Size(39, 15);
-            this.streetLabel.TabIndex = 28;
-            this.streetLabel.Text = "Street";
+            this.jobTitleBox.Location = new System.Drawing.Point(126, 141);
+            this.jobTitleBox.Name = "jobTitleBox";
+            this.jobTitleBox.Size = new System.Drawing.Size(228, 20);
+            this.jobTitleBox.TabIndex = 41;
             // 
-            // addressLabel
+            // lastNameBox
             // 
-            this.addressLabel.AutoSize = true;
-            this.addressLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.addressLabel.Location = new System.Drawing.Point(11, 317);
-            this.addressLabel.Name = "addressLabel";
-            this.addressLabel.Size = new System.Drawing.Size(55, 15);
-            this.addressLabel.TabIndex = 27;
-            this.addressLabel.Text = "Address";
+            this.lastNameBox.Location = new System.Drawing.Point(126, 115);
+            this.lastNameBox.Name = "lastNameBox";
+            this.lastNameBox.Size = new System.Drawing.Size(228, 20);
+            this.lastNameBox.TabIndex = 40;
+            // 
+            // firstNameBox
+            // 
+            this.firstNameBox.Location = new System.Drawing.Point(126, 90);
+            this.firstNameBox.Name = "firstNameBox";
+            this.firstNameBox.Size = new System.Drawing.Size(228, 20);
+            this.firstNameBox.TabIndex = 39;
+            // 
+            // companyBox
+            // 
+            this.companyBox.Location = new System.Drawing.Point(126, 16);
+            this.companyBox.Name = "companyBox";
+            this.companyBox.Size = new System.Drawing.Size(228, 20);
+            this.companyBox.TabIndex = 38;
+            // 
+            // webPageLabel
+            // 
+            this.webPageLabel.AutoSize = true;
+            this.webPageLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.webPageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.webPageLabel.Location = new System.Drawing.Point(467, 43);
+            this.webPageLabel.Name = "webPageLabel";
+            this.webPageLabel.Size = new System.Drawing.Size(64, 15);
+            this.webPageLabel.TabIndex = 37;
+            this.webPageLabel.Text = "Web Page";
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.emailLabel.Location = new System.Drawing.Point(467, 18);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(39, 15);
+            this.emailLabel.TabIndex = 36;
+            this.emailLabel.Text = "Email";
+            // 
+            // notesBox
+            // 
+            this.notesBox.Location = new System.Drawing.Point(378, 192);
+            this.notesBox.Multiline = true;
+            this.notesBox.Name = "notesBox";
+            this.notesBox.Size = new System.Drawing.Size(380, 287);
+            this.notesBox.TabIndex = 35;
+            // 
+            // notesLabel
+            // 
+            this.notesLabel.AutoSize = true;
+            this.notesLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.notesLabel.Location = new System.Drawing.Point(375, 161);
+            this.notesLabel.Name = "notesLabel";
+            this.notesLabel.Size = new System.Drawing.Size(40, 15);
+            this.notesLabel.TabIndex = 34;
+            this.notesLabel.Text = "Notes";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(378, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 114);
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
             // 
             // zipPostalCodeLabel
             // 
@@ -315,153 +331,145 @@
             this.cityLabel.TabIndex = 29;
             this.cityLabel.Text = "City";
             // 
-            // notesLabel
+            // streetLabel
             // 
-            this.notesLabel.AutoSize = true;
-            this.notesLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.notesLabel.Location = new System.Drawing.Point(375, 161);
-            this.notesLabel.Name = "notesLabel";
-            this.notesLabel.Size = new System.Drawing.Size(40, 15);
-            this.notesLabel.TabIndex = 34;
-            this.notesLabel.Text = "Notes";
+            this.streetLabel.AutoSize = true;
+            this.streetLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.streetLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.streetLabel.Location = new System.Drawing.Point(11, 342);
+            this.streetLabel.Name = "streetLabel";
+            this.streetLabel.Size = new System.Drawing.Size(39, 15);
+            this.streetLabel.TabIndex = 28;
+            this.streetLabel.Text = "Street";
             // 
-            // notesBox
+            // addressLabel
             // 
-            this.notesBox.Location = new System.Drawing.Point(378, 192);
-            this.notesBox.Multiline = true;
-            this.notesBox.Name = "notesBox";
-            this.notesBox.Size = new System.Drawing.Size(380, 287);
-            this.notesBox.TabIndex = 35;
+            this.addressLabel.AutoSize = true;
+            this.addressLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.addressLabel.Location = new System.Drawing.Point(11, 317);
+            this.addressLabel.Name = "addressLabel";
+            this.addressLabel.Size = new System.Drawing.Size(55, 15);
+            this.addressLabel.TabIndex = 27;
+            this.addressLabel.Text = "Address";
             // 
-            // emailLabel
+            // mobilePhoneLabel
             // 
-            this.emailLabel.AutoSize = true;
-            this.emailLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.emailLabel.Location = new System.Drawing.Point(467, 18);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(39, 15);
-            this.emailLabel.TabIndex = 36;
-            this.emailLabel.Text = "Email";
+            this.mobilePhoneLabel.AutoSize = true;
+            this.mobilePhoneLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mobilePhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.mobilePhoneLabel.Location = new System.Drawing.Point(11, 244);
+            this.mobilePhoneLabel.Name = "mobilePhoneLabel";
+            this.mobilePhoneLabel.Size = new System.Drawing.Size(82, 15);
+            this.mobilePhoneLabel.TabIndex = 26;
+            this.mobilePhoneLabel.Text = "Mobile Phone";
             // 
-            // webPageLabel
+            // faxNumberLabel
             // 
-            this.webPageLabel.AutoSize = true;
-            this.webPageLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.webPageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.webPageLabel.Location = new System.Drawing.Point(467, 43);
-            this.webPageLabel.Name = "webPageLabel";
-            this.webPageLabel.Size = new System.Drawing.Size(64, 15);
-            this.webPageLabel.TabIndex = 37;
-            this.webPageLabel.Text = "Web Page";
+            this.faxNumberLabel.AutoSize = true;
+            this.faxNumberLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.faxNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.faxNumberLabel.Location = new System.Drawing.Point(11, 270);
+            this.faxNumberLabel.Name = "faxNumberLabel";
+            this.faxNumberLabel.Size = new System.Drawing.Size(74, 15);
+            this.faxNumberLabel.TabIndex = 25;
+            this.faxNumberLabel.Text = "Fax Number";
             // 
-            // companyBox
+            // businessPhoneLabel
             // 
-            this.companyBox.Location = new System.Drawing.Point(126, 16);
-            this.companyBox.Name = "companyBox";
-            this.companyBox.Size = new System.Drawing.Size(228, 20);
-            this.companyBox.TabIndex = 38;
+            this.businessPhoneLabel.AutoSize = true;
+            this.businessPhoneLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.businessPhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.businessPhoneLabel.Location = new System.Drawing.Point(11, 219);
+            this.businessPhoneLabel.Name = "businessPhoneLabel";
+            this.businessPhoneLabel.Size = new System.Drawing.Size(99, 15);
+            this.businessPhoneLabel.TabIndex = 24;
+            this.businessPhoneLabel.Text = "Business Phone";
             // 
-            // firstNameBox
+            // phoneNumbersLabel
             // 
-            this.firstNameBox.Location = new System.Drawing.Point(126, 90);
-            this.firstNameBox.Name = "firstNameBox";
-            this.firstNameBox.Size = new System.Drawing.Size(228, 20);
-            this.firstNameBox.TabIndex = 39;
+            this.phoneNumbersLabel.AutoSize = true;
+            this.phoneNumbersLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumbersLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.phoneNumbersLabel.Location = new System.Drawing.Point(11, 194);
+            this.phoneNumbersLabel.Name = "phoneNumbersLabel";
+            this.phoneNumbersLabel.Size = new System.Drawing.Size(98, 15);
+            this.phoneNumbersLabel.TabIndex = 23;
+            this.phoneNumbersLabel.Text = "Phone Numbers";
             // 
-            // lastNameBox
+            // lastNameLabel
             // 
-            this.lastNameBox.Location = new System.Drawing.Point(126, 115);
-            this.lastNameBox.Name = "lastNameBox";
-            this.lastNameBox.Size = new System.Drawing.Size(228, 20);
-            this.lastNameBox.TabIndex = 40;
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.lastNameLabel.Location = new System.Drawing.Point(11, 117);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(68, 15);
+            this.lastNameLabel.TabIndex = 22;
+            this.lastNameLabel.Text = "Last Name";
             // 
-            // jobTitleBox
+            // label3
             // 
-            this.jobTitleBox.Location = new System.Drawing.Point(126, 141);
-            this.jobTitleBox.Name = "jobTitleBox";
-            this.jobTitleBox.Size = new System.Drawing.Size(228, 20);
-            this.jobTitleBox.TabIndex = 41;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.label3.Location = new System.Drawing.Point(11, 143);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 15);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Job Title";
             // 
-            // businessPhoneBox
+            // firstNameLabel
             // 
-            this.businessPhoneBox.Location = new System.Drawing.Point(126, 217);
-            this.businessPhoneBox.Name = "businessPhoneBox";
-            this.businessPhoneBox.Size = new System.Drawing.Size(228, 20);
-            this.businessPhoneBox.TabIndex = 42;
+            this.firstNameLabel.AutoSize = true;
+            this.firstNameLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.firstNameLabel.Location = new System.Drawing.Point(11, 92);
+            this.firstNameLabel.Name = "firstNameLabel";
+            this.firstNameLabel.Size = new System.Drawing.Size(68, 15);
+            this.firstNameLabel.TabIndex = 20;
+            this.firstNameLabel.Text = "First Name";
             // 
-            // mobilePhoneBox
+            // primaryContactLabel
             // 
-            this.mobilePhoneBox.Location = new System.Drawing.Point(126, 242);
-            this.mobilePhoneBox.Name = "mobilePhoneBox";
-            this.mobilePhoneBox.Size = new System.Drawing.Size(228, 20);
-            this.mobilePhoneBox.TabIndex = 43;
+            this.primaryContactLabel.AutoSize = true;
+            this.primaryContactLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.primaryContactLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.primaryContactLabel.Location = new System.Drawing.Point(11, 67);
+            this.primaryContactLabel.Name = "primaryContactLabel";
+            this.primaryContactLabel.Size = new System.Drawing.Size(99, 15);
+            this.primaryContactLabel.TabIndex = 19;
+            this.primaryContactLabel.Text = "Primary Contact";
             // 
-            // faxNumberBox
+            // companyLabel
             // 
-            this.faxNumberBox.Location = new System.Drawing.Point(126, 268);
-            this.faxNumberBox.Name = "faxNumberBox";
-            this.faxNumberBox.Size = new System.Drawing.Size(228, 20);
-            this.faxNumberBox.TabIndex = 44;
+            this.companyLabel.AutoSize = true;
+            this.companyLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.companyLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.companyLabel.Location = new System.Drawing.Point(11, 18);
+            this.companyLabel.Name = "companyLabel";
+            this.companyLabel.Size = new System.Drawing.Size(60, 15);
+            this.companyLabel.TabIndex = 18;
+            this.companyLabel.Text = "Company";
             // 
-            // streetBox
+            // tabPage2
             // 
-            this.streetBox.Location = new System.Drawing.Point(126, 340);
-            this.streetBox.Multiline = true;
-            this.streetBox.Name = "streetBox";
-            this.streetBox.Size = new System.Drawing.Size(228, 40);
-            this.streetBox.TabIndex = 45;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.tabPage2.Controls.Add(this.customerOrders);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(770, 491);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Orders";
             // 
-            // cityBox
+            // customerOrders
             // 
-            this.cityBox.Location = new System.Drawing.Point(126, 386);
-            this.cityBox.Name = "cityBox";
-            this.cityBox.Size = new System.Drawing.Size(228, 20);
-            this.cityBox.TabIndex = 46;
-            // 
-            // stateProvinceBox
-            // 
-            this.stateProvinceBox.Location = new System.Drawing.Point(126, 411);
-            this.stateProvinceBox.Name = "stateProvinceBox";
-            this.stateProvinceBox.Size = new System.Drawing.Size(228, 20);
-            this.stateProvinceBox.TabIndex = 47;
-            // 
-            // zipPostalCodeBox
-            // 
-            this.zipPostalCodeBox.Location = new System.Drawing.Point(126, 436);
-            this.zipPostalCodeBox.Name = "zipPostalCodeBox";
-            this.zipPostalCodeBox.Size = new System.Drawing.Size(228, 20);
-            this.zipPostalCodeBox.TabIndex = 48;
-            // 
-            // countryRegionBox
-            // 
-            this.countryRegionBox.Location = new System.Drawing.Point(126, 462);
-            this.countryRegionBox.Name = "countryRegionBox";
-            this.countryRegionBox.Size = new System.Drawing.Size(228, 20);
-            this.countryRegionBox.TabIndex = 49;
-            // 
-            // emailBox
-            // 
-            this.emailBox.Location = new System.Drawing.Point(545, 16);
-            this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(213, 20);
-            this.emailBox.TabIndex = 50;
-            // 
-            // webPageBox
-            // 
-            this.webPageBox.Location = new System.Drawing.Point(545, 41);
-            this.webPageBox.Name = "webPageBox";
-            this.webPageBox.Size = new System.Drawing.Size(213, 20);
-            this.webPageBox.TabIndex = 51;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(656, 408);
-            this.dataGridView1.TabIndex = 0;
+            this.customerOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerOrders.Location = new System.Drawing.Point(12, 13);
+            this.customerOrders.Name = "customerOrders";
+            this.customerOrders.Size = new System.Drawing.Size(656, 408);
+            this.customerOrders.TabIndex = 0;
             // 
             // homeHeader
             // 
@@ -495,6 +503,7 @@
             this.newLink.TabIndex = 17;
             this.newLink.TabStop = true;
             this.newLink.Text = "New";
+            this.newLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newLink_LinkClicked);
             // 
             // createOutlookContactLabel
             // 
@@ -549,6 +558,7 @@
             this.saveLink.TabIndex = 13;
             this.saveLink.TabStop = true;
             this.saveLink.Text = "Save";
+            this.saveLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.saveLink_LinkClicked);
             // 
             // goToLabel
             // 
@@ -561,6 +571,16 @@
             this.goToLabel.Size = new System.Drawing.Size(36, 15);
             this.goToLabel.TabIndex = 8;
             this.goToLabel.Text = "Go to";
+            // 
+            // headerImage
+            // 
+            this.headerImage.BackColor = System.Drawing.Color.Transparent;
+            this.headerImage.Image = global::Northwind.Properties.Resources.Logo;
+            this.headerImage.Location = new System.Drawing.Point(20, 2);
+            this.headerImage.Name = "headerImage";
+            this.headerImage.Size = new System.Drawing.Size(49, 41);
+            this.headerImage.TabIndex = 0;
+            this.headerImage.TabStop = false;
             // 
             // headerTitle
             // 
@@ -576,24 +596,6 @@
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Customer Name";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(378, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 114);
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
-            // headerImage
-            // 
-            this.headerImage.BackColor = System.Drawing.Color.Transparent;
-            this.headerImage.Image = global::Northwind.Properties.Resources.Logo;
-            this.headerImage.Location = new System.Drawing.Point(20, 2);
-            this.headerImage.Name = "headerImage";
-            this.headerImage.Size = new System.Drawing.Size(49, 41);
-            this.headerImage.TabIndex = 0;
-            this.headerImage.TabStop = false;
-            // 
             // CustomerDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,14 +607,15 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerDetailsForm";
             this.Text = "Customer Details";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerDetailsForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerOrders)).EndInit();
             this.homeHeader.ResumeLayout(false);
             this.homeHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).EndInit();
             this.ResumeLayout(false);
 
@@ -666,6 +669,6 @@
         private System.Windows.Forms.TextBox lastNameBox;
         private System.Windows.Forms.TextBox firstNameBox;
         private System.Windows.Forms.TextBox companyBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView customerOrders;
     }
 }

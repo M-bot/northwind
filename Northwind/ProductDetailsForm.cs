@@ -65,22 +65,11 @@ namespace Northwind
 
             if(id < 1)
             {
-                //New Product
                 newProduct = true;
 
                 headerTitle.Text = "Untitled";
                 idBox.Text = "(New)";
-                codeBox.Text = "";
-                nameBox.Text = "";
-                descriptionBox.Text = "";
-                costBox.Text = "$0.00";
-                priceBox.Text = "$0.00";
-                reorderBox.Text = "";
-                targetBox.Text = "";
-                quantityBox.Text = "";
-                discontinuedBox.Checked = false;
-                defaultReorderBox.Text = "";
-                categoryBox.Text = "";
+
             }
             else
             {
