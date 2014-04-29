@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeDetailsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.homePhoneBox = new System.Windows.Forms.TextBox();
+            this.homePhoneLabel = new System.Windows.Forms.Label();
+            this.streetBox = new System.Windows.Forms.TextBox();
             this.webPageBox = new System.Windows.Forms.TextBox();
             this.emailBox = new System.Windows.Forms.TextBox();
             this.countryRegionBox = new System.Windows.Forms.TextBox();
@@ -47,6 +51,7 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.notesBox = new System.Windows.Forms.TextBox();
             this.notesLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.zipPostalCodeLabel = new System.Windows.Forms.Label();
             this.countryRegionLabel = new System.Windows.Forms.Label();
             this.stateProvinceLabel = new System.Windows.Forms.Label();
@@ -62,7 +67,7 @@
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.companyLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.employeeOrders = new System.Windows.Forms.DataGridView();
             this.homeHeader = new Northwind.Header();
             this.newLink = new System.Windows.Forms.LinkLabel();
             this.createOutlookContactLabel = new System.Windows.Forms.LinkLabel();
@@ -70,18 +75,14 @@
             this.emailCustomerLink = new System.Windows.Forms.LinkLabel();
             this.saveLink = new System.Windows.Forms.LinkLabel();
             this.goToLabel = new System.Windows.Forms.Label();
-            this.headerTitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.headerImage = new System.Windows.Forms.PictureBox();
-            this.streetBox = new System.Windows.Forms.TextBox();
-            this.homePhoneBox = new System.Windows.Forms.TextBox();
-            this.homePhoneLabel = new System.Windows.Forms.Label();
+            this.headerTitle = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.homeHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeOrders)).BeginInit();
+            this.homeHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,6 +140,32 @@
             this.tabPage1.Size = new System.Drawing.Size(781, 502);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
+            // 
+            // homePhoneBox
+            // 
+            this.homePhoneBox.Location = new System.Drawing.Point(144, 207);
+            this.homePhoneBox.Name = "homePhoneBox";
+            this.homePhoneBox.Size = new System.Drawing.Size(219, 20);
+            this.homePhoneBox.TabIndex = 54;
+            // 
+            // homePhoneLabel
+            // 
+            this.homePhoneLabel.AutoSize = true;
+            this.homePhoneLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homePhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.homePhoneLabel.Location = new System.Drawing.Point(11, 209);
+            this.homePhoneLabel.Name = "homePhoneLabel";
+            this.homePhoneLabel.Size = new System.Drawing.Size(80, 15);
+            this.homePhoneLabel.TabIndex = 53;
+            this.homePhoneLabel.Text = "Home Phone";
+            // 
+            // streetBox
+            // 
+            this.streetBox.Location = new System.Drawing.Point(144, 332);
+            this.streetBox.Multiline = true;
+            this.streetBox.Name = "streetBox";
+            this.streetBox.Size = new System.Drawing.Size(219, 40);
+            this.streetBox.TabIndex = 52;
             // 
             // webPageBox
             // 
@@ -271,6 +298,14 @@
             this.notesLabel.Size = new System.Drawing.Size(40, 15);
             this.notesLabel.TabIndex = 34;
             this.notesLabel.Text = "Notes";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(377, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 114);
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
             // 
             // zipPostalCodeLabel
             // 
@@ -429,7 +464,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.employeeOrders);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -437,13 +472,13 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Orders";
             // 
-            // dataGridView1
+            // employeeOrders
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(700, 429);
-            this.dataGridView1.TabIndex = 0;
+            this.employeeOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeOrders.Location = new System.Drawing.Point(12, 13);
+            this.employeeOrders.Name = "employeeOrders";
+            this.employeeOrders.Size = new System.Drawing.Size(700, 429);
+            this.employeeOrders.TabIndex = 0;
             // 
             // homeHeader
             // 
@@ -477,6 +512,7 @@
             this.newLink.TabIndex = 17;
             this.newLink.TabStop = true;
             this.newLink.Text = "New";
+            this.newLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newLink_LinkClicked);
             // 
             // createOutlookContactLabel
             // 
@@ -531,6 +567,7 @@
             this.saveLink.TabIndex = 13;
             this.saveLink.TabStop = true;
             this.saveLink.Text = "Save";
+            this.saveLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.saveLink_LinkClicked);
             // 
             // goToLabel
             // 
@@ -543,6 +580,16 @@
             this.goToLabel.Size = new System.Drawing.Size(36, 15);
             this.goToLabel.TabIndex = 8;
             this.goToLabel.Text = "Go to";
+            // 
+            // headerImage
+            // 
+            this.headerImage.BackColor = System.Drawing.Color.Transparent;
+            this.headerImage.Image = global::Northwind.Properties.Resources.Logo;
+            this.headerImage.Location = new System.Drawing.Point(20, 2);
+            this.headerImage.Name = "headerImage";
+            this.headerImage.Size = new System.Drawing.Size(49, 41);
+            this.headerImage.TabIndex = 0;
+            this.headerImage.TabStop = false;
             // 
             // headerTitle
             // 
@@ -558,50 +605,6 @@
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Employee Name";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(377, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 114);
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
-            // headerImage
-            // 
-            this.headerImage.BackColor = System.Drawing.Color.Transparent;
-            this.headerImage.Image = global::Northwind.Properties.Resources.Logo;
-            this.headerImage.Location = new System.Drawing.Point(20, 2);
-            this.headerImage.Name = "headerImage";
-            this.headerImage.Size = new System.Drawing.Size(49, 41);
-            this.headerImage.TabIndex = 0;
-            this.headerImage.TabStop = false;
-            // 
-            // streetBox
-            // 
-            this.streetBox.Location = new System.Drawing.Point(144, 332);
-            this.streetBox.Multiline = true;
-            this.streetBox.Name = "streetBox";
-            this.streetBox.Size = new System.Drawing.Size(219, 40);
-            this.streetBox.TabIndex = 52;
-            // 
-            // homePhoneBox
-            // 
-            this.homePhoneBox.Location = new System.Drawing.Point(144, 207);
-            this.homePhoneBox.Name = "homePhoneBox";
-            this.homePhoneBox.Size = new System.Drawing.Size(219, 20);
-            this.homePhoneBox.TabIndex = 54;
-            // 
-            // homePhoneLabel
-            // 
-            this.homePhoneLabel.AutoSize = true;
-            this.homePhoneLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homePhoneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.homePhoneLabel.Location = new System.Drawing.Point(11, 209);
-            this.homePhoneLabel.Name = "homePhoneLabel";
-            this.homePhoneLabel.Size = new System.Drawing.Size(80, 15);
-            this.homePhoneLabel.TabIndex = 53;
-            this.homePhoneLabel.Text = "Home Phone";
-            // 
             // EmployeeDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,16 +612,18 @@
             this.ClientSize = new System.Drawing.Size(841, 657);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.homeHeader);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeDetailsForm";
-            this.Text = "EmployeeDetailsForm";
+            this.Text = "Employee Details";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmployeeDetailsForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeOrders)).EndInit();
             this.homeHeader.ResumeLayout(false);
             this.homeHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).EndInit();
             this.ResumeLayout(false);
 
@@ -661,7 +666,7 @@
         private System.Windows.Forms.Label firstNameLabel;
         private System.Windows.Forms.Label companyLabel;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView employeeOrders;
         private Header homeHeader;
         private System.Windows.Forms.LinkLabel newLink;
         private System.Windows.Forms.LinkLabel createOutlookContactLabel;

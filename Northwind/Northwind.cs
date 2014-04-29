@@ -21,6 +21,7 @@ namespace Northwind
         private static ProductDetailsForm newProductDetailsForm;
         private static CustomerDetailsForm newCustomerDetailsForm;
         private static SupplierDetailsForm newSupplierDetailsForm;
+        private static EmployeeDetailsForm newEmployeeDetailsForm;
 
         public Home()
         {
@@ -35,6 +36,8 @@ namespace Northwind
             newCustomerDetailsForm.Hide();
             newSupplierDetailsForm = new SupplierDetailsForm();
             newSupplierDetailsForm.Hide();
+            newEmployeeDetailsForm = new EmployeeDetailsForm();
+            newEmployeeDetailsForm.Hide();
             dialog.ShowDialog(this);
 
             InitializeComponent();
@@ -118,6 +121,10 @@ namespace Northwind
 
         private void employeesLink_Click(object sender, EventArgs e)
         {
+            employeeView.DataSource = NorthwindDatabase.Context
+                .Sql("SELECT * FROM `employee list`")
+                .QuerySingle<DataTable>();
+
             if (!mainTabControl.TabPages.Contains(employeeTab))
                 mainTabControl.TabPages.Add(employeeTab);
             mainTabControl.SelectedTab = employeeTab;
@@ -261,6 +268,23 @@ namespace Northwind
                 newSupplierDetailsForm.loadSupplier(id);
             newSupplierDetailsForm.Show();
             newSupplierDetailsForm.Activate();
+        }
+
+        private void newEmployeeLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newEmployeeDetailsForm.loadEmployee(0);
+            newEmployeeDetailsForm.Show();
+            newEmployeeDetailsForm.Activate();
+        }
+
+        private void employeeView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            int id = 0;
+            if (Int32.TryParse(employeeView.Rows[e.RowIndex].Cells["ID"].Value.ToString(), out id))
+                newEmployeeDetailsForm.loadEmployee(id);
+            newEmployeeDetailsForm.Show();
+            newEmployeeDetailsForm.Activate();
         }
 
 
