@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductDetailsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.supplierBox = new PresentationControls.CheckBoxComboBox();
             this.descriptionBox = new System.Windows.Forms.TextBox();
             this.discontinuedBox = new System.Windows.Forms.CheckBox();
             this.costBox = new System.Windows.Forms.TextBox();
@@ -67,6 +66,7 @@
             this.goToProductLabel = new System.Windows.Forms.Label();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.headerTitle = new System.Windows.Forms.Label();
+            this.supplierBox = new PresentationControls.CheckBoxComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -120,17 +120,6 @@
             this.tabPage1.Size = new System.Drawing.Size(741, 502);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Product Details";
-            // 
-            // supplierBox
-            // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.supplierBox.CheckBoxProperties = checkBoxProperties1;
-            this.supplierBox.DisplayMemberSingleItem = "";
-            this.supplierBox.FormattingEnabled = true;
-            this.supplierBox.Location = new System.Drawing.Point(149, 141);
-            this.supplierBox.Name = "supplierBox";
-            this.supplierBox.Size = new System.Drawing.Size(222, 21);
-            this.supplierBox.TabIndex = 38;
             // 
             // descriptionBox
             // 
@@ -424,6 +413,7 @@
             this.newLink.TabIndex = 14;
             this.newLink.TabStop = true;
             this.newLink.Text = "New";
+            this.newLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.newLink_LinkClicked);
             // 
             // saveLink
             // 
@@ -476,6 +466,17 @@
             this.headerTitle.Size = new System.Drawing.Size(164, 29);
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Product Name";
+            // 
+            // supplierBox
+            // 
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.supplierBox.CheckBoxProperties = checkBoxProperties1;
+            this.supplierBox.DisplayMemberSingleItem = "";
+            this.supplierBox.FormattingEnabled = true;
+            this.supplierBox.Location = new System.Drawing.Point(149, 141);
+            this.supplierBox.Name = "supplierBox";
+            this.supplierBox.Size = new System.Drawing.Size(222, 21);
+            this.supplierBox.TabIndex = 38;
             // 
             // ProductDetailsForm
             // 
