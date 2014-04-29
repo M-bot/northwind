@@ -50,7 +50,6 @@ namespace Northwind
             set { port = value; }
         }
 
-        private MySqlConnection connection;
         private IDbContext context;
 
         public IDbContext Context
@@ -99,8 +98,6 @@ namespace Northwind
         {
             try
             {
-                //connection = new MySqlConnection(GetConnectionString());
-                //connection.Open();
                 context = BuildContext();
             }
             catch (Exception)
@@ -108,38 +105,6 @@ namespace Northwind
                 MessageBox.Show("MySQL server is not running! Error 1001");
                 throw;
             }
-        }
-
-        public MySqlCommand ExecuteQuery(string query)
-        {
-            return new MySqlCommand(query, connection);
-        }
-
-        public DataTable BuildDataTable(string query)
-        {
-            MySqlDataAdapter transfer = new MySqlDataAdapter(ExecuteQuery(query));
-            DataTable data = new DataTable();
-            transfer.Fill(data);
-            return data;
-        }
-
-        public ArrayList StringRowResult(string query, int columns, string format)
-        {
-            MySqlDataReader transfer = ExecuteQuery(query).ExecuteReader();
-            ArrayList data = new ArrayList();
-            while(transfer.Read())
-            {
-                Object[] row = new Object[columns];
-                transfer.GetValues(row);
-                data.Add(String.Format(format, row));
-            }
-            transfer.Close();
-            return data;
-        }
-
-        public void Disconnect()
-        {
-            connection.Close();
         }
     }
 }
