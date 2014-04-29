@@ -146,6 +146,7 @@ namespace Northwind
                 btnColumn.UseColumnTextForButtonValue = true;
                 inventoryView.Columns.Insert(inventoryView.Columns.Count, btnColumn);
                 buttonColumnAdded = true;
+                inventoryView.Columns[0].Visible = false;
             }
         }
 
@@ -195,6 +196,24 @@ namespace Northwind
             if (e.RowIndex < 0) return;
             int id = 0;
             if (Int32.TryParse(inventoryToReorderView.Rows[e.RowIndex].Cells["#"].Value.ToString(), out id))
+                newProductDetailsForm.loadProduct(id);
+            newProductDetailsForm.Show();
+            newProductDetailsForm.Activate();
+        }
+
+        private void addProductLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newProductDetailsForm.loadProduct(0);
+            newProductDetailsForm.Show();
+            newProductDetailsForm.Activate();
+        }
+
+        private void inventoryView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            if (e.ColumnIndex == 8) return;
+            int id = 0;
+            if (Int32.TryParse(inventoryView.Rows[e.RowIndex].Cells["#"].Value.ToString(), out id))
                 newProductDetailsForm.loadProduct(id);
             newProductDetailsForm.Show();
             newProductDetailsForm.Activate();
