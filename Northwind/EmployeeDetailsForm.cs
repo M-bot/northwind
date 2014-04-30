@@ -39,7 +39,6 @@ namespace Northwind
         {
             if (!dataLoaded) loadData();
 
-            companyBox.Text = "";
             firstNameBox.Text = "";
             lastNameBox.Text = "";
             jobTitleBox.Text = "";

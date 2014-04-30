@@ -44,7 +44,6 @@
             this.mobilePhoneBox = new System.Windows.Forms.TextBox();
             this.businessPhoneBox = new System.Windows.Forms.TextBox();
             this.jobTitleBox = new System.Windows.Forms.TextBox();
-            this.companyBox = new System.Windows.Forms.TextBox();
             this.lastNameBox = new System.Windows.Forms.TextBox();
             this.firstNameBox = new System.Windows.Forms.TextBox();
             this.webPageLabel = new System.Windows.Forms.Label();
@@ -65,7 +64,6 @@
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.firstNameLabel = new System.Windows.Forms.Label();
-            this.companyLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.employeeOrders = new System.Windows.Forms.DataGridView();
             this.homeHeader = new Northwind.Header();
@@ -112,7 +110,6 @@
             this.tabPage1.Controls.Add(this.mobilePhoneBox);
             this.tabPage1.Controls.Add(this.businessPhoneBox);
             this.tabPage1.Controls.Add(this.jobTitleBox);
-            this.tabPage1.Controls.Add(this.companyBox);
             this.tabPage1.Controls.Add(this.lastNameBox);
             this.tabPage1.Controls.Add(this.firstNameBox);
             this.tabPage1.Controls.Add(this.webPageLabel);
@@ -133,7 +130,6 @@
             this.tabPage1.Controls.Add(this.lastNameLabel);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.firstNameLabel);
-            this.tabPage1.Controls.Add(this.companyLabel);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -232,17 +228,10 @@
             // 
             // jobTitleBox
             // 
-            this.jobTitleBox.Location = new System.Drawing.Point(144, 97);
+            this.jobTitleBox.Location = new System.Drawing.Point(144, 72);
             this.jobTitleBox.Name = "jobTitleBox";
             this.jobTitleBox.Size = new System.Drawing.Size(219, 20);
             this.jobTitleBox.TabIndex = 41;
-            // 
-            // companyBox
-            // 
-            this.companyBox.Location = new System.Drawing.Point(144, 71);
-            this.companyBox.Name = "companyBox";
-            this.companyBox.Size = new System.Drawing.Size(219, 20);
-            this.companyBox.TabIndex = 40;
             // 
             // lastNameBox
             // 
@@ -433,7 +422,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.label3.Location = new System.Drawing.Point(11, 99);
+            this.label3.Location = new System.Drawing.Point(11, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 15);
             this.label3.TabIndex = 21;
@@ -449,17 +438,6 @@
             this.firstNameLabel.Size = new System.Drawing.Size(68, 15);
             this.firstNameLabel.TabIndex = 20;
             this.firstNameLabel.Text = "First Name";
-            // 
-            // companyLabel
-            // 
-            this.companyLabel.AutoSize = true;
-            this.companyLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.companyLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.companyLabel.Location = new System.Drawing.Point(11, 73);
-            this.companyLabel.Name = "companyLabel";
-            this.companyLabel.Size = new System.Drawing.Size(60, 15);
-            this.companyLabel.TabIndex = 18;
-            this.companyLabel.Text = "Company";
             // 
             // tabPage2
             // 
@@ -643,7 +621,6 @@
         private System.Windows.Forms.TextBox mobilePhoneBox;
         private System.Windows.Forms.TextBox businessPhoneBox;
         private System.Windows.Forms.TextBox jobTitleBox;
-        private System.Windows.Forms.TextBox companyBox;
         private System.Windows.Forms.TextBox lastNameBox;
         private System.Windows.Forms.TextBox firstNameBox;
         private System.Windows.Forms.Label webPageLabel;
@@ -664,7 +641,6 @@
         private System.Windows.Forms.Label lastNameLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label firstNameLabel;
-        private System.Windows.Forms.Label companyLabel;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView employeeOrders;
         private Header homeHeader;
