@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `northwind` /*!40100 DEFAULT CHARACTER SET latin1
 USE `northwind`;
 -- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
--- Host: 127.0.0.1    Database: northwind
+-- Host: localhost    Database: northwind
 -- ------------------------------------------------------
--- Server version	5.6.12-log
+-- Server version	5.1.70-community
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -72,7 +72,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,'Company A','Bedecs','Anna','anna.bedecs@aol.com','Owner','(123)555-0100','(713)111-1111','(321)231-2331','123 1st Street','(123)555-0101','Seattle','WA','99999','USA',NULL,NULL,NULL),(2,'Company B','Gratacos Solsona','Antonio','gratocs.solsona@aol.com','Owner','(123)555-0100','(294)342-1832','(320)213-2421','123 2nd Street','(123)555-0101','Boston','MA','99999','USA',NULL,NULL,NULL),(3,'Company C','Axen','Thomas',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'123 3rd Street','(123)555-0101','Los Angelas','CA','99999','USA',NULL,NULL,NULL),(4,'Company D','Lee','Christina',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 4th Street','(123)555-0101','New York','NY','99999','USA',NULL,NULL,NULL),(5,'Company E','O’Donnell','Martin',NULL,'Owner','(123)555-0100',NULL,NULL,'123 5th Street','(123)555-0101','Minneapolis','MN','99999','USA',NULL,NULL,NULL),(6,'Company F','Pérez-Olaeta','Francisco',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 6th Street','(123)555-0101','Milwaukee','WI','99999','USA',NULL,NULL,NULL),(7,'Company G','Xie','Ming-Yang',NULL,'Owner','(123)555-0100',NULL,NULL,'123 7th Street','(123)555-0101','Boise','ID','99999','USA',NULL,NULL,NULL),(8,'Company H','Andersen','Elizabeth',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'123 8th Street','(123)555-0101','Portland','OR','99999','USA',NULL,NULL,NULL),(9,'Company I','Mortensen','Sven',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 9th Street','(123)555-0101','Salt Lake City','UT','99999','USA',NULL,NULL,NULL),(10,'Company J','Wacker','Roland',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 10th Street','(123)555-0101','Chicago','IL','99999','USA',NULL,NULL,NULL),(11,'Company K','Krschne','Peter',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 11th Street','(123)555-0101','Miami','FL','99999','USA',NULL,NULL,NULL),(12,'Company L','Edwards','John',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 12th Street','(123)555-0101','Las Vegas','NV','99999','USA',NULL,NULL,NULL),(13,'Company M','Ludick','Andre',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'456 13th Street','(123)555-0101','Memphis','TN','99999','USA',NULL,NULL,NULL),(14,'Company N','Grilo','Carlos',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'456 14th Street','(123)555-0101','Denver','CO','99999','USA',NULL,NULL,NULL),(15,'Company O','Kupkova','Helena',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'456 15th Street','(123)555-0101','Honolulu','HI','99999','USA',NULL,NULL,NULL),(16,'Company P','Goldschmidt','Daniel',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'456 16th Street','(123)555-0101','San Francisco','CA','99999','USA',NULL,NULL,NULL),(17,'Company Q','Bagel','Jean Philippe',NULL,'Owner','(123)555-0100',NULL,NULL,'456 17th Street','(123)555-0101','Seattle','WA','99999','USA',NULL,NULL,NULL),(18,'Company R','Autier Miconi','Catherine',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'456 18th Street','(123)555-0101','Boston','MA','99999','USA',NULL,NULL,NULL),(19,'Company S','Eggerer','Alexander',NULL,'Accounting Assistant','(123)555-0100',NULL,NULL,'789 19th Street','(123)555-0101','Los Angelas','CA','99999','USA',NULL,NULL,NULL),(20,'Company T','Li','George',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 20th Street','(123)555-0101','New York','NY','99999','USA',NULL,NULL,NULL),(21,'Company U','Tham','Bernard',NULL,'Accounting Manager','(123)555-0100',NULL,NULL,'789 21th Street','(123)555-0101','Minneapolis','MN','99999','USA',NULL,NULL,NULL),(22,'Company V','Ramos','Luciana',NULL,'Purchasing Assistant','(123)555-0100',NULL,NULL,'789 22th Street','(123)555-0101','Milwaukee','WI','99999','USA',NULL,NULL,NULL),(23,'Company W','Entin','Michael',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 23th Street','(123)555-0101','Portland','OR','99999','USA',NULL,NULL,NULL),(24,'Company X','Hasselberg','Jonas',NULL,'Owner','(123)555-0100',NULL,NULL,'789 24th Street','(123)555-0101','Salt Lake City','UT','99999','USA',NULL,NULL,NULL),(25,'Company Y','Rodman','John',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 25th Street','(123)555-0101','Chicago','IL','99999','USA',NULL,NULL,NULL),(26,'Company Z','Liu','Run',NULL,'Accounting Assistant','(123)555-0100',NULL,NULL,'789 26th Street','(123)555-0101','Miami','FL','99999','USA',NULL,NULL,NULL),(27,'Company AA','Toh','Karen',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 27th Street','(123)555-0101','Las Vegas','NV','99999','USA',NULL,NULL,NULL),(28,'Company BB','Raghav','Amritansh',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 28th Street','(123)555-0101','Memphis','TN','99999','USA',NULL,NULL,NULL),(29,'Company CC','Lee','Soo Jung',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 29th Street','(123)555-0101','Denver','CO','99999','USA',NULL,NULL,NULL);
+INSERT INTO `customers` VALUES (1,'Company A','Bedecs','Anna','anna.bedecs@aol.com','Owner','(123)555-0100','(713)111-1111','(321)231-2331','123 1st Street','(123)555-0101','Seattle','WA','99999','USA',NULL,NULL,NULL),(2,'Company B','Gratacos Solsona','Antonio','gratocs.solsona@aol.com','Owner','(123)555-0100','(294)342-1832','(320)213-2421','123 2nd Street','(123)555-0101','Boston','MA','99999','USA',NULL,NULL,NULL),(3,'Company C','Axen','Thomas',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'123 3rd Street','(123)555-0101','Los Angelas','CA','99999','USA',NULL,NULL,NULL),(4,'Company D','Lee','Christina',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 4th Street','(123)555-0101','New York','NY','99999','USA',NULL,NULL,NULL),(5,'Company E','O’Donnell','Martin',NULL,'Owner','(123)555-0100',NULL,NULL,'123 5th Street','(123)555-0101','Minneapolis','MN','99999','USA',NULL,NULL,NULL),(6,'Company F','Pérez-Olaeta','Francisco',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 6th Street','(123)555-0101','Milwaukee','WI','99999','USA',NULL,NULL,NULL),(7,'Company G','Xie','Ming-Yang',NULL,'Owner','(123)555-0100',NULL,NULL,'123 7th Street','(123)555-0101','Boise','ID','99999','USA',NULL,NULL,NULL),(8,'Company H','Andersen','Elizabeth','','Purchasing Representative','(123)555-0101',NULL,'','123 8th Street','(123)555-0101','Portland','OR','99999','USA','','',NULL),(9,'Company I','Mortensen','Sven',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 9th Street','(123)555-0101','Salt Lake City','UT','99999','USA',NULL,NULL,NULL),(10,'Company J','Wacker','Roland',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 10th Street','(123)555-0101','Chicago','IL','99999','USA',NULL,NULL,NULL),(11,'Company K','Krschne','Peter',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 11th Street','(123)555-0101','Miami','FL','99999','USA',NULL,NULL,NULL),(12,'Company L','Edwards','John',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'123 12th Street','(123)555-0101','Las Vegas','NV','99999','USA',NULL,NULL,NULL),(13,'Company M','Ludick','Andre',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'456 13th Street','(123)555-0101','Memphis','TN','99999','USA',NULL,NULL,NULL),(14,'Company N','Grilo','Carlos',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'456 14th Street','(123)555-0101','Denver','CO','99999','USA',NULL,NULL,NULL),(15,'Company O','Kupkova','Helena',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'456 15th Street','(123)555-0101','Honolulu','HI','99999','USA',NULL,NULL,NULL),(16,'Company P','Goldschmidt','Daniel',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'456 16th Street','(123)555-0101','San Francisco','CA','99999','USA',NULL,NULL,NULL),(17,'Company Q','Bagel','Jean Philippe',NULL,'Owner','(123)555-0100',NULL,NULL,'456 17th Street','(123)555-0101','Seattle','WA','99999','USA',NULL,NULL,NULL),(18,'Company R','Autier Miconi','Catherine',NULL,'Purchasing Representative','(123)555-0100',NULL,NULL,'456 18th Street','(123)555-0101','Boston','MA','99999','USA',NULL,NULL,NULL),(19,'Company S','Eggerer','Alexander',NULL,'Accounting Assistant','(123)555-0100',NULL,NULL,'789 19th Street','(123)555-0101','Los Angelas','CA','99999','USA',NULL,NULL,NULL),(20,'Company T','Li','George',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 20th Street','(123)555-0101','New York','NY','99999','USA',NULL,NULL,NULL),(21,'Company U','Tham','Bernard',NULL,'Accounting Manager','(123)555-0100',NULL,NULL,'789 21th Street','(123)555-0101','Minneapolis','MN','99999','USA',NULL,NULL,NULL),(22,'Company V','Ramos','Luciana',NULL,'Purchasing Assistant','(123)555-0100',NULL,NULL,'789 22th Street','(123)555-0101','Milwaukee','WI','99999','USA',NULL,NULL,NULL),(23,'Company W','Entin','Michael',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 23th Street','(123)555-0101','Portland','OR','99999','USA',NULL,NULL,NULL),(24,'Company X','Hasselberg','Jonas',NULL,'Owner','(123)555-0100',NULL,NULL,'789 24th Street','(123)555-0101','Salt Lake City','UT','99999','USA',NULL,NULL,NULL),(25,'Company Y','Rodman','John',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 25th Street','(123)555-0101','Chicago','IL','99999','USA',NULL,NULL,NULL),(26,'Company Z','Liu','Run',NULL,'Accounting Assistant','(123)555-0100',NULL,NULL,'789 26th Street','(123)555-0101','Miami','FL','99999','USA',NULL,NULL,NULL),(27,'Company AA','Toh','Karen',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 27th Street','(123)555-0101','Las Vegas','NV','99999','USA',NULL,NULL,NULL),(28,'Company BB','Raghav','Amritansh',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 28th Street','(123)555-0101','Memphis','TN','99999','USA',NULL,NULL,NULL),(29,'Company CC','Lee','Soo Jung',NULL,'Purchasing Manager','(123)555-0100',NULL,NULL,'789 29th Street','(123)555-0101','Denver','CO','99999','USA',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,6 +105,24 @@ SET character_set_client = utf8;
   `WebPage` tinyint NOT NULL,
   `Notes` tinyint NOT NULL,
   `Attachments` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `employee list`
+--
+
+DROP TABLE IF EXISTS `employee list`;
+/*!50001 DROP VIEW IF EXISTS `employee list`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `employee list` (
+  `ID` tinyint NOT NULL,
+  `First Name` tinyint NOT NULL,
+  `Last Name` tinyint NOT NULL,
+  `Email Address` tinyint NOT NULL,
+  `Business Phone` tinyint NOT NULL,
+  `Job Title` tinyint NOT NULL
 ) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
@@ -168,9 +186,40 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES (1,'Freehafer','Nancy','nancy@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 1st Avenue','Seattle','WA','99999','USA','#http://northwindtraders.com#',NULL,NULL),(2,'Cencini','Andrew','andrew@northwindtraders.com','Vice President, Sales','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 2nd Avenue','Bellevue','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Joined the company as a sales representative, was promoted to sales manager and was then named vice president of sales.',NULL),(3,'Kotas','Jan','jan@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 3rd Avenue','Redmond','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Was hired as a sales associate and was promoted to sales representative.',NULL),(4,'Sergienko','Mariya','mariya@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 4th Avenue','Kirkland','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#',NULL,NULL),(5,'Thorpe','Steven','steven@northwindtraders.com','Sales Manager','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 5th Avenue','Seattle','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Joined the company as a sales representative and was promoted to sales manager.  Fluent in French.',NULL),(6,'Neipper','Michael','michael@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 6th Avenue','Redmond','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Fluent in Japanese and can read and write French, Portuguese, and Spanish.',NULL),(7,'Zare','Robert','robert@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 7th Avenue','Seattle','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#',NULL,NULL),(8,'Giussani','Laura','laura@northwindtraders.com','Sales Coordinator','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 8th Avenue','Redmond','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Reads and writes French.',NULL),(9,'Hellung-Larsen','Anne','anne@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 9th Avenue','Seattle','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Fluent in French and German.',NULL);
+INSERT INTO `employees` VALUES (1,'Freehafer','Nancy','nancy@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 1st Avenue','Seattle','WA','99999','USA','#http://northwindtraders.com#',NULL,NULL),(2,'Cencini','Andrew','andrew@northwindtraders.com','Vice President, Sales','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 2nd Avenue','Bellevue','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Joined the company as a sales representative, was promoted to sales manager and was then named vice president of sales.',NULL),(3,'Kotas','Jane','jan@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102','','(123)555-0103','123 3rd Avenue','Redmond','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Was hired as a sales associate and was promoted to sales representative.',NULL),(4,'Sergienko','Mariya','mariya@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 4th Avenue','Kirkland','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#',NULL,NULL),(5,'Thorpe','Steven','steven@northwindtraders.com','Sales Manager','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 5th Avenue','Seattle','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Joined the company as a sales representative and was promoted to sales manager.  Fluent in French.',NULL),(6,'Neipper','Michael','michael@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 6th Avenue','Redmond','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Fluent in Japanese and can read and write French, Portuguese, and Spanish.',NULL),(7,'Zare','Robert','robert@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 7th Avenue','Seattle','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#',NULL,NULL),(8,'Giussani','Laura','laura@northwindtraders.com','Sales Coordinator','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 8th Avenue','Redmond','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Reads and writes French.',NULL),(9,'Hellung-Larsen','Anne','anne@northwindtraders.com','Sales Representative','(123)555-0100','(123)555-0102',NULL,'(123)555-0103','123 9th Avenue','Seattle','WA','99999','USA','http://northwindtraders.com#http://northwindtraders.com/#','Fluent in French and German.',NULL);
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `employees extended`
+--
+
+DROP TABLE IF EXISTS `employees extended`;
+/*!50001 DROP VIEW IF EXISTS `employees extended`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `employees extended` (
+  `FileAs` tinyint NOT NULL,
+  `EmployeeName` tinyint NOT NULL,
+  `ID` tinyint NOT NULL,
+  `LastName` tinyint NOT NULL,
+  `FirstName` tinyint NOT NULL,
+  `EmailAddress` tinyint NOT NULL,
+  `JobTitle` tinyint NOT NULL,
+  `BusinessPhone` tinyint NOT NULL,
+  `HomePhone` tinyint NOT NULL,
+  `MobilePhone` tinyint NOT NULL,
+  `FaxNumber` tinyint NOT NULL,
+  `Address` tinyint NOT NULL,
+  `City` tinyint NOT NULL,
+  `State_Province` tinyint NOT NULL,
+  `ZIP_PostalCode` tinyint NOT NULL,
+  `Country_Region` tinyint NOT NULL,
+  `WebPage` tinyint NOT NULL,
+  `Notes` tinyint NOT NULL,
+  `Attachments` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Temporary table structure for view `inventory`
@@ -208,6 +257,7 @@ DROP TABLE IF EXISTS `inventory list`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 /*!50001 CREATE TABLE `inventory list` (
+  `#` tinyint NOT NULL,
   `Product Name` tinyint NOT NULL,
   `Qty On Hand` tinyint NOT NULL,
   `Qty On Hold` tinyint NOT NULL,
@@ -436,7 +486,7 @@ DROP TABLE IF EXISTS `order details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `order details` (
-  `ID` int(11) DEFAULT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `OrderID` int(11) DEFAULT NULL,
   `ProductID` int(11) DEFAULT NULL,
   `Quantity` decimal(18,4) DEFAULT NULL,
@@ -446,8 +496,9 @@ CREATE TABLE `order details` (
   `DateAllocated` datetime DEFAULT NULL,
   `PurchaseOrderID` int(11) DEFAULT NULL,
   `InventoryID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
   UNIQUE KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -456,7 +507,7 @@ CREATE TABLE `order details` (
 
 LOCK TABLES `order details` WRITE;
 /*!40000 ALTER TABLE `order details` DISABLE KEYS */;
-INSERT INTO `order details` VALUES (27,30,34,100.0000,14,0,2,NULL,96,83),(28,30,80,30.0000,3.5,0,2,NULL,NULL,63),(29,31,7,10.0000,30,0,2,NULL,NULL,64),(30,31,51,10.0000,53,0,2,NULL,NULL,65),(31,31,80,10.0000,3.5,0,2,NULL,NULL,66),(32,32,1,15.0000,18,0,2,NULL,NULL,67),(33,32,43,20.0000,46,0,2,NULL,NULL,68),(34,33,19,30.0000,9.2,0,2,NULL,97,81),(35,34,19,20.0000,9.2,0,2,NULL,NULL,69),(36,35,48,10.0000,12.75,0,2,NULL,NULL,70),(37,36,41,200.0000,9.65,0,2,NULL,98,79),(38,37,8,17.0000,40,0,2,NULL,NULL,71),(39,38,43,300.0000,46,0,2,NULL,99,77),(40,39,48,100.0000,12.75,0,2,NULL,100,75),(41,40,81,200.0000,2.99,0,2,NULL,101,73),(42,41,43,300.0000,46,0,1,NULL,102,104),(43,42,6,10.0000,25,0,2,NULL,NULL,84),(44,42,4,10.0000,22,0,2,NULL,NULL,85),(45,42,19,10.0000,9.2,0,2,NULL,103,110),(46,43,80,20.0000,3.5,0,1,NULL,NULL,86),(47,43,81,50.0000,2.99,0,1,NULL,NULL,87),(48,44,1,25.0000,18,0,1,NULL,NULL,88),(49,44,43,25.0000,46,0,1,NULL,NULL,89),(50,44,81,25.0000,2.99,0,1,NULL,NULL,90),(51,45,41,50.0000,9.65,0,2,NULL,104,116),(52,45,40,50.0000,18.4,0,2,NULL,NULL,91),(53,46,57,100.0000,19.5,0,2,NULL,105,101),(54,46,72,50.0000,34.8,0,2,NULL,106,114),(55,47,34,300.0000,14,0,2,NULL,107,108),(56,48,8,25.0000,40,0,2,NULL,108,106),(57,48,19,25.0000,9.2,0,2,NULL,109,112),(59,50,21,20.0000,10,0,2,NULL,NULL,92),(60,51,5,25.0000,21.35,0,2,NULL,NULL,93),(61,51,41,30.0000,9.65,0,2,NULL,NULL,94),(62,51,40,30.0000,18.4,0,2,NULL,NULL,95),(66,56,48,10.0000,12.75,0,2,NULL,111,99),(67,55,34,87.0000,14,0,2,NULL,NULL,117),(68,79,7,30.0000,30,0,2,NULL,NULL,119),(69,79,51,30.0000,53,0,2,NULL,NULL,118),(70,78,17,40.0000,39,0,2,NULL,NULL,120),(71,77,6,90.0000,25,0,2,NULL,NULL,121),(72,76,4,30.0000,22,0,2,NULL,NULL,122),(73,75,48,40.0000,12.75,0,2,NULL,NULL,123),(74,74,48,40.0000,12.75,0,2,NULL,NULL,124),(75,73,41,10.0000,9.65,0,2,NULL,NULL,125),(76,72,43,5.0000,46,0,2,NULL,NULL,126),(77,71,40,40.0000,18.4,0,2,NULL,NULL,127),(78,70,8,20.0000,40,0,2,NULL,NULL,128),(79,69,80,15.0000,3.5,0,2,NULL,NULL,129),(80,67,74,20.0000,10,0,2,NULL,NULL,130),(81,60,72,40.0000,34.8,0,2,NULL,NULL,131),(82,63,3,50.0000,10,0,2,NULL,NULL,132),(83,63,8,3.0000,40,0,2,NULL,NULL,133),(84,58,20,40.0000,81,0,2,NULL,NULL,134),(85,58,52,40.0000,7,0,2,NULL,NULL,135),(86,80,56,10.0000,38,0,1,NULL,NULL,136),(90,81,81,0.0000,2.99,0,5,NULL,NULL,NULL),(91,81,56,0.0000,38,0,0,NULL,NULL,NULL);
+INSERT INTO `order details` VALUES (27,30,34,100.0000,14,0,2,NULL,96,83),(28,30,80,30.0000,3.5,0,2,NULL,NULL,63),(29,31,7,10.0000,30,0,2,NULL,NULL,64),(30,31,51,10.0000,53,0,2,NULL,NULL,65),(31,31,80,10.0000,3.5,0,2,NULL,NULL,66),(32,32,1,15.0000,18,0,2,NULL,NULL,67),(33,32,43,20.0000,46,0,2,NULL,NULL,68),(34,33,19,30.0000,9.2,0,2,NULL,97,81),(35,34,19,20.0000,9.2,0,2,NULL,NULL,69),(36,35,48,10.0000,12.75,0,2,NULL,NULL,70),(37,36,41,200.0000,9.65,0,2,NULL,98,79),(38,37,8,17.0000,40,0,2,NULL,NULL,71),(39,38,43,300.0000,46,0,2,NULL,99,77),(40,39,48,100.0000,12.75,0,2,NULL,100,75),(41,40,81,200.0000,2.99,0,2,NULL,101,73),(42,41,43,300.0000,46,0,1,NULL,102,104),(43,42,6,10.0000,25,0,2,NULL,NULL,84),(44,42,4,10.0000,22,0,2,NULL,NULL,85),(45,42,19,10.0000,9.2,0,2,NULL,103,110),(46,43,80,20.0000,3.5,0,1,NULL,NULL,86),(47,43,81,50.0000,2.99,0,1,NULL,NULL,87),(48,44,1,25.0000,18,0,1,NULL,NULL,88),(49,44,43,25.0000,46,0,1,NULL,NULL,89),(50,44,81,25.0000,2.99,0,1,NULL,NULL,90),(51,45,41,50.0000,9.65,0,2,NULL,104,116),(52,45,40,50.0000,18.4,0,2,NULL,NULL,91),(53,46,57,100.0000,19.5,0,2,NULL,105,101),(54,46,72,50.0000,34.8,0,2,NULL,106,114),(55,47,34,300.0000,14,0,2,NULL,107,108),(56,48,8,25.0000,40,0,2,NULL,108,106),(57,48,19,25.0000,9.2,0,2,NULL,109,112),(59,50,21,20.0000,10,0,2,NULL,NULL,92),(60,51,5,25.0000,21.35,0,2,NULL,NULL,93),(61,51,41,30.0000,9.65,0,2,NULL,NULL,94),(62,51,40,30.0000,18.4,0,2,NULL,NULL,95),(66,56,48,10.0000,12.75,0,2,NULL,111,99),(67,55,34,87.0000,14,0,2,NULL,NULL,117),(68,79,7,30.0000,30,0,2,NULL,NULL,119),(69,79,51,30.0000,53,0,2,NULL,NULL,118),(70,78,17,40.0000,39,0,2,NULL,NULL,120),(71,77,6,90.0000,25,0,2,NULL,NULL,121),(72,76,4,30.0000,22,0,2,NULL,NULL,122),(73,75,48,40.0000,12.75,0,2,NULL,NULL,123),(74,74,48,40.0000,12.75,0,2,NULL,NULL,124),(75,73,41,10.0000,9.65,0,2,NULL,NULL,125),(76,72,43,5.0000,46,0,2,NULL,NULL,126),(77,71,40,40.0000,18.4,0,2,NULL,NULL,127),(78,70,8,20.0000,40,0,2,NULL,NULL,128),(79,69,80,15.0000,3.5,0,2,NULL,NULL,129),(80,67,74,20.0000,10,0,2,NULL,NULL,130),(81,60,72,40.0000,34.8,0,2,NULL,NULL,131),(82,63,3,50.0000,10,0,2,NULL,NULL,132),(83,63,8,3.0000,40,0,2,NULL,NULL,133),(84,58,20,40.0000,81,0,2,NULL,NULL,134),(85,58,52,40.0000,7,0,2,NULL,NULL,135),(86,80,56,10.0000,38,0,1,NULL,NULL,136);
 /*!40000 ALTER TABLE `order details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -751,7 +802,7 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `SupplierIDs` mediumtext,
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ProductCode` varchar(25) DEFAULT NULL,
   `ProductName` varchar(50) DEFAULT NULL,
   `Description` mediumtext,
@@ -766,7 +817,7 @@ CREATE TABLE `products` (
   `Attachments` mediumtext,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -775,7 +826,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES ('4',1,'NWTB-1','Northwind Traders Chai',NULL,13.5,18,10,40,'10 boxes x 20 bags','\0',10,'Beverages',NULL),('10',3,'NWTCO-3','Northwind Traders Syrup',NULL,7.5,10,25,100,'12 - 550 ml bottles','\0',25,'Condiments',NULL),('10',4,'NWTCO-4','Northwind Traders Cajun Seasoning',NULL,16.5,22,10,40,'48 - 6 oz jars','\0',10,'Condiments',NULL),('10',5,'NWTO-5','Northwind Traders Olive Oil',NULL,16.0125,21.35,10,40,'36 boxes','\0',10,'Oil',NULL),('2;6',6,'NWTJP-6','Northwind Traders Boysenberry Spread',NULL,18.75,25,25,100,'12 - 8 oz jars','\0',25,'Jams, Preserves',NULL),('2',7,'NWTDFN-7','Northwind Traders Dried Pears',NULL,22.5,30,10,40,'12 - 1 lb pkgs.','\0',10,'Dried Fruit & Nuts',NULL),('8',8,'NWTS-8','Northwind Traders Curry Sauce',NULL,30,40,10,40,'12 - 12 oz jars','\0',10,'Sauces',NULL),('2;6',14,'NWTDFN-14','Northwind Traders Walnuts',NULL,17.4375,23.25,10,40,'40 - 100 g pkgs.','\0',10,'Dried Fruit & Nuts',NULL),('6',17,'NWTCFV-17','Northwind Traders Fruit Cocktail',NULL,29.25,39,10,40,'15.25 OZ','\0',10,'Canned Fruit & Vegetables',NULL),('1',19,'NWTBGM-19','Northwind Traders Chocolate Biscuits Mix',NULL,6.9,9.2,5,20,'10 boxes x 12 pieces','\0',5,'Baked Goods & Mixes',NULL),('2;6',20,'NWTJP-6','Northwind Traders Marmalade',NULL,60.75,81,10,40,'30 gift boxes','\0',10,'Jams, Preserves',NULL),('1',21,'NWTBGM-21','Northwind Traders Scones',NULL,7.5,10,5,20,'24 pkgs. x 4 pieces','\0',5,'Baked Goods & Mixes',NULL),('4',34,'NWTB-34','Northwind Traders Beer',NULL,10.5,14,15,60,'24 - 12 oz bottles','\0',15,'Beverages',NULL),('7',40,'NWTCM-40','Northwind Traders Crab Meat',NULL,13.8,18.4,30,120,'24 - 4 oz tins','\0',30,'Canned Meat',NULL),('6',41,'NWTSO-41','Northwind Traders Clam Chowder',NULL,7.2375,9.65,10,40,'12 - 12 oz cans','\0',10,'Soups',NULL),('3;4',43,'NWTB-43','Northwind Traders Coffee',NULL,34.5,46,25,100,'16 - 500 g tins','\0',25,'Beverages',NULL),('10',48,'NWTCA-48','Northwind Traders Chocolate',NULL,9.5625,12.75,25,100,'10 pkgs','\0',25,'Candy',NULL),('2',51,'NWTDFN-51','Northwind Traders Dried Apples',NULL,39.75,53,10,40,'50 - 300 g pkgs.','\0',10,'Dried Fruit & Nuts',NULL),('1',52,'NWTG-52','Northwind Traders Long Grain Rice',NULL,5.25,7,25,100,'16 - 2 kg boxes','\0',25,'Grains',NULL),('1',56,'NWTP-56','Northwind Traders Gnocchi',NULL,28.5,38,30,120,'24 - 250 g pkgs.','\0',30,'Pasta',NULL),('1',57,'NWTP-57','Northwind Traders Ravioli',NULL,14.625,19.5,20,80,'24 - 250 g pkgs.','\0',20,'Pasta',NULL),('8',65,'NWTS-65','Northwind Traders Hot Pepper Sauce',NULL,15.7875,21.05,10,40,'32 - 8 oz bottles','\0',10,'Sauces',NULL),('8',66,'NWTS-66','Northwind Traders Tomato Sauce',NULL,12.75,17,20,80,'24 - 8 oz jars','\0',20,'Sauces',NULL),('5',72,'NWTD-72','Northwind Traders Mozzarella',NULL,26.1,34.8,10,40,'24 - 200 g pkgs.','\0',10,'Dairy Products',NULL),('2;6',74,'NWTDFN-74','Northwind Traders Almonds',NULL,7.5,10,5,20,'5 kg pkg.','\0',5,'Dried Fruit & Nuts',NULL),('10',77,'NWTCO-77','Northwind Traders Mustard',NULL,9.75,13,15,60,'12 boxes','\0',15,'Condiments',NULL),('2',80,'NWTDFN-80','Northwind Traders Dried Plums',NULL,3,3.5,50,75,'1 lb bag','\0',25,'Dried Fruit & Nuts',NULL),('3',81,'NWTB-81','Northwind Traders Green Tea',NULL,2,2.99,100,125,'20 bags per box','\0',25,'Beverages',NULL),('1',82,'NWTC-82','Northwind Traders Granola',NULL,2,4,20,100,NULL,'\0',NULL,'Cereal',NULL),('9',83,'NWTCS-83','Northwind Traders Potato Chips',NULL,0.5,1.8,30,200,NULL,'\0',NULL,'Chips, Snacks',NULL),('1',85,'NWTBGM-85','Northwind Traders Brownie Mix',NULL,9,12.49,10,20,'3 boxes','\0',5,'Baked Goods & Mixes',NULL),('1',86,'NWTBGM-86','Northwind Traders Cake Mix',NULL,10.5,15.99,10,20,'4 boxes','\0',5,'Baked Goods & Mixes',NULL),('7',87,'NWTB-87','Northwind Traders Tea',NULL,2,4,20,50,'100 count per box','\0',NULL,'Beverages',NULL),('6',88,'NWTCFV-88','Northwind Traders Pears',NULL,1,1.3,10,40,'15.25 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',89,'NWTCFV-89','Northwind Traders Peaches',NULL,1,1.5,10,40,'15.25 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',90,'NWTCFV-90','Northwind Traders Pineapple',NULL,1,1.8,10,40,'15.25 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',91,'NWTCFV-91','Northwind Traders Cherry Pie Filling',NULL,1,2,10,40,'15.25 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',92,'NWTCFV-92','Northwind Traders Green Beans',NULL,1,1.2,10,40,'14.5 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',93,'NWTCFV-93','Northwind Traders Corn',NULL,1,1.2,10,40,'14.5 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',94,'NWTCFV-94','Northwind Traders Peas',NULL,1,1.5,10,40,'14.5 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('7',95,'NWTCM-95','Northwind Traders Tuna Fish',NULL,0.5,2,30,50,'5 oz','\0',NULL,'Canned Meat',NULL),('7',96,'NWTCM-96','Northwind Traders Smoked Salmon',NULL,2,4,30,50,'5 oz','\0',NULL,'Canned Meat',NULL),('1',97,'NWTC-82','Northwind Traders Hot Cereal',NULL,3,5,50,200,NULL,'\0',NULL,'Cereal',NULL),('6',98,'NWTSO-98','Northwind Traders Vegetable Soup',NULL,1,1.89,100,200,NULL,'\0',NULL,'Soups',NULL),('6',99,'NWTSO-99','Northwind Traders Chicken Soup',NULL,1,1.95,100,200,NULL,'\0',NULL,'Soups',NULL);
+INSERT INTO `products` VALUES ('4',1,'NWTB-1','Northwind Traders Chai',NULL,13.5,18,10,40,'10 boxes x 20 bags','\0',10,'Beverages',NULL),('10',3,'NWTCO-3','Northwind Traders Syrup',NULL,7.5,10,25,100,'12 - 550 ml bottles','\0',25,'Condiments',NULL),('10',4,'NWTCO-4','Northwind Traders Cajun Seasoning',NULL,16.5,22,10,40,'48 - 6 oz jars','\0',10,'Condiments',NULL),('10',5,'NWTO-5','Northwind Traders Olive Oil','',16.01,21.35,10,30,'36 boxes','\0',10,'Oil',NULL),('2;6',6,'NWTJP-6','Northwind Traders Boysenberry Spread','',0,0,25,100,'12 - 8 oz jars','\0',25,'Jams, Preserves',NULL),('2',7,'NWTDFN-7','Northwind Traders Dried Pears',NULL,22.5,30,10,40,'12 - 1 lb pkgs.','\0',10,'Dried Fruit & Nuts',NULL),('8',8,'NWTS-8','Northwind Traders Curry Sauce',NULL,30,40,10,40,'12 - 12 oz jars','\0',10,'Sauces',NULL),('2;6',14,'NWTDFN-14','Northwind Traders Walnuts',NULL,17.4375,23.25,10,40,'40 - 100 g pkgs.','\0',10,'Dried Fruit & Nuts',NULL),('6',17,'NWTCFV-17','Northwind Traders Fruit Cocktail','',29.25,39,10,40,'15.25 OZ','\0',10,'Canned Fruit & Vegetables',NULL),('1',19,'NWTBGM-19','Northwind Traders Chocolate Biscuits Mix',NULL,6.9,9.2,5,20,'10 boxes x 12 pieces','\0',5,'Baked Goods & Mixes',NULL),('2;6',20,'NWTJP-6','Northwind Traders Marmalade',NULL,60.75,81,10,40,'30 gift boxes','\0',10,'Jams, Preserves',NULL),('1',21,'NWTBGM-21','Northwind Traders Scone','',7.5,10,5,20,'24 pkgs. x 4 pieces','\0',5,'Baked Goods & Mixes',NULL),('4',34,'NWTB-34','Northwind Traders Beer',NULL,10.5,14,15,60,'24 - 12 oz bottles','\0',15,'Beverages',NULL),('7',40,'NWTCM-40','Northwind Traders Crab Meat',NULL,13.8,18.4,30,120,'24 - 4 oz tins','\0',30,'Canned Meat',NULL),('6',41,'NWTSO-41','Northwind Traders Clam Chowder',NULL,7.2375,9.65,10,40,'12 - 12 oz cans','\0',10,'Soups',NULL),('3;4',43,'NWTB-43','Northwind Traders Coffee',NULL,34.5,46,25,100,'16 - 500 g tins','\0',25,'Beverages',NULL),('10',48,'NWTCA-48','Northwind Traders Chocolate',NULL,9.5625,12.75,25,100,'10 pkgs','\0',25,'Candy',NULL),('2',51,'NWTDFN-51','Northwind Traders Dried Apples',NULL,39.75,53,10,40,'50 - 300 g pkgs.','\0',10,'Dried Fruit & Nuts',NULL),('1',52,'NWTG-52','Northwind Traders Long Grain Rice',NULL,5.25,7,25,100,'16 - 2 kg boxes','\0',25,'Grains',NULL),('1',56,'NWTP-56','Northwind Traders Gnocchi',NULL,28.5,38,30,120,'24 - 250 g pkgs.','\0',30,'Pasta',NULL),('1',57,'NWTP-57','Northwind Traders Ravioli',NULL,14.625,19.5,20,80,'24 - 250 g pkgs.','\0',20,'Pasta',NULL),('8',65,'NWTS-65','Northwind Traders Hot Pepper Sauce',NULL,15.7875,21.05,10,40,'32 - 8 oz bottles','\0',10,'Sauces',NULL),('8',66,'NWTS-66','Northwind Traders Tomato Sauce',NULL,12.75,17,20,80,'24 - 8 oz jars','\0',20,'Sauces',NULL),('5',72,'NWTD-72','Northwind Traders Mozzarella',NULL,26.1,34.8,10,40,'24 - 200 g pkgs.','\0',10,'Dairy Products',NULL),('2;6',74,'NWTDFN-74','Northwind Traders Almonds',NULL,7.5,10,5,20,'5 kg pkg.','\0',5,'Dried Fruit & Nuts',NULL),('10',77,'NWTCO-77','Northwind Traders Mustard',NULL,9.75,13,15,60,'12 boxes','\0',15,'Condiments',NULL),('2',80,'NWTDFN-80','Northwind Traders Dried Plums',NULL,3,3.5,50,75,'1 lb bag','\0',25,'Dried Fruit & Nuts',NULL),('3',81,'NWTB-81','Northwind Traders Green Tea',NULL,2,2.99,100,125,'20 bags per box','\0',25,'Beverages',NULL),('1',82,'NWTC-82','Northwind Traders Granola',NULL,2,4,20,100,NULL,'\0',NULL,'Cereal',NULL),('9',83,'NWTCS-83','Northwind Traders Potato Chips',NULL,0.5,1.8,30,200,NULL,'\0',NULL,'Chips, Snacks',NULL),('1',85,'NWTBGM-85','Northwind Traders Brownie Mix',NULL,9,12.49,10,20,'3 boxes','\0',5,'Baked Goods & Mixes',NULL),('1',86,'NWTBGM-86','Northwind Traders Cake Mix',NULL,10.5,15.99,10,20,'4 boxes','\0',5,'Baked Goods & Mixes',NULL),('7',87,'NWTB-87','Northwind Traders Tea',NULL,2,4,20,50,'100 count per box','\0',NULL,'Beverages',NULL),('6',88,'NWTCFV-88','Northwind Traders Pears',NULL,1,1.3,10,40,'15.25 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',89,'NWTCFV-89','Northwind Traders Peaches',NULL,1,1.5,10,40,'15.25 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',90,'NWTCFV-90','Northwind Traders Pineapple',NULL,1,1.8,10,40,'15.25 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',91,'NWTCFV-91','Northwind Traders Cherry Pie Filling',NULL,1,2,10,40,'15.25 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',92,'NWTCFV-92','Northwind Traders Green Beans',NULL,1,1.2,10,40,'14.5 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',93,'NWTCFV-93','Northwind Traders Corn',NULL,1,1.2,10,40,'14.5 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('6',94,'NWTCFV-94','Northwind Traders Peas',NULL,1,1.5,10,40,'14.5 OZ','\0',NULL,'Canned Fruit & Vegetables',NULL),('7',95,'NWTCM-95','Northwind Traders Tuna Fish',NULL,0.5,2,30,50,'5 oz','\0',NULL,'Canned Meat',NULL),('7',96,'NWTCM-96','Northwind Traders Smoked Salmon',NULL,2,4,30,50,'5 oz','\0',NULL,'Canned Meat',NULL),('1',97,'NWTC-82','Northwind Traders Hot Cereal',NULL,3,5,50,200,NULL,'\0',NULL,'Cereal',NULL),('6',98,'NWTSO-98','Northwind Traders Vegetable Soup',NULL,1,1.89,100,200,NULL,'\0',NULL,'Soups',NULL),('6',99,'NWTSO-99','Northwind Traders Chicken Soup',NULL,1,1.95,100,200,NULL,'\0',NULL,'Soups',NULL),('3',100,'asdf','asdf','asdf',2,2,2,2,'sdfasdff','',2,'asdf',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -886,6 +937,25 @@ INSERT INTO `purchase orders` VALUES (90,1,2,'2006-01-14 00:00:00','2006-01-22 0
 UNLOCK TABLES;
 
 --
+-- Temporary table structure for view `shipper list`
+--
+
+DROP TABLE IF EXISTS `shipper list`;
+/*!50001 DROP VIEW IF EXISTS `shipper list`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `shipper list` (
+  `ID` tinyint NOT NULL,
+  `Company` tinyint NOT NULL,
+  `First Name` tinyint NOT NULL,
+  `Last Name` tinyint NOT NULL,
+  `Email Address` tinyint NOT NULL,
+  `Business Phone` tinyint NOT NULL,
+  `Job Title` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `shippers`
 --
 
@@ -924,6 +994,25 @@ LOCK TABLES `shippers` WRITE;
 INSERT INTO `shippers` VALUES (1,'Shipping Company A',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123 Any Street','Memphis','TN','99999','USA',NULL,NULL,NULL),(2,'Shipping Company B',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123 Any Street','Memphis','TN','99999','USA',NULL,NULL,NULL),(3,'Shipping Company C',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123 Any Street','Memphis','TN','99999','USA',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `shippers` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `supplier list`
+--
+
+DROP TABLE IF EXISTS `supplier list`;
+/*!50001 DROP VIEW IF EXISTS `supplier list`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `supplier list` (
+  `ID` tinyint NOT NULL,
+  `Company` tinyint NOT NULL,
+  `First Name` tinyint NOT NULL,
+  `Last Name` tinyint NOT NULL,
+  `Email Address` tinyint NOT NULL,
+  `Business Phone` tinyint NOT NULL,
+  `Job Title` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `suppliers`
@@ -1011,16 +1100,16 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `order details for #`(IN id int(11))
 BEGIN
 SELECT 
 	`ProductName` AS `Product`,
 	round(`Quantity`,0) AS `Qty`,
-	concat('$',round(`UnitPrice`,2)) AS `Unit Price`,
-	concat(round(`Discount`,2),'%') AS `Discount`,
-	concat('$',round(`Quantity` * `UnitPrice`,2)) AS `Total Price`,
+	concat('$',cast(round(`UnitPrice`,2) as char)) AS `Unit Price`,
+	concat(cast(round(`Discount`,2) as char),'%') AS `Discount`,
+	concat('$',cast(round(`Quantity` * `UnitPrice`,2) as char)) AS `Total Price`,
 	`StatusName` AS `Status`
 FROM 
 	`order details` 
@@ -1076,6 +1165,44 @@ DELIMITER ;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `employee list`
+--
+
+/*!50001 DROP TABLE IF EXISTS `employee list`*/;
+/*!50001 DROP VIEW IF EXISTS `employee list`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `employee list` AS select `employees extended`.`ID` AS `ID`,`employees extended`.`FirstName` AS `First Name`,`employees extended`.`LastName` AS `Last Name`,`employees extended`.`EmailAddress` AS `Email Address`,`employees extended`.`BusinessPhone` AS `Business Phone`,`employees extended`.`JobTitle` AS `Job Title` from `employees extended` order by `employees extended`.`LastName` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `employees extended`
+--
+
+/*!50001 DROP TABLE IF EXISTS `employees extended`*/;
+/*!50001 DROP VIEW IF EXISTS `employees extended`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `employees extended` AS select if(isnull(`employees`.`LastName`),`employees`.`FirstName`,if(isnull(`employees`.`FirstName`),`employees`.`LastName`,concat(`employees`.`LastName`,', ',`employees`.`FirstName`))) AS `FileAs`,if(isnull(`employees`.`LastName`),`employees`.`FirstName`,if(isnull(`employees`.`FirstName`),`employees`.`LastName`,concat(`employees`.`FirstName`,' ',`employees`.`LastName`))) AS `EmployeeName`,`employees`.`ID` AS `ID`,`employees`.`LastName` AS `LastName`,`employees`.`FirstName` AS `FirstName`,`employees`.`EmailAddress` AS `EmailAddress`,`employees`.`JobTitle` AS `JobTitle`,`employees`.`BusinessPhone` AS `BusinessPhone`,`employees`.`HomePhone` AS `HomePhone`,`employees`.`MobilePhone` AS `MobilePhone`,`employees`.`FaxNumber` AS `FaxNumber`,`employees`.`Address` AS `Address`,`employees`.`City` AS `City`,`employees`.`State_Province` AS `State_Province`,`employees`.`ZIP_PostalCode` AS `ZIP_PostalCode`,`employees`.`Country_Region` AS `Country_Region`,`employees`.`WebPage` AS `WebPage`,`employees`.`Notes` AS `Notes`,`employees`.`Attachments` AS `Attachments` from `employees` order by if(isnull(`employees`.`LastName`),`employees`.`FirstName`,if(isnull(`employees`.`FirstName`),`employees`.`LastName`,concat(`employees`.`LastName`,', ',`employees`.`FirstName`))),if(isnull(`employees`.`LastName`),`employees`.`FirstName`,if(isnull(`employees`.`FirstName`),`employees`.`LastName`,concat(`employees`.`FirstName`,' ',`employees`.`LastName`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `inventory`
 --
 
@@ -1108,7 +1235,7 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `inventory list` AS select `inventory`.`Product Name` AS `Product Name`,`inventory`.`Qty On Hand` AS `Qty On Hand`,`inventory`.`Qty On Hold` AS `Qty On Hold`,`inventory`.`Qty Available` AS `Qty Available`,`inventory`.`Qty On Order` AS `Qty On Order`,`inventory`.`Current Level` AS `Combined Total`,`inventory`.`Target Level` AS `Target Level`,`inventory`.`Qty To Reorder` AS `Qty To Reorder` from `inventory` */;
+/*!50001 VIEW `inventory list` AS select `inventory`.`Product ID` AS `#`,`inventory`.`Product Name` AS `Product Name`,`inventory`.`Qty On Hand` AS `Qty On Hand`,`inventory`.`Qty On Hold` AS `Qty On Hold`,`inventory`.`Qty Available` AS `Qty Available`,`inventory`.`Qty On Order` AS `Qty On Order`,`inventory`.`Current Level` AS `Combined Total`,`inventory`.`Target Level` AS `Target Level`,`inventory`.`Qty To Reorder` AS `Qty To Reorder` from `inventory` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1260,7 +1387,7 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `order details extended` AS select `order details`.`ID` AS `ID`,`order details`.`OrderID` AS `Order ID`,`order details`.`ProductID` AS `Product ID`,`order details`.`Quantity` AS `Quantity`,`order details`.`UnitPrice` AS `Unit Price`,`order details`.`Discount` AS `Discount`,`order details`.`StatusID` AS `Status ID`,coalesce(`order details`.`DateAllocated`,'') AS `Date Allocated`,coalesce(`order details`.`PurchaseOrderID`,'') AS `Purchase Order ID`,coalesce(`order details`.`InventoryID`,'') AS `Inventory ID`,((`order details`.`Quantity` * `order details`.`UnitPrice`) * (1 - `order details`.`Discount`)) AS `Extended Price`,`order details status`.`StatusName` AS `Status Name` from (`order details` left join `order details status` on((`order details`.`StatusID` = `order details status`.`StatusID`))) */;
+/*!50001 VIEW `order details extended` AS select `order details`.`ID` AS `ID`,`order details`.`OrderID` AS `Order ID`,`order details`.`ProductID` AS `Product ID`,`order details`.`Quantity` AS `Quantity`,`order details`.`UnitPrice` AS `Unit Price`,`order details`.`Discount` AS `Discount`,`order details`.`StatusID` AS `Status ID`,coalesce(`order details`.`DateAllocated`,'') AS `Date Allocated`,coalesce(`order details`.`PurchaseOrderID`,0) AS `Purchase Order ID`,coalesce(`order details`.`InventoryID`,0) AS `Inventory ID`,((`order details`.`Quantity` * `order details`.`UnitPrice`) * (1 - `order details`.`Discount`)) AS `Extended Price`,`order details status`.`StatusName` AS `Status Name` from (`order details` left join `order details status` on((`order details`.`StatusID` = `order details status`.`StatusID`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1397,6 +1524,44 @@ DELIMITER ;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `shipper list`
+--
+
+/*!50001 DROP TABLE IF EXISTS `shipper list`*/;
+/*!50001 DROP VIEW IF EXISTS `shipper list`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `shipper list` AS select `shippers`.`ID` AS `ID`,`shippers`.`Company` AS `Company`,`shippers`.`FirstName` AS `First Name`,`shippers`.`LastName` AS `Last Name`,`shippers`.`EmailAddress` AS `Email Address`,`shippers`.`BusinessPhone` AS `Business Phone`,`shippers`.`JobTitle` AS `Job Title` from `shippers` order by `shippers`.`LastName` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `supplier list`
+--
+
+/*!50001 DROP TABLE IF EXISTS `supplier list`*/;
+/*!50001 DROP VIEW IF EXISTS `supplier list`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `supplier list` AS select `suppliers`.`ID` AS `ID`,`suppliers`.`Company` AS `Company`,`suppliers`.`FirstName` AS `First Name`,`suppliers`.`LastName` AS `Last Name`,`suppliers`.`EmailAddress` AS `Email Address`,`suppliers`.`BusinessPhone` AS `Business Phone`,`suppliers`.`JobTitle` AS `Job Title` from `suppliers` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1407,4 +1572,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-28 11:46:51
+-- Dump completed on 2014-04-29 20:22:22
