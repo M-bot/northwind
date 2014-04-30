@@ -22,6 +22,7 @@ namespace Northwind
         private static CustomerDetailsForm newCustomerDetailsForm;
         private static SupplierDetailsForm newSupplierDetailsForm;
         private static EmployeeDetailsForm newEmployeeDetailsForm;
+        private static ShipperDetailsForm newShipperDetailsForm;
 
         public Home()
         {
@@ -38,6 +39,8 @@ namespace Northwind
             newSupplierDetailsForm.Hide();
             newEmployeeDetailsForm = new EmployeeDetailsForm();
             newEmployeeDetailsForm.Hide();
+            newShipperDetailsForm = new ShipperDetailsForm();
+            newShipperDetailsForm.Hide();
             dialog.ShowDialog(this);
 
             InitializeComponent();
@@ -132,6 +135,10 @@ namespace Northwind
 
         private void shippersLink_Click(object sender, EventArgs e)
         {
+            shipperView.DataSource = NorthwindDatabase.Context
+                .Sql("SELECT * FROM `shipper list`")
+                .QuerySingle<DataTable>();
+
             if (!mainTabControl.TabPages.Contains(shipperTab))
                 mainTabControl.TabPages.Add(shipperTab);
             mainTabControl.SelectedTab = shipperTab;
@@ -175,10 +182,6 @@ namespace Northwind
                 MessageBox.Show("Product does not need restocking! Product is already at desired inventory level.");
         }
 
-        private void inventoryToReorderView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MessageBox.Show("Product Details Form");
-        }
 
         private void newCustomerOrderLabel_Click(object sender, EventArgs e)
         {
@@ -287,6 +290,22 @@ namespace Northwind
             newEmployeeDetailsForm.Activate();
         }
 
+        private void newShipperLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newShipperDetailsForm.loadShipper(0);
+            newShipperDetailsForm.Show();
+            newShipperDetailsForm.Activate();
+        }
+
+        private void shipperView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            int id = 0;
+            if (Int32.TryParse(shipperView.Rows[e.RowIndex].Cells["ID"].Value.ToString(), out id))
+                newShipperDetailsForm.loadShipper(id);
+            newShipperDetailsForm.Show();
+            newShipperDetailsForm.Activate();
+        }
 
     }
 }
