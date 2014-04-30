@@ -94,6 +94,7 @@ namespace Northwind
         private void saveLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             bool failure = false;
+            if (newEmployee) currentEmployee = new Employee();
             currentEmployee.Address = streetBox.Text;
             currentEmployee.BusinessPhone = businessPhoneBox.Text;
             currentEmployee.City = cityBox.Text;

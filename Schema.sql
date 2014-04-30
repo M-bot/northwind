@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `northwind` /*!40100 DEFAULT CHARACTER SET latin1
 USE `northwind`;
 -- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
--- Host: localhost    Database: northwind
+-- Host: 127.0.0.1    Database: northwind
 -- ------------------------------------------------------
--- Server version	5.1.70-community
+-- Server version	5.6.12-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -44,7 +44,7 @@ DROP TABLE IF EXISTS `customers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customers` (
-  `ID` int(11) DEFAULT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Company` varchar(50) DEFAULT NULL,
   `LastName` varchar(50) DEFAULT NULL,
   `FirstName` varchar(50) DEFAULT NULL,
@@ -62,8 +62,9 @@ CREATE TABLE `customers` (
   `WebPage` mediumtext,
   `Notes` mediumtext,
   `Attachments` mediumtext,
+  PRIMARY KEY (`ID`),
   UNIQUE KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,9 +135,8 @@ DROP TABLE IF EXISTS `employee privileges`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employee privileges` (
-  `EmployeeID` int(11) DEFAULT NULL,
-  `PrivilegeID` int(11) DEFAULT NULL,
-  UNIQUE KEY `Privilege ID` (`PrivilegeID`)
+  `EmployeeID` int(11) NOT NULL,
+  `PrivilegeID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -158,7 +158,7 @@ DROP TABLE IF EXISTS `employees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employees` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `LastName` varchar(50) DEFAULT NULL,
   `FirstName` varchar(50) DEFAULT NULL,
   `EmailAddress` varchar(50) DEFAULT NULL,
@@ -177,7 +177,7 @@ CREATE TABLE `employees` (
   `Attachments` mediumtext,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ID_UNIQUE` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -353,10 +353,11 @@ DROP TABLE IF EXISTS `inventory transaction types`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `inventory transaction types` (
-  `ID` tinyint(4) DEFAULT NULL,
+  `ID` tinyint(4) NOT NULL AUTO_INCREMENT,
   `TypeName` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
   UNIQUE KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -377,7 +378,7 @@ DROP TABLE IF EXISTS `inventory transactions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `inventory transactions` (
-  `TransactionID` int(11) DEFAULT NULL,
+  `TransactionID` int(11) NOT NULL AUTO_INCREMENT,
   `TransactionType` tinyint(4) DEFAULT NULL,
   `TransactionCreatedDate` datetime DEFAULT NULL,
   `TransactionModifiedDate` datetime DEFAULT NULL,
@@ -386,8 +387,9 @@ CREATE TABLE `inventory transactions` (
   `PurchaseOrderID` int(11) DEFAULT NULL,
   `CustomerOrderID` int(11) DEFAULT NULL,
   `Comments` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`TransactionID`),
   UNIQUE KEY `Transaction ID` (`TransactionID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -457,15 +459,16 @@ DROP TABLE IF EXISTS `invoices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `invoices` (
-  `InvoiceID` int(11) DEFAULT NULL,
+  `InvoiceID` int(11) NOT NULL AUTO_INCREMENT,
   `OrderID` int(11) DEFAULT NULL,
   `InvoiceDate` datetime DEFAULT NULL,
   `DueDate` datetime DEFAULT NULL,
   `Tax` double DEFAULT NULL,
   `Shipping` double DEFAULT NULL,
   `AmountDue` double DEFAULT NULL,
+  PRIMARY KEY (`InvoiceID`),
   UNIQUE KEY `Invoice ID` (`InvoiceID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -543,8 +546,9 @@ DROP TABLE IF EXISTS `order details status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `order details status` (
-  `StatusID` int(11) DEFAULT NULL,
+  `StatusID` int(11) NOT NULL,
   `StatusName` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`StatusID`),
   UNIQUE KEY `Status ID` (`StatusID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -627,7 +631,7 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
-  `OrderID` int(11) DEFAULT NULL,
+  `OrderID` int(11) NOT NULL AUTO_INCREMENT,
   `EmployeeID` int(11) DEFAULT NULL,
   `CustomerID` int(11) DEFAULT NULL,
   `OrderDate` datetime DEFAULT NULL,
@@ -647,8 +651,9 @@ CREATE TABLE `orders` (
   `TaxRate` double DEFAULT NULL,
   `TaxStatus` tinyint(4) DEFAULT NULL,
   `StatusID` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`OrderID`),
   UNIQUE KEY `Order ID` (`OrderID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -669,8 +674,9 @@ DROP TABLE IF EXISTS `orders status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders status` (
-  `StatusID` tinyint(4) DEFAULT NULL,
+  `StatusID` tinyint(4) NOT NULL,
   `StatusName` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`StatusID`),
   UNIQUE KEY `Status ID` (`StatusID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -693,8 +699,9 @@ DROP TABLE IF EXISTS `orders tax status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders tax status` (
-  `ID` tinyint(4) DEFAULT NULL,
+  `ID` tinyint(4) NOT NULL,
   `TaxStatusName` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
   UNIQUE KEY `ID` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -717,10 +724,11 @@ DROP TABLE IF EXISTS `privileges`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `privileges` (
-  `PrivilegeID` int(11) DEFAULT NULL,
+  `PrivilegeID` int(11) NOT NULL AUTO_INCREMENT,
   `PrivilegeName` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`PrivilegeID`),
   UNIQUE KEY `Privilege ID` (`PrivilegeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -852,7 +860,7 @@ DROP TABLE IF EXISTS `purchase order details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `purchase order details` (
-  `ID` int(11) DEFAULT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `PurchaseOrderID` int(11) DEFAULT NULL,
   `ProductID` int(11) DEFAULT NULL,
   `Quantity` decimal(18,4) DEFAULT NULL,
@@ -860,8 +868,9 @@ CREATE TABLE `purchase order details` (
   `DateReceived` datetime DEFAULT NULL,
   `PostedToInventory` bit(1) DEFAULT NULL,
   `InventoryID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
   UNIQUE KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=296 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -882,8 +891,9 @@ DROP TABLE IF EXISTS `purchase order status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `purchase order status` (
-  `StatusID` int(11) DEFAULT NULL,
+  `StatusID` int(11) NOT NULL,
   `Status` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`StatusID`),
   UNIQUE KEY `Status ID` (`StatusID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -906,7 +916,7 @@ DROP TABLE IF EXISTS `purchase orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `purchase orders` (
-  `PurchaseOrderID` int(11) DEFAULT NULL,
+  `PurchaseOrderID` int(11) NOT NULL AUTO_INCREMENT,
   `SupplierID` int(11) DEFAULT NULL,
   `CreatedBy` int(11) DEFAULT NULL,
   `SubmittedDate` datetime DEFAULT NULL,
@@ -922,8 +932,9 @@ CREATE TABLE `purchase orders` (
   `ApprovedBy` int(11) DEFAULT NULL,
   `ApprovedDate` datetime DEFAULT NULL,
   `SubmittedBy` int(11) DEFAULT NULL,
+  PRIMARY KEY (`PurchaseOrderID`),
   UNIQUE KEY `Purchase Order ID` (`PurchaseOrderID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -963,7 +974,7 @@ DROP TABLE IF EXISTS `shippers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `shippers` (
-  `ID` int(11) DEFAULT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Company` varchar(50) DEFAULT NULL,
   `LastName` varchar(50) DEFAULT NULL,
   `FirstName` varchar(50) DEFAULT NULL,
@@ -981,8 +992,9 @@ CREATE TABLE `shippers` (
   `WebPage` mediumtext,
   `Notes` mediumtext,
   `Attachments` mediumtext,
+  PRIMARY KEY (`ID`),
   UNIQUE KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -993,6 +1005,31 @@ LOCK TABLES `shippers` WRITE;
 /*!40000 ALTER TABLE `shippers` DISABLE KEYS */;
 INSERT INTO `shippers` VALUES (1,'Shipping Company A',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123 Any Street','Memphis','TN','99999','USA',NULL,NULL,NULL),(2,'Shipping Company B',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123 Any Street','Memphis','TN','99999','USA',NULL,NULL,NULL),(3,'Shipping Company C',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'123 Any Street','Memphis','TN','99999','USA',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `shippers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `states`
+--
+
+DROP TABLE IF EXISTS `states`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `states` (
+  `state_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `state_name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `state_abbr` varchar(8) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`state_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `states`
+--
+
+LOCK TABLES `states` WRITE;
+/*!40000 ALTER TABLE `states` DISABLE KEYS */;
+INSERT INTO `states` VALUES (1,'Alabama','AL'),(2,'Alaska','AK'),(3,'Arizona','AZ'),(4,'Arkansas','AR'),(5,'California','CA'),(6,'Colorado','CO'),(7,'Connecticut','CT'),(8,'Delaware','DE'),(9,'District of Columbia','DC'),(10,'Florida','FL'),(11,'Georgia','GA'),(12,'Hawaii','HI'),(13,'Idaho','ID'),(14,'Illinois','IL'),(15,'Indiana','IN'),(16,'Iowa','IA'),(17,'Kansas','KS'),(18,'Kentucky','KY'),(19,'Louisiana','LA'),(20,'Maine','ME'),(21,'Maryland','MD'),(22,'Massachusetts','MA'),(23,'Michigan','MI'),(24,'Minnesota','MN'),(25,'Mississippi','MS'),(26,'Missouri','MO'),(27,'Montana','MT'),(28,'Nebraska','NE'),(29,'Nevada','NV'),(30,'New Hampshire','NH'),(31,'New Jersey','NJ'),(32,'New Mexico','NM'),(33,'New York','NY'),(34,'North Carolina','NC'),(35,'North Dakota','ND'),(36,'Ohio','OH'),(37,'Oklahoma','OK'),(38,'Oregon','OR'),(39,'Pennsylvania','PA'),(40,'Rhode Island','RI'),(41,'South Carolina','SC'),(42,'South Dakota','SD'),(43,'Tennessee','TN'),(44,'Texas','TX'),(45,'Utah','UT'),(46,'Vermont','VT'),(47,'Virginia','VA'),(48,'Washington','WA'),(49,'West Virginia','WV'),(50,'Wisconsin','WI'),(51,'Wyoming','WY');
+/*!40000 ALTER TABLE `states` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1022,7 +1059,7 @@ DROP TABLE IF EXISTS `suppliers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `suppliers` (
-  `ID` int(11) DEFAULT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Company` varchar(50) DEFAULT NULL,
   `LastName` varchar(50) DEFAULT NULL,
   `FirstName` varchar(50) DEFAULT NULL,
@@ -1040,8 +1077,9 @@ CREATE TABLE `suppliers` (
   `WebPage` mediumtext,
   `Notes` mediumtext,
   `Attachments` mediumtext,
+  PRIMARY KEY (`ID`),
   UNIQUE KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1572,4 +1610,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-29 20:22:22
+-- Dump completed on 2014-04-30 11:40:29
