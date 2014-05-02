@@ -30,6 +30,14 @@ namespace Northwind
 
         private void loadData()
         {
+            stateProvinceBox.DataSource = Home.NorthwindDatabase.Context
+                .Sql("SELECT * FROM `subregion` WHERE `RegionID` = 1 ORDER BY `Name` ASC;")
+                .QueryMany<Subregion>();
+
+            countryRegionBox.DataSource = Home.NorthwindDatabase.Context
+                .Sql("SELECT * FROM `region` ORDER BY `Name` ASC")
+                .QueryMany<Objects.Region>();
+
             dataLoaded = true;
         }
 

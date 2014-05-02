@@ -22,5 +22,10 @@ namespace Northwind.Objects
         public int MinimumReorderQuantity { get; set; }
         public string Category { get; set; }
         public string Attachments { get; set; }
+
+        public override string ToString()
+        {
+            return this.ProductName;
+        }
     }
 }

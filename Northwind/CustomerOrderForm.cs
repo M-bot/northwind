@@ -145,9 +145,20 @@ namespace Northwind
                 paymentTypeBox.Text = currentOrder.PaymentType;
                 orderNotesBox.Text = currentOrder.Notes;
 
-                orderDetailsView.DataSource = Home.NorthwindDatabase.Context
+                DataTable temp = Home.NorthwindDatabase.Context
                     .Sql("CALL `northwind`.`order details for #`(" + id + ");")
                     .QuerySingle<DataTable>(); ;
+
+                DataGridViewComboBoxColumn d = new DataGridViewComboBoxColumn();
+                d.Items.AddRange(Home.NorthwindDatabase.Context
+                    .Sql("SELECT * FROM products")
+                    .QueryMany<Product>()
+                    .ToArray());
+                d.Name = "Product";
+                d.DataSource = temp.Columns[0].Container;
+                orderDetailsView.Columns.Add(d);
+                orderDetailsView.DataSource = temp;
+                
 
                 newOrder = false;
             }

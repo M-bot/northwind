@@ -207,6 +207,7 @@
             // 
             // orderDetailsView
             // 
+            this.orderDetailsView.AllowUserToOrderColumns = true;
             this.orderDetailsView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.orderDetailsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orderDetailsView.Location = new System.Drawing.Point(0, 0);

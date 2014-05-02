@@ -948,6 +948,31 @@ INSERT INTO `purchase orders` VALUES (90,1,2,'2006-01-14 00:00:00','2006-01-22 0
 UNLOCK TABLES;
 
 --
+-- Table structure for table `region`
+--
+
+DROP TABLE IF EXISTS `region`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `region` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `idregion_UNIQUE` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `region`
+--
+
+LOCK TABLES `region` WRITE;
+/*!40000 ALTER TABLE `region` DISABLE KEYS */;
+INSERT INTO `region` VALUES (1,'United States');
+/*!40000 ALTER TABLE `region` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Temporary table structure for view `shipper list`
 --
 
@@ -1008,28 +1033,29 @@ INSERT INTO `shippers` VALUES (1,'Shipping Company A',NULL,NULL,NULL,NULL,NULL,N
 UNLOCK TABLES;
 
 --
--- Table structure for table `states`
+-- Table structure for table `subregion`
 --
 
-DROP TABLE IF EXISTS `states`;
+DROP TABLE IF EXISTS `subregion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `states` (
-  `state_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `state_name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `state_abbr` varchar(8) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`state_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `subregion` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `RegionID` int(11) NOT NULL,
+  `Name` varchar(45) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `idsubregion_UNIQUE` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `states`
+-- Dumping data for table `subregion`
 --
 
-LOCK TABLES `states` WRITE;
-/*!40000 ALTER TABLE `states` DISABLE KEYS */;
-INSERT INTO `states` VALUES (1,'Alabama','AL'),(2,'Alaska','AK'),(3,'Arizona','AZ'),(4,'Arkansas','AR'),(5,'California','CA'),(6,'Colorado','CO'),(7,'Connecticut','CT'),(8,'Delaware','DE'),(9,'District of Columbia','DC'),(10,'Florida','FL'),(11,'Georgia','GA'),(12,'Hawaii','HI'),(13,'Idaho','ID'),(14,'Illinois','IL'),(15,'Indiana','IN'),(16,'Iowa','IA'),(17,'Kansas','KS'),(18,'Kentucky','KY'),(19,'Louisiana','LA'),(20,'Maine','ME'),(21,'Maryland','MD'),(22,'Massachusetts','MA'),(23,'Michigan','MI'),(24,'Minnesota','MN'),(25,'Mississippi','MS'),(26,'Missouri','MO'),(27,'Montana','MT'),(28,'Nebraska','NE'),(29,'Nevada','NV'),(30,'New Hampshire','NH'),(31,'New Jersey','NJ'),(32,'New Mexico','NM'),(33,'New York','NY'),(34,'North Carolina','NC'),(35,'North Dakota','ND'),(36,'Ohio','OH'),(37,'Oklahoma','OK'),(38,'Oregon','OR'),(39,'Pennsylvania','PA'),(40,'Rhode Island','RI'),(41,'South Carolina','SC'),(42,'South Dakota','SD'),(43,'Tennessee','TN'),(44,'Texas','TX'),(45,'Utah','UT'),(46,'Vermont','VT'),(47,'Virginia','VA'),(48,'Washington','WA'),(49,'West Virginia','WV'),(50,'Wisconsin','WI'),(51,'Wyoming','WY');
-/*!40000 ALTER TABLE `states` ENABLE KEYS */;
+LOCK TABLES `subregion` WRITE;
+/*!40000 ALTER TABLE `subregion` DISABLE KEYS */;
+INSERT INTO `subregion` VALUES (1,1,'Alabama'),(2,1,'Alaska'),(3,1,'Arizona'),(4,1,'Arkansas'),(5,1,'California'),(6,1,'Colorado'),(7,1,'Connecticut'),(8,1,'Delaware'),(9,1,'Florida'),(10,1,'Georgia'),(11,1,'Hawaii'),(12,1,'Idaho'),(13,1,'Illinois'),(14,1,'Indiana'),(15,1,'Iowa'),(16,1,'Kansas'),(17,1,'Kentucky'),(18,1,'Louisiana'),(19,1,'Maine'),(20,1,'Maryland'),(21,1,'Massachusetts'),(22,1,'Michigan'),(23,1,'Minnesota'),(24,1,'Mississippi'),(25,1,'Missouri'),(26,1,'Montana'),(27,1,'Nebraska'),(28,1,'Nevada'),(29,1,'New Hampshire'),(30,1,'New Jersey'),(31,1,'New Mexico'),(32,1,'New York'),(33,1,'North Carolina'),(34,1,'North Dakota'),(35,1,'Ohio'),(36,1,'Oklahoma'),(37,1,'Oregon'),(38,1,'Pennsylvania'),(39,1,'Rhode Island'),(40,1,'South Carolina'),(41,1,'South Dakota'),(42,1,'Tennessee'),(43,1,'Texas'),(44,1,'Utah'),(45,1,'Vermont'),(46,1,'Virginia'),(47,1,'Washington'),(48,1,'West Virginia'),(49,1,'Wisconsin'),(50,1,'Wyoming'),(51,1,'District of Columbia');
+/*!40000 ALTER TABLE `subregion` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1610,4 +1636,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-30 11:40:29
+-- Dump completed on 2014-05-02 11:51:55
