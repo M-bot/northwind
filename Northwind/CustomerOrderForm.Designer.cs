@@ -70,7 +70,7 @@
             this.orderNotesLabel = new System.Windows.Forms.Label();
             this.paymentDateLabel = new System.Windows.Forms.Label();
             this.paymentTypeLabel = new System.Windows.Forms.Label();
-            this.homeHeader = new Northwind.Header();
+            this.homeHeader = new System.Windows.Forms.Panel();
             this.saveLink = new System.Windows.Forms.LinkLabel();
             this.deleteOrderLink = new System.Windows.Forms.LinkLabel();
             this.completeOrderLink = new System.Windows.Forms.LinkLabel();
@@ -515,6 +515,7 @@
             this.homeHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
             this.homeHeader.Controls.Add(this.saveLink);
             this.homeHeader.Controls.Add(this.deleteOrderLink);
             this.homeHeader.Controls.Add(this.completeOrderLink);
@@ -619,10 +620,10 @@
             // headerImage
             // 
             this.headerImage.BackColor = System.Drawing.Color.Transparent;
-            this.headerImage.Image = global::Northwind.Properties.Resources.Logo;
+            this.headerImage.Image = global::Northwind.Properties.Resources.OrderDetailsIcon;
             this.headerImage.Location = new System.Drawing.Point(20, 2);
             this.headerImage.Name = "headerImage";
-            this.headerImage.Size = new System.Drawing.Size(49, 41);
+            this.headerImage.Size = new System.Drawing.Size(54, 41);
             this.headerImage.TabIndex = 0;
             this.headerImage.TabStop = false;
             // 
@@ -678,7 +679,7 @@
 
         #endregion
 
-        private Header homeHeader;
+        private System.Windows.Forms.Panel homeHeader;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.PictureBox headerImage;
         private System.Windows.Forms.Label headerTitle;

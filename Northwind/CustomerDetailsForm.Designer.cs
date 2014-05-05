@@ -67,7 +67,7 @@
             this.companyLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.customerOrders = new System.Windows.Forms.DataGridView();
-            this.homeHeader = new Northwind.Header();
+            this.homeHeader = new System.Windows.Forms.Panel();
             this.newLink = new System.Windows.Forms.LinkLabel();
             this.createOutlookContactLabel = new System.Windows.Forms.LinkLabel();
             this.customerBox = new System.Windows.Forms.ComboBox();
@@ -281,9 +281,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Northwind.Properties.Resources.PortraitPlaceholder;
             this.pictureBox1.Location = new System.Drawing.Point(378, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(84, 114);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
@@ -476,6 +478,7 @@
             this.homeHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
             this.homeHeader.Controls.Add(this.newLink);
             this.homeHeader.Controls.Add(this.createOutlookContactLabel);
             this.homeHeader.Controls.Add(this.customerBox);
@@ -575,7 +578,7 @@
             // headerImage
             // 
             this.headerImage.BackColor = System.Drawing.Color.Transparent;
-            this.headerImage.Image = global::Northwind.Properties.Resources.Logo;
+            this.headerImage.Image = global::Northwind.Properties.Resources.CustomerDetailsIcon;
             this.headerImage.Location = new System.Drawing.Point(20, 2);
             this.headerImage.Name = "headerImage";
             this.headerImage.Size = new System.Drawing.Size(49, 41);
@@ -604,7 +607,10 @@
             this.ClientSize = new System.Drawing.Size(804, 607);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.homeHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CustomerDetailsForm";
             this.Text = "Customer Details";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerDetailsForm_FormClosing);
@@ -623,7 +629,7 @@
 
         #endregion
 
-        private Header homeHeader;
+        private System.Windows.Forms.Panel homeHeader;
         private System.Windows.Forms.ComboBox customerBox;
         private System.Windows.Forms.LinkLabel emailCustomerLink;
         private System.Windows.Forms.LinkLabel saveLink;

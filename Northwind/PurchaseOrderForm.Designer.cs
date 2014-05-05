@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseOrderForm));
-            this.homeHeader = new Northwind.Header();
+            this.homeHeader = new System.Windows.Forms.Panel();
             this.closeLabel = new System.Windows.Forms.LinkLabel();
             this.completeOrder = new System.Windows.Forms.LinkLabel();
             this.shipOrderLabel = new System.Windows.Forms.LinkLabel();
@@ -82,6 +82,7 @@
             this.homeHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
             this.homeHeader.Controls.Add(this.closeLabel);
             this.homeHeader.Controls.Add(this.completeOrder);
             this.homeHeader.Controls.Add(this.shipOrderLabel);
@@ -512,7 +513,7 @@
 
         #endregion
 
-        private Header homeHeader;
+        private System.Windows.Forms.Panel homeHeader;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.PictureBox headerImage;
         private System.Windows.Forms.Label headerTitle;

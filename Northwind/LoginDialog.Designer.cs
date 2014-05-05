@@ -43,7 +43,7 @@
             // northwindLogo
             // 
             this.northwindLogo.BackColor = System.Drawing.Color.Transparent;
-            this.northwindLogo.Image = global::Northwind.Properties.Resources.formLoginDialog2;
+            this.northwindLogo.Image = global::Northwind.Properties.Resources.LogoLarge;
             this.northwindLogo.Location = new System.Drawing.Point(16, 23);
             this.northwindLogo.Name = "northwindLogo";
             this.northwindLogo.Size = new System.Drawing.Size(93, 123);

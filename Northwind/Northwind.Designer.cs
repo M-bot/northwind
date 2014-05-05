@@ -1121,7 +1121,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Image = global::Northwind.Properties.Resources.formShipperDetails3;
+            this.pictureBox7.Image = global::Northwind.Properties.Resources.ShipperDetailsIcon;
             this.pictureBox7.Location = new System.Drawing.Point(19, 3);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(54, 38);

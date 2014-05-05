@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductDetailsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.categoryBox = new System.Windows.Forms.ComboBox();
             this.supplierBox = new PresentationControls.CheckBoxComboBox();
             this.descriptionBox = new System.Windows.Forms.TextBox();
             this.discontinuedBox = new System.Windows.Forms.CheckBox();
@@ -59,20 +60,21 @@
             this.productIDLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.historyView = new System.Windows.Forms.DataGridView();
-            this.homeHeader = new Northwind.Header();
+            this.homeHeader = new System.Windows.Forms.Panel();
             this.productBox = new System.Windows.Forms.ComboBox();
             this.newLink = new System.Windows.Forms.LinkLabel();
             this.saveLink = new System.Windows.Forms.LinkLabel();
             this.goToProductLabel = new System.Windows.Forms.Label();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.headerTitle = new System.Windows.Forms.Label();
-            this.categoryBox = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.historyView)).BeginInit();
             this.homeHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -88,6 +90,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.categoryBox);
             this.tabPage1.Controls.Add(this.supplierBox);
             this.tabPage1.Controls.Add(this.descriptionBox);
@@ -120,6 +123,14 @@
             this.tabPage1.Size = new System.Drawing.Size(741, 502);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Product Details";
+            // 
+            // categoryBox
+            // 
+            this.categoryBox.FormattingEnabled = true;
+            this.categoryBox.Location = new System.Drawing.Point(149, 112);
+            this.categoryBox.Name = "categoryBox";
+            this.categoryBox.Size = new System.Drawing.Size(222, 21);
+            this.categoryBox.TabIndex = 39;
             // 
             // supplierBox
             // 
@@ -383,6 +394,7 @@
             this.homeHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
             this.homeHeader.Controls.Add(this.productBox);
             this.homeHeader.Controls.Add(this.newLink);
             this.homeHeader.Controls.Add(this.saveLink);
@@ -450,10 +462,10 @@
             // headerImage
             // 
             this.headerImage.BackColor = System.Drawing.Color.Transparent;
-            this.headerImage.Image = global::Northwind.Properties.Resources.Logo;
+            this.headerImage.Image = global::Northwind.Properties.Resources.ProductDetailsIcon;
             this.headerImage.Location = new System.Drawing.Point(20, 2);
             this.headerImage.Name = "headerImage";
-            this.headerImage.Size = new System.Drawing.Size(49, 41);
+            this.headerImage.Size = new System.Drawing.Size(54, 41);
             this.headerImage.TabIndex = 0;
             this.headerImage.TabStop = false;
             // 
@@ -471,13 +483,16 @@
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Product Name";
             // 
-            // categoryBox
+            // pictureBox1
             // 
-            this.categoryBox.FormattingEnabled = true;
-            this.categoryBox.Location = new System.Drawing.Point(149, 112);
-            this.categoryBox.Name = "categoryBox";
-            this.categoryBox.Size = new System.Drawing.Size(222, 21);
-            this.categoryBox.TabIndex = 39;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::Northwind.Properties.Resources.AttachmentPlaceholder;
+            this.pictureBox1.Location = new System.Drawing.Point(386, 230);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(349, 265);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
             // 
             // ProductDetailsForm
             // 
@@ -502,13 +517,14 @@
             this.homeHeader.ResumeLayout(false);
             this.homeHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Header homeHeader;
+        private System.Windows.Forms.Panel homeHeader;
         private System.Windows.Forms.LinkLabel saveLink;
         private System.Windows.Forms.Label goToProductLabel;
         private System.Windows.Forms.PictureBox headerImage;
@@ -545,5 +561,6 @@
         private System.Windows.Forms.ComboBox productBox;
         private PresentationControls.CheckBoxComboBox supplierBox;
         private System.Windows.Forms.ComboBox categoryBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShipperDetailsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.countryRegionBox = new System.Windows.Forms.ComboBox();
+            this.stateProvinceBox = new System.Windows.Forms.ComboBox();
             this.webPageBox = new System.Windows.Forms.TextBox();
             this.emailBox = new System.Windows.Forms.TextBox();
             this.zipPostalCodeBox = new System.Windows.Forms.TextBox();
@@ -65,7 +67,7 @@
             this.companyLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ShipperOrders = new System.Windows.Forms.DataGridView();
-            this.homeHeader = new Northwind.Header();
+            this.homeHeader = new System.Windows.Forms.Panel();
             this.newLink = new System.Windows.Forms.LinkLabel();
             this.createOutlookContactLabel = new System.Windows.Forms.LinkLabel();
             this.ShipperBox = new System.Windows.Forms.ComboBox();
@@ -74,8 +76,6 @@
             this.goToLabel = new System.Windows.Forms.Label();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.headerTitle = new System.Windows.Forms.Label();
-            this.stateProvinceBox = new System.Windows.Forms.ComboBox();
-            this.countryRegionBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -138,6 +138,22 @@
             this.tabPage1.Size = new System.Drawing.Size(770, 491);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
+            // 
+            // countryRegionBox
+            // 
+            this.countryRegionBox.FormattingEnabled = true;
+            this.countryRegionBox.Location = new System.Drawing.Point(126, 462);
+            this.countryRegionBox.Name = "countryRegionBox";
+            this.countryRegionBox.Size = new System.Drawing.Size(228, 21);
+            this.countryRegionBox.TabIndex = 53;
+            // 
+            // stateProvinceBox
+            // 
+            this.stateProvinceBox.FormattingEnabled = true;
+            this.stateProvinceBox.Location = new System.Drawing.Point(126, 411);
+            this.stateProvinceBox.Name = "stateProvinceBox";
+            this.stateProvinceBox.Size = new System.Drawing.Size(228, 21);
+            this.stateProvinceBox.TabIndex = 52;
             // 
             // webPageBox
             // 
@@ -267,9 +283,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Northwind.Properties.Resources.PortraitPlaceholder;
             this.pictureBox1.Location = new System.Drawing.Point(378, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(84, 114);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
@@ -462,6 +480,7 @@
             this.homeHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
             this.homeHeader.Controls.Add(this.newLink);
             this.homeHeader.Controls.Add(this.createOutlookContactLabel);
             this.homeHeader.Controls.Add(this.ShipperBox);
@@ -561,7 +580,7 @@
             // headerImage
             // 
             this.headerImage.BackColor = System.Drawing.Color.Transparent;
-            this.headerImage.Image = global::Northwind.Properties.Resources.Logo;
+            this.headerImage.Image = global::Northwind.Properties.Resources.ShipperDetailsIcon;
             this.headerImage.Location = new System.Drawing.Point(20, 2);
             this.headerImage.Name = "headerImage";
             this.headerImage.Size = new System.Drawing.Size(49, 41);
@@ -582,22 +601,6 @@
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Shipper Name";
             // 
-            // stateProvinceBox
-            // 
-            this.stateProvinceBox.FormattingEnabled = true;
-            this.stateProvinceBox.Location = new System.Drawing.Point(126, 411);
-            this.stateProvinceBox.Name = "stateProvinceBox";
-            this.stateProvinceBox.Size = new System.Drawing.Size(228, 21);
-            this.stateProvinceBox.TabIndex = 52;
-            // 
-            // countryRegionBox
-            // 
-            this.countryRegionBox.FormattingEnabled = true;
-            this.countryRegionBox.Location = new System.Drawing.Point(126, 462);
-            this.countryRegionBox.Name = "countryRegionBox";
-            this.countryRegionBox.Size = new System.Drawing.Size(228, 21);
-            this.countryRegionBox.TabIndex = 53;
-            // 
             // ShipperDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,7 +609,10 @@
             this.ClientSize = new System.Drawing.Size(804, 607);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.homeHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ShipperDetailsForm";
             this.Text = "Shipper Details";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShipperDetailsForm_FormClosing);
@@ -625,7 +631,7 @@
 
         #endregion
 
-        private Header homeHeader;
+        private System.Windows.Forms.Panel homeHeader;
         private System.Windows.Forms.ComboBox ShipperBox;
         private System.Windows.Forms.LinkLabel emailShipperLink;
         private System.Windows.Forms.LinkLabel saveLink;
