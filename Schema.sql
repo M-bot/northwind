@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `northwind` /*!40100 DEFAULT CHARACTER SET latin1
 USE `northwind`;
 -- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
--- Host: localhost    Database: northwind
+-- Host: 127.0.0.1    Database: northwind
 -- ------------------------------------------------------
--- Server version	5.1.70-community
+-- Server version	5.6.12-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -877,6 +877,28 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary table structure for view `purchase details extended`
+--
+
+DROP TABLE IF EXISTS `purchase details extended`;
+/*!50001 DROP VIEW IF EXISTS `purchase details extended`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `purchase details extended` (
+  `ID` tinyint NOT NULL,
+  `PurchaseOrderID` tinyint NOT NULL,
+  `ProductID` tinyint NOT NULL,
+  `Quantity` tinyint NOT NULL,
+  `UnitCost` tinyint NOT NULL,
+  `DateReceived` tinyint NOT NULL,
+  `PostedToInventory` tinyint NOT NULL,
+  `InventoryID` tinyint NOT NULL,
+  `Extended Price` tinyint NOT NULL,
+  `ProductName` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `purchase order details`
 --
 
@@ -970,6 +992,67 @@ LOCK TABLES `purchase orders` WRITE;
 INSERT INTO `purchase orders` VALUES (90,1,2,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,NULL,2,'2006-01-22 00:00:00',2),(91,3,2,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,NULL,2,'2006-01-22 00:00:00',2),(92,2,2,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,NULL,2,'2006-01-22 00:00:00',2),(93,5,2,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,NULL,2,'2006-01-22 00:00:00',2),(94,6,2,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,NULL,2,'2006-01-22 00:00:00',2),(95,4,2,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,NULL,2,'2006-01-22 00:00:00',2),(96,1,5,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #30',2,'2006-01-22 00:00:00',5),(97,2,7,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #33',2,'2006-01-22 00:00:00',7),(98,2,4,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #36',2,'2006-01-22 00:00:00',4),(99,1,3,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #38',2,'2006-01-22 00:00:00',3),(100,2,9,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #39',2,'2006-01-22 00:00:00',9),(101,1,2,'2006-01-14 00:00:00','2006-01-22 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #40',2,'2006-01-22 00:00:00',2),(102,1,1,'2006-03-24 00:00:00','2006-03-24 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #41',2,'2006-04-04 00:00:00',1),(103,2,1,'2006-03-24 00:00:00','2006-03-24 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #42',2,'2006-04-04 00:00:00',1),(104,2,1,'2006-03-24 00:00:00','2006-03-24 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #45',2,'2006-04-04 00:00:00',1),(105,5,7,'2006-03-24 00:00:00','2006-03-24 00:00:00',2,NULL,0,0,NULL,0,'Check','Purchase generated based on Order #46',2,'2006-04-04 00:00:00',7),(106,6,7,'2006-03-24 00:00:00','2006-03-24 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #46',2,'2006-04-04 00:00:00',7),(107,1,6,'2006-03-24 00:00:00','2006-03-24 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #47',2,'2006-04-04 00:00:00',6),(108,2,4,'2006-03-24 00:00:00','2006-03-24 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #48',2,'2006-04-04 00:00:00',4),(109,2,4,'2006-03-24 00:00:00','2006-03-24 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #48',2,'2006-04-04 00:00:00',4),(110,1,3,'2006-03-24 00:00:00','2006-03-24 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #49',2,'2006-04-04 00:00:00',3),(111,1,2,'2006-03-31 00:00:00','2006-03-31 00:00:00',2,NULL,0,0,NULL,0,NULL,'Purchase generated based on Order #56',2,'2006-04-04 00:00:00',2),(140,6,NULL,'2006-04-25 00:00:00','2006-04-25 16:40:51',2,NULL,0,0,NULL,0,NULL,NULL,2,'2006-04-25 16:41:33',2),(141,8,NULL,'2006-04-25 00:00:00','2006-04-25 17:10:35',2,NULL,0,0,NULL,0,NULL,NULL,2,'2006-04-25 17:10:55',2),(142,8,NULL,'2006-04-25 00:00:00','2006-04-25 17:18:29',2,NULL,0,0,NULL,0,'Check',NULL,2,'2006-04-25 17:18:51',2),(146,2,2,'2006-04-26 18:26:37','2006-04-26 18:26:37',1,NULL,0,0,NULL,0,NULL,NULL,NULL,NULL,2),(147,7,2,'2006-04-26 18:33:28','2006-04-26 18:33:28',1,NULL,0,0,NULL,0,NULL,NULL,NULL,NULL,2),(148,5,2,'2006-04-26 18:33:52','2006-04-26 18:33:52',1,NULL,0,0,NULL,0,NULL,NULL,NULL,NULL,2);
 /*!40000 ALTER TABLE `purchase orders` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `purchase orders list`
+--
+
+DROP TABLE IF EXISTS `purchase orders list`;
+/*!50001 DROP VIEW IF EXISTS `purchase orders list`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `purchase orders list` (
+  `#` tinyint NOT NULL,
+  `Status` tinyint NOT NULL,
+  `Company` tinyint NOT NULL,
+  `Total` tinyint NOT NULL,
+  `Submitted By` tinyint NOT NULL,
+  `Submitted` tinyint NOT NULL,
+  `Approved By` tinyint NOT NULL,
+  `Approved` tinyint NOT NULL,
+  `Date Paid` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `purchase price totals`
+--
+
+DROP TABLE IF EXISTS `purchase price totals`;
+/*!50001 DROP VIEW IF EXISTS `purchase price totals`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `purchase price totals` (
+  `Purchase ID` tinyint NOT NULL,
+  `Price Total` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `purchase summary`
+--
+
+DROP TABLE IF EXISTS `purchase summary`;
+/*!50001 DROP VIEW IF EXISTS `purchase summary`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `purchase summary` (
+  `CreationDate` tinyint NOT NULL,
+  `Status` tinyint NOT NULL,
+  `SupplierID` tinyint NOT NULL,
+  `ShippingFee` tinyint NOT NULL,
+  `Taxes` tinyint NOT NULL,
+  `Order Total` tinyint NOT NULL,
+  `Sub Total` tinyint NOT NULL,
+  `PaymentDate` tinyint NOT NULL,
+  `ApprovedBy` tinyint NOT NULL,
+  `ApprovedDate` tinyint NOT NULL,
+  `SubmittedBy` tinyint NOT NULL,
+  `SubmittedDate` tinyint NOT NULL,
+  `StatusID` tinyint NOT NULL,
+  `PurchaseOrderID` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `region`
@@ -1614,6 +1697,82 @@ DELIMITER ;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `purchase details extended`
+--
+
+/*!50001 DROP TABLE IF EXISTS `purchase details extended`*/;
+/*!50001 DROP VIEW IF EXISTS `purchase details extended`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `purchase details extended` AS select `purchase order details`.`ID` AS `ID`,`purchase order details`.`PurchaseOrderID` AS `PurchaseOrderID`,`purchase order details`.`ProductID` AS `ProductID`,`purchase order details`.`Quantity` AS `Quantity`,`purchase order details`.`UnitCost` AS `UnitCost`,`purchase order details`.`DateReceived` AS `DateReceived`,`purchase order details`.`PostedToInventory` AS `PostedToInventory`,`purchase order details`.`InventoryID` AS `InventoryID`,(`purchase order details`.`Quantity` * `purchase order details`.`UnitCost`) AS `Extended Price`,`products`.`ProductName` AS `ProductName` from (`products` join `purchase order details` on((`products`.`ID` = `purchase order details`.`ProductID`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `purchase orders list`
+--
+
+/*!50001 DROP TABLE IF EXISTS `purchase orders list`*/;
+/*!50001 DROP VIEW IF EXISTS `purchase orders list`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `purchase orders list` AS select `purchase summary`.`PurchaseOrderID` AS `#`,`purchase summary`.`Status` AS `Status`,`suppliers`.`Company` AS `Company`,`purchase summary`.`Order Total` AS `Total`,concat(`employees`.`FirstName`,' ',`employees`.`LastName`) AS `Submitted By`,`purchase summary`.`SubmittedDate` AS `Submitted`,concat(`a`.`FirstName`,' ',`a`.`LastName`) AS `Approved By`,`purchase summary`.`ApprovedDate` AS `Approved`,`purchase summary`.`PaymentDate` AS `Date Paid` from (((`purchase summary` join `suppliers` on((`suppliers`.`ID` = `purchase summary`.`SupplierID`))) join `employees` on((`employees`.`ID` = `purchase summary`.`SubmittedBy`))) join `employees` `a` on((`employees`.`ID` = `purchase summary`.`ApprovedBy`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `purchase price totals`
+--
+
+/*!50001 DROP TABLE IF EXISTS `purchase price totals`*/;
+/*!50001 DROP VIEW IF EXISTS `purchase price totals`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `purchase price totals` AS select `purchase details extended`.`PurchaseOrderID` AS `Purchase ID`,sum(`purchase details extended`.`Extended Price`) AS `Price Total` from `purchase details extended` group by `purchase details extended`.`PurchaseOrderID` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `purchase summary`
+--
+
+/*!50001 DROP TABLE IF EXISTS `purchase summary`*/;
+/*!50001 DROP VIEW IF EXISTS `purchase summary`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `purchase summary` AS select `purchase orders`.`CreationDate` AS `CreationDate`,`purchase order status`.`Status` AS `Status`,`purchase orders`.`SupplierID` AS `SupplierID`,`purchase orders`.`ShippingFee` AS `ShippingFee`,`purchase orders`.`Taxes` AS `Taxes`,((`purchase price totals`.`Price Total` + `purchase orders`.`ShippingFee`) + `purchase orders`.`Taxes`) AS `Order Total`,`purchase price totals`.`Price Total` AS `Sub Total`,`purchase orders`.`PaymentDate` AS `PaymentDate`,`purchase orders`.`ApprovedBy` AS `ApprovedBy`,`purchase orders`.`ApprovedDate` AS `ApprovedDate`,`purchase orders`.`SubmittedBy` AS `SubmittedBy`,`purchase orders`.`SubmittedDate` AS `SubmittedDate`,`purchase orders`.`StatusID` AS `StatusID`,`purchase orders`.`PurchaseOrderID` AS `PurchaseOrderID` from (`purchase order status` join (`purchase orders` join `purchase price totals` on((`purchase orders`.`PurchaseOrderID` = `purchase price totals`.`Purchase ID`))) on((`purchase order status`.`StatusID` = `purchase orders`.`StatusID`))) order by `purchase orders`.`StatusID`,`purchase orders`.`PurchaseOrderID` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `shipper list`
 --
 
@@ -1660,4 +1819,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-04 17:43:05
+-- Dump completed on 2014-05-05 11:49:30

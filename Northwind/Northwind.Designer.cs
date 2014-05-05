@@ -80,7 +80,7 @@
             this.purchaseOrderTab = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.header4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.asd = new System.Windows.Forms.LinkLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.supplierTab = new System.Windows.Forms.TabPage();
@@ -849,7 +849,7 @@
             this.header4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.header4.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
             this.header4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.header4.Controls.Add(this.label9);
+            this.header4.Controls.Add(this.asd);
             this.header4.Controls.Add(this.pictureBox4);
             this.header4.Controls.Add(this.label10);
             this.header4.Location = new System.Drawing.Point(0, 0);
@@ -857,17 +857,21 @@
             this.header4.Size = new System.Drawing.Size(1082, 72);
             this.header4.TabIndex = 15;
             // 
-            // label9
+            // asd
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(17, 50);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 14);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "New Customer";
+            this.asd.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.asd.AutoSize = true;
+            this.asd.BackColor = System.Drawing.Color.Transparent;
+            this.asd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asd.ForeColor = System.Drawing.Color.White;
+            this.asd.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.asd.LinkColor = System.Drawing.Color.White;
+            this.asd.Location = new System.Drawing.Point(17, 50);
+            this.asd.Name = "asd";
+            this.asd.Size = new System.Drawing.Size(102, 14);
+            this.asd.TabIndex = 9;
+            this.asd.TabStop = true;
+            this.asd.Text = "Add New Purchase";
             // 
             // pictureBox4
             // 
@@ -1255,7 +1259,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Panel header4;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.LinkLabel asd;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView supplierView;
