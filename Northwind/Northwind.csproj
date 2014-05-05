@@ -116,6 +116,7 @@
     <Compile Include="LoginDialog.Designer.cs">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objects\Category.cs" />
     <Compile Include="Objects\Customer.cs" />
     <Compile Include="Objects\Employee.cs" />
     <Compile Include="Objects\Order.cs" />

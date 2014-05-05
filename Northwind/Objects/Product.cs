@@ -20,7 +20,7 @@ namespace Northwind.Objects
         public string QuantityPerUnit { get; set; }
         public bool Discontinued { get; set; }
         public int MinimumReorderQuantity { get; set; }
-        public string Category { get; set; }
+        public int Category { get; set; }
         public string Attachments { get; set; }
 
         public override string ToString()

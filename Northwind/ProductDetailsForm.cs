@@ -37,6 +37,11 @@ namespace Northwind
                 .QueryMany<SupplierCompany>()
                 .ToArray());
 
+            categoryBox.Items.AddRange(Home.NorthwindDatabase.Context
+                .Sql("SELECT * FROM category ORDER BY Name ASC")
+                .QueryMany<Category>()
+                .ToArray());
+
             dataLoaded = true;
         }
 
@@ -60,7 +65,6 @@ namespace Northwind
             quantityBox.Text = "";
             discontinuedBox.Checked = false;
             defaultReorderBox.Text = "";
-            categoryBox.Text = "";
             historyView.DataSource = null;
 
             if(id < 1)
@@ -102,7 +106,17 @@ namespace Northwind
                 quantityBox.Text = currentProduct.QuantityPerUnit;
                 discontinuedBox.Checked = currentProduct.Discontinued;
                 defaultReorderBox.Text = currentProduct.MinimumReorderQuantity.ToString();
-                categoryBox.Text = currentProduct.Category;
+
+                int xx = -1;
+                foreach (Category c in categoryBox.Items)
+                {
+                    xx++;
+                    if (c.ID == currentProduct.Category)
+                    {
+                        categoryBox.SelectedIndex = xx;
+                        break;
+                    }
+                }
 
                 historyView.DataSource = Home.NorthwindDatabase.Context
                     .Sql("SELECT * FROM `product transactions` WHERE `Product ID` = " + currentProduct.ID)
@@ -124,7 +138,7 @@ namespace Northwind
                     currentProduct.SupplierIDs += ((Supplier)c.ComboBoxItem).ID + ";";
             currentProduct.SupplierIDs = currentProduct.SupplierIDs.Substring(0, currentProduct.SupplierIDs.Length - 1);
 
-            currentProduct.Category = categoryBox.Text;
+            currentProduct.Category = ((Category)categoryBox.SelectedItem).ID;
             currentProduct.Description = descriptionBox.Text;
             currentProduct.Discontinued = discontinuedBox.Checked;
 

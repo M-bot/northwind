@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductDetailsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.supplierBox = new PresentationControls.CheckBoxComboBox();
             this.descriptionBox = new System.Windows.Forms.TextBox();
             this.discontinuedBox = new System.Windows.Forms.CheckBox();
             this.costBox = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.targetBox = new System.Windows.Forms.TextBox();
             this.defaultReorderBox = new System.Windows.Forms.TextBox();
             this.quantityBox = new System.Windows.Forms.TextBox();
-            this.categoryBox = new System.Windows.Forms.TextBox();
             this.codeBox = new System.Windows.Forms.TextBox();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.idBox = new System.Windows.Forms.TextBox();
@@ -66,7 +66,7 @@
             this.goToProductLabel = new System.Windows.Forms.Label();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.headerTitle = new System.Windows.Forms.Label();
-            this.supplierBox = new PresentationControls.CheckBoxComboBox();
+            this.categoryBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -88,6 +88,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.tabPage1.Controls.Add(this.categoryBox);
             this.tabPage1.Controls.Add(this.supplierBox);
             this.tabPage1.Controls.Add(this.descriptionBox);
             this.tabPage1.Controls.Add(this.discontinuedBox);
@@ -97,7 +98,6 @@
             this.tabPage1.Controls.Add(this.targetBox);
             this.tabPage1.Controls.Add(this.defaultReorderBox);
             this.tabPage1.Controls.Add(this.quantityBox);
-            this.tabPage1.Controls.Add(this.categoryBox);
             this.tabPage1.Controls.Add(this.codeBox);
             this.tabPage1.Controls.Add(this.nameBox);
             this.tabPage1.Controls.Add(this.idBox);
@@ -120,6 +120,17 @@
             this.tabPage1.Size = new System.Drawing.Size(741, 502);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Product Details";
+            // 
+            // supplierBox
+            // 
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.supplierBox.CheckBoxProperties = checkBoxProperties1;
+            this.supplierBox.DisplayMemberSingleItem = "";
+            this.supplierBox.FormattingEnabled = true;
+            this.supplierBox.Location = new System.Drawing.Point(149, 141);
+            this.supplierBox.Name = "supplierBox";
+            this.supplierBox.Size = new System.Drawing.Size(222, 21);
+            this.supplierBox.TabIndex = 38;
             // 
             // descriptionBox
             // 
@@ -179,13 +190,6 @@
             this.quantityBox.Name = "quantityBox";
             this.quantityBox.Size = new System.Drawing.Size(222, 20);
             this.quantityBox.TabIndex = 29;
-            // 
-            // categoryBox
-            // 
-            this.categoryBox.Location = new System.Drawing.Point(149, 112);
-            this.categoryBox.Name = "categoryBox";
-            this.categoryBox.Size = new System.Drawing.Size(222, 20);
-            this.categoryBox.TabIndex = 28;
             // 
             // codeBox
             // 
@@ -467,16 +471,13 @@
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Product Name";
             // 
-            // supplierBox
+            // categoryBox
             // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.supplierBox.CheckBoxProperties = checkBoxProperties1;
-            this.supplierBox.DisplayMemberSingleItem = "";
-            this.supplierBox.FormattingEnabled = true;
-            this.supplierBox.Location = new System.Drawing.Point(149, 141);
-            this.supplierBox.Name = "supplierBox";
-            this.supplierBox.Size = new System.Drawing.Size(222, 21);
-            this.supplierBox.TabIndex = 38;
+            this.categoryBox.FormattingEnabled = true;
+            this.categoryBox.Location = new System.Drawing.Point(149, 112);
+            this.categoryBox.Name = "categoryBox";
+            this.categoryBox.Size = new System.Drawing.Size(222, 21);
+            this.categoryBox.TabIndex = 39;
             // 
             // ProductDetailsForm
             // 
@@ -524,7 +525,6 @@
         private System.Windows.Forms.TextBox targetBox;
         private System.Windows.Forms.TextBox defaultReorderBox;
         private System.Windows.Forms.TextBox quantityBox;
-        private System.Windows.Forms.TextBox categoryBox;
         private System.Windows.Forms.TextBox codeBox;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.TextBox idBox;
@@ -544,5 +544,6 @@
         private System.Windows.Forms.DataGridView historyView;
         private System.Windows.Forms.ComboBox productBox;
         private PresentationControls.CheckBoxComboBox supplierBox;
+        private System.Windows.Forms.ComboBox categoryBox;
     }
 }
