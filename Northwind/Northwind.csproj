@@ -133,6 +133,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="PurchaseOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,14 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="PurchaseOrderForm.resx">
       <DependentUpon>PurchaseOrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,9 +211,24 @@
     <None Include="res\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\LogoBig.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="res\InventoryHeader.png" />
+    <Content Include="res\StartupHeader.png" />
+    <None Include="res\formLoginDialog1.png" />
+    <None Include="res\formLoginDialog2.png" />
+    <None Include="res\formOrderDetails2.png" />
+    <None Include="res\formOrderList2.png" />
+    <None Include="res\formProductDetails3.png" />
+    <None Include="res\formPurchaseOrderDetails2.png" />
+    <None Include="res\formStartupScreen2.png" />
+    <None Include="res\formSupplierDetails2.png" />
+    <None Include="res\formCustomerDetailsAddFurigana2.png" />
+    <None Include="res\formCustomerDetailsAddFurigana3.png" />
+    <None Include="res\formEmployeeDetails2.png" />
+    <None Include="res\formHome2.png" />
+    <None Include="res\formHome3.png" />
+    <None Include="res\formInventoryList2.png" />
+    <None Include="res\formShipperDetails3.png" />
+    <Content Include="res\GenericHeader.png" />
     <Content Include="res\Inventory List.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

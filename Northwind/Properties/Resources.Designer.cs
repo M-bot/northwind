@@ -63,9 +63,159 @@ namespace Northwind.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Inventory_List {
+        internal static System.Drawing.Bitmap formCustomerDetailsAddFurigana2 {
             get {
-                object obj = ResourceManager.GetObject("Inventory List", resourceCulture);
+                object obj = ResourceManager.GetObject("formCustomerDetailsAddFurigana2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formCustomerDetailsAddFurigana3 {
+            get {
+                object obj = ResourceManager.GetObject("formCustomerDetailsAddFurigana3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formEmployeeDetails2 {
+            get {
+                object obj = ResourceManager.GetObject("formEmployeeDetails2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formHome3 {
+            get {
+                object obj = ResourceManager.GetObject("formHome3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formInventoryList2 {
+            get {
+                object obj = ResourceManager.GetObject("formInventoryList2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formLoginDialog1 {
+            get {
+                object obj = ResourceManager.GetObject("formLoginDialog1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formLoginDialog2 {
+            get {
+                object obj = ResourceManager.GetObject("formLoginDialog2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formOrderDetails2 {
+            get {
+                object obj = ResourceManager.GetObject("formOrderDetails2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formOrderList2 {
+            get {
+                object obj = ResourceManager.GetObject("formOrderList2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formProductDetails3 {
+            get {
+                object obj = ResourceManager.GetObject("formProductDetails3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formPurchaseOrderDetails2 {
+            get {
+                object obj = ResourceManager.GetObject("formPurchaseOrderDetails2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formShipperDetails3 {
+            get {
+                object obj = ResourceManager.GetObject("formShipperDetails3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formStartupScreen2 {
+            get {
+                object obj = ResourceManager.GetObject("formStartupScreen2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formSupplierDetails2 {
+            get {
+                object obj = ResourceManager.GetObject("formSupplierDetails2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GenericHeader {
+            get {
+                object obj = ResourceManager.GetObject("GenericHeader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InventoryHeader {
+            get {
+                object obj = ResourceManager.GetObject("InventoryHeader", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +233,9 @@ namespace Northwind.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LogoBig {
+        internal static System.Drawing.Bitmap StartupHeader {
             get {
-                object obj = ResourceManager.GetObject("LogoBig", resourceCulture);
+                object obj = ResourceManager.GetObject("StartupHeader", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

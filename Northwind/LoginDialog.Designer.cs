@@ -29,51 +29,56 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginDialog));
-            this.header1 = new Northwind.Header();
-            this.backdrop = new Northwind.GradientPanel();
-            this.disclaimerLabel = new System.Windows.Forms.Label();
-            this.employeeLabel = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.employeeBox = new System.Windows.Forms.ComboBox();
-            this.loginTitle = new System.Windows.Forms.Label();
             this.northwindLogo = new System.Windows.Forms.PictureBox();
-            this.backdrop.SuspendLayout();
+            this.loginTitle = new System.Windows.Forms.Label();
+            this.employeeBox = new System.Windows.Forms.ComboBox();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.employeeLabel = new System.Windows.Forms.Label();
+            this.disclaimerLabel = new System.Windows.Forms.Label();
+            this.backdrop = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.northwindLogo)).BeginInit();
+            this.backdrop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // header1
+            // northwindLogo
             // 
-            this.header1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.header1.Location = new System.Drawing.Point(0, 0);
-            this.header1.Name = "header1";
-            this.header1.Size = new System.Drawing.Size(465, 12);
-            this.header1.TabIndex = 1;
+            this.northwindLogo.BackColor = System.Drawing.Color.Transparent;
+            this.northwindLogo.Image = global::Northwind.Properties.Resources.formLoginDialog2;
+            this.northwindLogo.Location = new System.Drawing.Point(16, 23);
+            this.northwindLogo.Name = "northwindLogo";
+            this.northwindLogo.Size = new System.Drawing.Size(93, 123);
+            this.northwindLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.northwindLogo.TabIndex = 0;
+            this.northwindLogo.TabStop = false;
             // 
-            // backdrop
+            // loginTitle
             // 
-            this.backdrop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.backdrop.Controls.Add(this.disclaimerLabel);
-            this.backdrop.Controls.Add(this.employeeLabel);
-            this.backdrop.Controls.Add(this.loginButton);
-            this.backdrop.Controls.Add(this.employeeBox);
-            this.backdrop.Controls.Add(this.loginTitle);
-            this.backdrop.Controls.Add(this.northwindLogo);
-            this.backdrop.Location = new System.Drawing.Point(0, 0);
-            this.backdrop.Name = "backdrop";
-            this.backdrop.Size = new System.Drawing.Size(465, 265);
-            this.backdrop.TabIndex = 2;
+            this.loginTitle.AutoSize = true;
+            this.loginTitle.BackColor = System.Drawing.Color.Transparent;
+            this.loginTitle.Font = new System.Drawing.Font("Trebuchet MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginTitle.Location = new System.Drawing.Point(120, 30);
+            this.loginTitle.Name = "loginTitle";
+            this.loginTitle.Size = new System.Drawing.Size(249, 40);
+            this.loginTitle.TabIndex = 1;
+            this.loginTitle.Text = "Northwind Login";
             // 
-            // disclaimerLabel
+            // employeeBox
             // 
-            this.disclaimerLabel.AutoSize = true;
-            this.disclaimerLabel.BackColor = System.Drawing.Color.Transparent;
-            this.disclaimerLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disclaimerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(143)))));
-            this.disclaimerLabel.Location = new System.Drawing.Point(5, 149);
-            this.disclaimerLabel.Name = "disclaimerLabel";
-            this.disclaimerLabel.Size = new System.Drawing.Size(445, 56);
-            this.disclaimerLabel.TabIndex = 7;
-            this.disclaimerLabel.Text = resources.GetString("disclaimerLabel.Text");
+            this.employeeBox.FormattingEnabled = true;
+            this.employeeBox.Location = new System.Drawing.Point(127, 115);
+            this.employeeBox.Name = "employeeBox";
+            this.employeeBox.Size = new System.Drawing.Size(242, 21);
+            this.employeeBox.TabIndex = 2;
+            // 
+            // loginButton
+            // 
+            this.loginButton.Location = new System.Drawing.Point(386, 113);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(66, 23);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // employeeLabel
             // 
@@ -87,52 +92,39 @@
             this.employeeLabel.TabIndex = 6;
             this.employeeLabel.Text = "Select Employee";
             // 
-            // loginButton
+            // disclaimerLabel
             // 
-            this.loginButton.Location = new System.Drawing.Point(386, 113);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(66, 23);
-            this.loginButton.TabIndex = 3;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.disclaimerLabel.AutoSize = true;
+            this.disclaimerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.disclaimerLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.disclaimerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(77)))), ((int)(((byte)(143)))));
+            this.disclaimerLabel.Location = new System.Drawing.Point(5, 149);
+            this.disclaimerLabel.Name = "disclaimerLabel";
+            this.disclaimerLabel.Size = new System.Drawing.Size(445, 56);
+            this.disclaimerLabel.TabIndex = 7;
+            this.disclaimerLabel.Text = resources.GetString("disclaimerLabel.Text");
             // 
-            // employeeBox
+            // backdrop
             // 
-            this.employeeBox.FormattingEnabled = true;
-            this.employeeBox.Location = new System.Drawing.Point(127, 115);
-            this.employeeBox.Name = "employeeBox";
-            this.employeeBox.Size = new System.Drawing.Size(242, 21);
-            this.employeeBox.TabIndex = 2;
-            // 
-            // loginTitle
-            // 
-            this.loginTitle.AutoSize = true;
-            this.loginTitle.BackColor = System.Drawing.Color.Transparent;
-            this.loginTitle.Font = new System.Drawing.Font("Trebuchet MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginTitle.Location = new System.Drawing.Point(120, 30);
-            this.loginTitle.Name = "loginTitle";
-            this.loginTitle.Size = new System.Drawing.Size(249, 40);
-            this.loginTitle.TabIndex = 1;
-            this.loginTitle.Text = "Northwind Login";
-            // 
-            // northwindLogo
-            // 
-            this.northwindLogo.BackColor = System.Drawing.Color.Transparent;
-            this.northwindLogo.Image = global::Northwind.Properties.Resources.LogoBig;
-            this.northwindLogo.Location = new System.Drawing.Point(16, 23);
-            this.northwindLogo.Name = "northwindLogo";
-            this.northwindLogo.Size = new System.Drawing.Size(93, 123);
-            this.northwindLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.northwindLogo.TabIndex = 0;
-            this.northwindLogo.TabStop = false;
+            this.backdrop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.backdrop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backdrop.BackgroundImage")));
+            this.backdrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.backdrop.Controls.Add(this.disclaimerLabel);
+            this.backdrop.Controls.Add(this.employeeLabel);
+            this.backdrop.Controls.Add(this.loginButton);
+            this.backdrop.Controls.Add(this.employeeBox);
+            this.backdrop.Controls.Add(this.loginTitle);
+            this.backdrop.Controls.Add(this.northwindLogo);
+            this.backdrop.Location = new System.Drawing.Point(0, 0);
+            this.backdrop.Name = "backdrop";
+            this.backdrop.Size = new System.Drawing.Size(465, 265);
+            this.backdrop.TabIndex = 2;
             // 
             // LoginDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 262);
-            this.Controls.Add(this.header1);
             this.Controls.Add(this.backdrop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -143,9 +135,9 @@
             this.Text = "Login Dialog";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginDialog_FormClosing);
             this.Load += new System.EventHandler(this.LoginDialog_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.northwindLogo)).EndInit();
             this.backdrop.ResumeLayout(false);
             this.backdrop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -153,12 +145,12 @@
         #endregion
 
         private System.Windows.Forms.PictureBox northwindLogo;
-        private Header header1;
-        private GradientPanel backdrop;
         private System.Windows.Forms.Label loginTitle;
-        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.ComboBox employeeBox;
+        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.Label disclaimerLabel;
+        private System.Windows.Forms.Panel backdrop;
+
     }
 }

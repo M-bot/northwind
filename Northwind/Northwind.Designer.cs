@@ -49,7 +49,7 @@
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.homeTab = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.homeHeader = new Northwind.Header();
+            this.homeHeader = new System.Windows.Forms.Panel();
             this.newPurchaseOrderLabel = new System.Windows.Forms.LinkLabel();
             this.newCustomerOrderLabel = new System.Windows.Forms.LinkLabel();
             this.headerLabel1 = new System.Windows.Forms.Label();
@@ -58,47 +58,46 @@
             this.headerTitle = new System.Windows.Forms.Label();
             this.inventoryTab = new System.Windows.Forms.TabPage();
             this.inventoryView = new System.Windows.Forms.DataGridView();
-            this.inventoryHeader = new Northwind.Header();
+            this.inventoryHeader = new System.Windows.Forms.Panel();
             this.homeLabel = new System.Windows.Forms.LinkLabel();
             this.addProductLabel = new System.Windows.Forms.LinkLabel();
             this.inventoryImage = new System.Windows.Forms.PictureBox();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.orderTab = new System.Windows.Forms.TabPage();
             this.ordersView = new System.Windows.Forms.DataGridView();
-            this.header2 = new Northwind.Header();
+            this.header2 = new System.Windows.Forms.Panel();
             this.viewInvoiceLink = new System.Windows.Forms.LinkLabel();
             this.addNewOrderLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.customerTab = new System.Windows.Forms.TabPage();
             this.customerView = new System.Windows.Forms.DataGridView();
-            this.header3 = new Northwind.Header();
+            this.header3 = new System.Windows.Forms.Panel();
             this.viewInvoiceLink2 = new System.Windows.Forms.LinkLabel();
             this.newCustomerLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.purchaseOrderTab = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.header4 = new Northwind.Header();
-            this.label8 = new System.Windows.Forms.Label();
+            this.header4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.supplierTab = new System.Windows.Forms.TabPage();
             this.supplierView = new System.Windows.Forms.DataGridView();
-            this.header5 = new Northwind.Header();
+            this.header5 = new System.Windows.Forms.Panel();
             this.newSupplierLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.employeeTab = new System.Windows.Forms.TabPage();
             this.employeeView = new System.Windows.Forms.DataGridView();
-            this.header6 = new Northwind.Header();
+            this.header6 = new System.Windows.Forms.Panel();
             this.newEmployeeLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.shipperTab = new System.Windows.Forms.TabPage();
             this.shipperView = new System.Windows.Forms.DataGridView();
-            this.header7 = new Northwind.Header();
+            this.header7 = new System.Windows.Forms.Panel();
             this.newShipperLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -421,6 +420,8 @@
             this.homeHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
+            this.homeHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.homeHeader.Controls.Add(this.newPurchaseOrderLabel);
             this.homeHeader.Controls.Add(this.newCustomerOrderLabel);
             this.homeHeader.Controls.Add(this.headerLabel1);
@@ -491,10 +492,11 @@
             // headerImage
             // 
             this.headerImage.BackColor = System.Drawing.Color.Transparent;
-            this.headerImage.Image = global::Northwind.Properties.Resources.Logo;
+            this.headerImage.Image = ((System.Drawing.Image)(resources.GetObject("headerImage.Image")));
             this.headerImage.Location = new System.Drawing.Point(20, 2);
             this.headerImage.Name = "headerImage";
-            this.headerImage.Size = new System.Drawing.Size(49, 67);
+            this.headerImage.Size = new System.Drawing.Size(54, 67);
+            this.headerImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.headerImage.TabIndex = 0;
             this.headerImage.TabStop = false;
             // 
@@ -546,6 +548,8 @@
             this.inventoryHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inventoryHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.inventoryHeader.BackgroundImage = global::Northwind.Properties.Resources.InventoryHeader;
+            this.inventoryHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.inventoryHeader.Controls.Add(this.homeLabel);
             this.inventoryHeader.Controls.Add(this.addProductLabel);
             this.inventoryHeader.Controls.Add(this.inventoryImage);
@@ -593,8 +597,8 @@
             // inventoryImage
             // 
             this.inventoryImage.BackColor = System.Drawing.Color.Transparent;
-            this.inventoryImage.Image = global::Northwind.Properties.Resources.Inventory_List;
-            this.inventoryImage.Location = new System.Drawing.Point(17, 12);
+            this.inventoryImage.Image = ((System.Drawing.Image)(resources.GetObject("inventoryImage.Image")));
+            this.inventoryImage.Location = new System.Drawing.Point(17, 3);
             this.inventoryImage.Name = "inventoryImage";
             this.inventoryImage.Size = new System.Drawing.Size(54, 48);
             this.inventoryImage.TabIndex = 0;
@@ -645,6 +649,8 @@
             this.header2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.header2.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
+            this.header2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.header2.Controls.Add(this.viewInvoiceLink);
             this.header2.Controls.Add(this.addNewOrderLink);
             this.header2.Controls.Add(this.pictureBox2);
@@ -656,10 +662,13 @@
             // 
             // viewInvoiceLink
             // 
+            this.viewInvoiceLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
             this.viewInvoiceLink.AutoSize = true;
             this.viewInvoiceLink.BackColor = System.Drawing.Color.Transparent;
             this.viewInvoiceLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewInvoiceLink.ForeColor = System.Drawing.Color.White;
+            this.viewInvoiceLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.viewInvoiceLink.LinkColor = System.Drawing.Color.White;
             this.viewInvoiceLink.Location = new System.Drawing.Point(138, 50);
             this.viewInvoiceLink.Name = "viewInvoiceLink";
             this.viewInvoiceLink.Size = new System.Drawing.Size(70, 14);
@@ -669,10 +678,13 @@
             // 
             // addNewOrderLink
             // 
+            this.addNewOrderLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
             this.addNewOrderLink.AutoSize = true;
             this.addNewOrderLink.BackColor = System.Drawing.Color.Transparent;
             this.addNewOrderLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewOrderLink.ForeColor = System.Drawing.Color.White;
+            this.addNewOrderLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.addNewOrderLink.LinkColor = System.Drawing.Color.White;
             this.addNewOrderLink.Location = new System.Drawing.Point(17, 50);
             this.addNewOrderLink.Name = "addNewOrderLink";
             this.addNewOrderLink.Size = new System.Drawing.Size(84, 14);
@@ -683,10 +695,10 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Northwind.Properties.Resources.Logo;
-            this.pictureBox2.Location = new System.Drawing.Point(20, 2);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(20, 6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(54, 38);
+            this.pictureBox2.Size = new System.Drawing.Size(54, 36);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -736,6 +748,8 @@
             this.header3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.header3.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
+            this.header3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.header3.Controls.Add(this.viewInvoiceLink2);
             this.header3.Controls.Add(this.newCustomerLink);
             this.header3.Controls.Add(this.pictureBox3);
@@ -781,8 +795,8 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Northwind.Properties.Resources.Logo;
-            this.pictureBox3.Location = new System.Drawing.Point(20, 2);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(19, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(54, 38);
             this.pictureBox3.TabIndex = 0;
@@ -833,7 +847,8 @@
             this.header4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.header4.Controls.Add(this.label8);
+            this.header4.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
+            this.header4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.header4.Controls.Add(this.label9);
             this.header4.Controls.Add(this.pictureBox4);
             this.header4.Controls.Add(this.label10);
@@ -841,18 +856,6 @@
             this.header4.Name = "header4";
             this.header4.Size = new System.Drawing.Size(1082, 72);
             this.header4.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(138, 50);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 14);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "View Invoice";
             // 
             // label9
             // 
@@ -869,7 +872,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::Northwind.Properties.Resources.Logo;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(20, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(54, 38);
@@ -922,6 +925,8 @@
             this.header5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.header5.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
+            this.header5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.header5.Controls.Add(this.newSupplierLink);
             this.header5.Controls.Add(this.pictureBox5);
             this.header5.Controls.Add(this.label13);
@@ -950,8 +955,8 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::Northwind.Properties.Resources.Logo;
-            this.pictureBox5.Location = new System.Drawing.Point(20, 2);
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(20, 6);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(54, 38);
             this.pictureBox5.TabIndex = 0;
@@ -1003,6 +1008,8 @@
             this.header6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.header6.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
+            this.header6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.header6.Controls.Add(this.newEmployeeLink);
             this.header6.Controls.Add(this.pictureBox6);
             this.header6.Controls.Add(this.label16);
@@ -1031,8 +1038,8 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::Northwind.Properties.Resources.Logo;
-            this.pictureBox6.Location = new System.Drawing.Point(20, 2);
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(19, 3);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(54, 38);
             this.pictureBox6.TabIndex = 0;
@@ -1084,6 +1091,8 @@
             this.header7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.header7.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
+            this.header7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.header7.Controls.Add(this.newShipperLink);
             this.header7.Controls.Add(this.pictureBox7);
             this.header7.Controls.Add(this.label19);
@@ -1112,8 +1121,8 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Image = global::Northwind.Properties.Resources.Logo;
-            this.pictureBox7.Location = new System.Drawing.Point(20, 2);
+            this.pictureBox7.Image = global::Northwind.Properties.Resources.formShipperDetails3;
+            this.pictureBox7.Location = new System.Drawing.Point(19, 3);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(54, 38);
             this.pictureBox7.TabIndex = 0;
@@ -1212,7 +1221,7 @@
         private System.Windows.Forms.LinkLabel inventoryLink;
         private System.Windows.Forms.Label inventoryToReorderLabel;
         private System.Windows.Forms.Label quickLinks;
-        private Header homeHeader;
+        private System.Windows.Forms.Panel homeHeader;
         private System.Windows.Forms.Label headerTitle;
         private System.Windows.Forms.PictureBox headerImage;
         private System.Windows.Forms.ComboBox employeeBox;
@@ -1222,12 +1231,12 @@
         private System.Windows.Forms.TabControl mainTabControl;
         private System.Windows.Forms.TabPage homeTab;
         private System.Windows.Forms.TabPage inventoryTab;
-        private Header inventoryHeader;
+        private System.Windows.Forms.Panel inventoryHeader;
         private System.Windows.Forms.PictureBox inventoryImage;
         private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.DataGridView inventoryView;
         private System.Windows.Forms.TabPage orderTab;
-        private Header header2;
+        private System.Windows.Forms.Panel header2;
         private System.Windows.Forms.LinkLabel viewInvoiceLink;
         private System.Windows.Forms.LinkLabel addNewOrderLink;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1239,27 +1248,26 @@
         private System.Windows.Forms.TabPage shipperTab;
         private System.Windows.Forms.DataGridView ordersView;
         private System.Windows.Forms.DataGridView customerView;
-        private Header header3;
+        private System.Windows.Forms.Panel header3;
         private System.Windows.Forms.LinkLabel viewInvoiceLink2;
         private System.Windows.Forms.LinkLabel newCustomerLink;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private Header header4;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel header4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView supplierView;
-        private Header header5;
+        private System.Windows.Forms.Panel header5;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView employeeView;
-        private Header header6;
+        private System.Windows.Forms.Panel header6;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView shipperView;
-        private Header header7;
+        private System.Windows.Forms.Panel header7;
         private System.Windows.Forms.LinkLabel newShipperLink;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label19;

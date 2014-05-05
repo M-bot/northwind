@@ -17,7 +17,7 @@ namespace Northwind
         public LoginDialog()
         {
             InitializeComponent();
-            backdrop.Colors = new[]{Color.FromArgb(180,178,166), Color.FromArgb(212,210,203)};
+            //backdrop.Colors = new[]{Color.FromArgb(180,178,166), Color.FromArgb(212,210,203)};
         }
 
         private void loginButton_Click(object sender, EventArgs e)

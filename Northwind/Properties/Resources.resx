@@ -118,13 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="formLoginDialog2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formLoginDialog2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formOrderList2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formOrderList2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formEmployeeDetails2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formEmployeeDetails2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formPurchaseOrderDetails2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formPurchaseOrderDetails2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formCustomerDetailsAddFurigana3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formCustomerDetailsAddFurigana3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formStartupScreen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formStartupScreen2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formSupplierDetails2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formSupplierDetails2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formCustomerDetailsAddFurigana2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formCustomerDetailsAddFurigana2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formProductDetails3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formProductDetails3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formOrderDetails2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formOrderDetails2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formInventoryList2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formInventoryList2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formHome3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formHome3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formLoginDialog1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formLoginDialog1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\res\formHome2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LogoBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\LogoBig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="formShipperDetails3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\formShipperDetails3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inventory List" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Inventory List.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GenericHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\genericheader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InventoryHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\inventoryheader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StartupHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\startupheader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
