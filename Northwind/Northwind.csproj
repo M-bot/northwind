@@ -71,6 +71,7 @@
     <Compile Include="CheckBoxComboBox\PopupComboBox.designer.cs">
       <DependentUpon>PopupComboBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objects\PurchaseOrder.cs" />
     <Compile Include="CheckBoxComboBox\Selection Wrappers\ListSelectionWrapper.cs" />
     <Compile Include="CheckBoxComboBox\Selection Wrappers\ObjectSelectionWrapper.cs" />
     <Compile Include="CustomerDetailsForm.cs">
@@ -212,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="res\InventoryHeader.png" />
+    <Content Include="res\PurchaseOrdersList.png" />
     <Content Include="res\StartupHeader.png" />
     <None Include="res\formLoginDialog1.png" />
     <None Include="res\formLoginDialog2.png" />

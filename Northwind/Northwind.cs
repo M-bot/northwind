@@ -106,6 +106,10 @@ namespace Northwind
 
         private void purchaseOrdersLink_Click(object sender, EventArgs e)
         {
+            purchaseOrderView.DataSource = NorthwindDatabase.Context
+                .Sql("SELECT * FROM `purchase orders list`")
+                .QuerySingle<DataTable>();
+
             if (!mainTabControl.TabPages.Contains(purchaseOrderTab))
                 mainTabControl.TabPages.Add(purchaseOrderTab);
             mainTabControl.SelectedTab = purchaseOrderTab;
@@ -305,6 +309,33 @@ namespace Northwind
                 newShipperDetailsForm.loadShipper(id);
             newShipperDetailsForm.Show();
             newShipperDetailsForm.Activate();
+        }
+
+        private void ordersView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            int id = 0;
+            if (Int32.TryParse(ordersView.Rows[e.RowIndex].Cells["#"].Value.ToString(), out id))
+                newCustomerOrderForm.loadOrder(id);
+            newCustomerOrderForm.Show();
+            newCustomerOrderForm.Activate();
+        }
+
+        private void addNewOrderLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newCustomerOrderForm.loadOrder(0);
+            newCustomerOrderForm.Show();
+            newCustomerOrderForm.Activate();
+        }
+
+        private void purchaseOrderView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            int id = 0;
+            if (Int32.TryParse(purchaseOrderView.Rows[e.RowIndex].Cells["#"].Value.ToString(), out id))
+                newPurchaseOrderForm.loadOrder(id);
+            newCustomerOrderForm.Show();
+            newCustomerOrderForm.Activate();
         }
 
     }
