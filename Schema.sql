@@ -29,7 +29,7 @@ CREATE TABLE `category` (
   `Name` varchar(45) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ID_UNIQUE` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'None');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1729,7 +1730,7 @@ DELIMITER ;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `purchase orders list` AS select `purchase summary`.`PurchaseOrderID` AS `#`,`purchase summary`.`Status` AS `Status`,`suppliers`.`Company` AS `Company`,`purchase summary`.`Order Total` AS `Total`,concat(`employees`.`FirstName`,' ',`employees`.`LastName`) AS `Submitted By`,`purchase summary`.`SubmittedDate` AS `Submitted`,concat(`a`.`FirstName`,' ',`a`.`LastName`) AS `Approved By`,`purchase summary`.`ApprovedDate` AS `Approved`,`purchase summary`.`PaymentDate` AS `Date Paid` from (((`purchase summary` join `suppliers` on((`suppliers`.`ID` = `purchase summary`.`SupplierID`))) join `employees` on((`employees`.`ID` = `purchase summary`.`SubmittedBy`))) join `employees` `a` on((`employees`.`ID` = `purchase summary`.`ApprovedBy`))) */;
+/*!50001 VIEW `purchase orders list` AS select `purchase summary`.`PurchaseOrderID` AS `#`,`purchase summary`.`Status` AS `Status`,`suppliers`.`Company` AS `Company`,`purchase summary`.`Order Total` AS `Total`,concat(`employees`.`FirstName`,' ',`employees`.`LastName`) AS `Submitted By`,`purchase summary`.`SubmittedDate` AS `Submitted`,concat(`employees2`.`FirstName`,' ',`employees2`.`LastName`) AS `Approved By`,`purchase summary`.`ApprovedDate` AS `Approved`,`purchase summary`.`PaymentDate` AS `Date Paid` from (((`purchase summary` join `suppliers` on((`suppliers`.`ID` = `purchase summary`.`SupplierID`))) left join `employees` on((`employees`.`ID` = `purchase summary`.`SubmittedBy`))) left join `employees` `employees2` on((`employees2`.`ID` = `purchase summary`.`ApprovedBy`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1819,4 +1820,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-05 11:49:30
+-- Dump completed on 2014-05-06 11:47:18
