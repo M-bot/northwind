@@ -67,7 +67,7 @@ namespace Northwind
                 .QuerySingle<DataTable>();
 
             employeeBox.Items.AddRange((Home.NorthwindDatabase.Context
-                .Sql("SELECT * FROM employees ORDER BY LastName ASC")
+                .Sql("SELECT * FROM employees ORDER BY FirstName ASC")
                 .QueryMany<EmployeeLoginDialog>())
                 .ToArray());
 
@@ -334,8 +334,8 @@ namespace Northwind
             int id = 0;
             if (Int32.TryParse(purchaseOrderView.Rows[e.RowIndex].Cells["#"].Value.ToString(), out id))
                 newPurchaseOrderForm.loadOrder(id);
-            newCustomerOrderForm.Show();
-            newCustomerOrderForm.Activate();
+            newPurchaseOrderForm.Show();
+            newPurchaseOrderForm.Activate();
         }
 
     }

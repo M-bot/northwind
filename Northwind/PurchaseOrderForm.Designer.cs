@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseOrderForm));
             this.homeHeader = new System.Windows.Forms.Panel();
-            this.closeLabel = new System.Windows.Forms.LinkLabel();
-            this.completeOrder = new System.Windows.Forms.LinkLabel();
-            this.shipOrderLabel = new System.Windows.Forms.LinkLabel();
-            this.createInvoiceLabel = new System.Windows.Forms.LinkLabel();
+            this.saveLink = new System.Windows.Forms.LinkLabel();
+            this.cancelPurchaseLink = new System.Windows.Forms.LinkLabel();
+            this.approvePurchaseLink = new System.Windows.Forms.LinkLabel();
+            this.submitForApprovalLink = new System.Windows.Forms.LinkLabel();
             this.statusLabel = new System.Windows.Forms.Label();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.headerTitle = new System.Windows.Forms.Label();
@@ -54,26 +54,26 @@
             this.supplierBox = new System.Windows.Forms.ComboBox();
             this.createdByLabel = new System.Windows.Forms.Label();
             this.supplierLabel = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.orderDetailsTab = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.shippingInformationTab = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.purchaseDetailsTab = new System.Windows.Forms.TabPage();
+            this.purchaseDetailsView = new System.Windows.Forms.DataGridView();
+            this.inventoryReceivingTab = new System.Windows.Forms.TabPage();
+            this.inventoryReceivingView = new System.Windows.Forms.DataGridView();
             this.paymentInformation = new System.Windows.Forms.TabPage();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.paymentTypeBox = new System.Windows.Forms.ComboBox();
+            this.orderNotesBox = new System.Windows.Forms.TextBox();
+            this.paymentDateBox = new System.Windows.Forms.TextBox();
+            this.orderNotesLabel = new System.Windows.Forms.Label();
+            this.paymentDateLabel = new System.Windows.Forms.Label();
+            this.paymentTypeLabel = new System.Windows.Forms.Label();
             this.homeHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).BeginInit();
             this.panel1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.orderDetailsTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.shippingInformationTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabControl.SuspendLayout();
+            this.purchaseDetailsTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.purchaseDetailsView)).BeginInit();
+            this.inventoryReceivingTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryReceivingView)).BeginInit();
             this.paymentInformation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,10 +83,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
-            this.homeHeader.Controls.Add(this.closeLabel);
-            this.homeHeader.Controls.Add(this.completeOrder);
-            this.homeHeader.Controls.Add(this.shipOrderLabel);
-            this.homeHeader.Controls.Add(this.createInvoiceLabel);
+            this.homeHeader.Controls.Add(this.saveLink);
+            this.homeHeader.Controls.Add(this.cancelPurchaseLink);
+            this.homeHeader.Controls.Add(this.approvePurchaseLink);
+            this.homeHeader.Controls.Add(this.submitForApprovalLink);
             this.homeHeader.Controls.Add(this.statusLabel);
             this.homeHeader.Controls.Add(this.headerImage);
             this.homeHeader.Controls.Add(this.headerTitle);
@@ -95,61 +95,66 @@
             this.homeHeader.Size = new System.Drawing.Size(672, 72);
             this.homeHeader.TabIndex = 10;
             // 
-            // closeLabel
+            // saveLink
             // 
-            this.closeLabel.AutoSize = true;
-            this.closeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.closeLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.closeLabel.LinkColor = System.Drawing.Color.White;
-            this.closeLabel.Location = new System.Drawing.Point(628, 52);
-            this.closeLabel.Name = "closeLabel";
-            this.closeLabel.Size = new System.Drawing.Size(34, 14);
-            this.closeLabel.TabIndex = 13;
-            this.closeLabel.TabStop = true;
-            this.closeLabel.Text = "Close";
+            this.saveLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.saveLink.AutoSize = true;
+            this.saveLink.BackColor = System.Drawing.Color.Transparent;
+            this.saveLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.saveLink.LinkColor = System.Drawing.Color.White;
+            this.saveLink.Location = new System.Drawing.Point(628, 52);
+            this.saveLink.Name = "saveLink";
+            this.saveLink.Size = new System.Drawing.Size(32, 14);
+            this.saveLink.TabIndex = 13;
+            this.saveLink.TabStop = true;
+            this.saveLink.Text = "Save";
+            this.saveLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.saveLink_LinkClicked);
             // 
-            // completeOrder
+            // cancelPurchaseLink
             // 
-            this.completeOrder.AutoSize = true;
-            this.completeOrder.BackColor = System.Drawing.Color.Transparent;
-            this.completeOrder.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.completeOrder.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.completeOrder.LinkColor = System.Drawing.Color.White;
-            this.completeOrder.Location = new System.Drawing.Point(424, 52);
-            this.completeOrder.Name = "completeOrder";
-            this.completeOrder.Size = new System.Drawing.Size(89, 14);
-            this.completeOrder.TabIndex = 11;
-            this.completeOrder.TabStop = true;
-            this.completeOrder.Text = "Cancel Purchase";
+            this.cancelPurchaseLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.cancelPurchaseLink.AutoSize = true;
+            this.cancelPurchaseLink.BackColor = System.Drawing.Color.Transparent;
+            this.cancelPurchaseLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelPurchaseLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.cancelPurchaseLink.LinkColor = System.Drawing.Color.White;
+            this.cancelPurchaseLink.Location = new System.Drawing.Point(424, 52);
+            this.cancelPurchaseLink.Name = "cancelPurchaseLink";
+            this.cancelPurchaseLink.Size = new System.Drawing.Size(89, 14);
+            this.cancelPurchaseLink.TabIndex = 11;
+            this.cancelPurchaseLink.TabStop = true;
+            this.cancelPurchaseLink.Text = "Cancel Purchase";
             // 
-            // shipOrderLabel
+            // approvePurchaseLink
             // 
-            this.shipOrderLabel.AutoSize = true;
-            this.shipOrderLabel.BackColor = System.Drawing.Color.Transparent;
-            this.shipOrderLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shipOrderLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.shipOrderLabel.LinkColor = System.Drawing.Color.White;
-            this.shipOrderLabel.Location = new System.Drawing.Point(301, 52);
-            this.shipOrderLabel.Name = "shipOrderLabel";
-            this.shipOrderLabel.Size = new System.Drawing.Size(98, 14);
-            this.shipOrderLabel.TabIndex = 10;
-            this.shipOrderLabel.TabStop = true;
-            this.shipOrderLabel.Text = "Approve Purchase";
+            this.approvePurchaseLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.approvePurchaseLink.AutoSize = true;
+            this.approvePurchaseLink.BackColor = System.Drawing.Color.Transparent;
+            this.approvePurchaseLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.approvePurchaseLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.approvePurchaseLink.LinkColor = System.Drawing.Color.White;
+            this.approvePurchaseLink.Location = new System.Drawing.Point(301, 52);
+            this.approvePurchaseLink.Name = "approvePurchaseLink";
+            this.approvePurchaseLink.Size = new System.Drawing.Size(98, 14);
+            this.approvePurchaseLink.TabIndex = 10;
+            this.approvePurchaseLink.TabStop = true;
+            this.approvePurchaseLink.Text = "Approve Purchase";
             // 
-            // createInvoiceLabel
+            // submitForApprovalLink
             // 
-            this.createInvoiceLabel.AutoSize = true;
-            this.createInvoiceLabel.BackColor = System.Drawing.Color.Transparent;
-            this.createInvoiceLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createInvoiceLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.createInvoiceLabel.LinkColor = System.Drawing.Color.White;
-            this.createInvoiceLabel.Location = new System.Drawing.Point(173, 52);
-            this.createInvoiceLabel.Name = "createInvoiceLabel";
-            this.createInvoiceLabel.Size = new System.Drawing.Size(104, 14);
-            this.createInvoiceLabel.TabIndex = 9;
-            this.createInvoiceLabel.TabStop = true;
-            this.createInvoiceLabel.Text = "Submit For Approval";
+            this.submitForApprovalLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.submitForApprovalLink.AutoSize = true;
+            this.submitForApprovalLink.BackColor = System.Drawing.Color.Transparent;
+            this.submitForApprovalLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitForApprovalLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.submitForApprovalLink.LinkColor = System.Drawing.Color.White;
+            this.submitForApprovalLink.Location = new System.Drawing.Point(173, 52);
+            this.submitForApprovalLink.Name = "submitForApprovalLink";
+            this.submitForApprovalLink.Size = new System.Drawing.Size(104, 14);
+            this.submitForApprovalLink.TabIndex = 9;
+            this.submitForApprovalLink.TabStop = true;
+            this.submitForApprovalLink.Text = "Submit For Approval";
             // 
             // statusLabel
             // 
@@ -359,125 +364,125 @@
             this.supplierLabel.TabIndex = 9;
             this.supplierLabel.Text = "Supplier";
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.orderDetailsTab);
-            this.tabControl1.Controls.Add(this.shippingInformationTab);
-            this.tabControl1.Controls.Add(this.paymentInformation);
-            this.tabControl1.Location = new System.Drawing.Point(12, 206);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(653, 274);
-            this.tabControl1.TabIndex = 12;
+            this.tabControl.Controls.Add(this.purchaseDetailsTab);
+            this.tabControl.Controls.Add(this.inventoryReceivingTab);
+            this.tabControl.Controls.Add(this.paymentInformation);
+            this.tabControl.Location = new System.Drawing.Point(12, 206);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(653, 274);
+            this.tabControl.TabIndex = 12;
             // 
-            // orderDetailsTab
+            // purchaseDetailsTab
             // 
-            this.orderDetailsTab.Controls.Add(this.dataGridView1);
-            this.orderDetailsTab.Location = new System.Drawing.Point(4, 22);
-            this.orderDetailsTab.Name = "orderDetailsTab";
-            this.orderDetailsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.orderDetailsTab.Size = new System.Drawing.Size(645, 248);
-            this.orderDetailsTab.TabIndex = 0;
-            this.orderDetailsTab.Text = "Order Details";
-            this.orderDetailsTab.UseVisualStyleBackColor = true;
+            this.purchaseDetailsTab.Controls.Add(this.purchaseDetailsView);
+            this.purchaseDetailsTab.Location = new System.Drawing.Point(4, 22);
+            this.purchaseDetailsTab.Name = "purchaseDetailsTab";
+            this.purchaseDetailsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.purchaseDetailsTab.Size = new System.Drawing.Size(645, 248);
+            this.purchaseDetailsTab.TabIndex = 0;
+            this.purchaseDetailsTab.Text = "Purchase Details";
+            this.purchaseDetailsTab.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // purchaseDetailsView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(645, 248);
-            this.dataGridView1.TabIndex = 0;
+            this.purchaseDetailsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.purchaseDetailsView.Location = new System.Drawing.Point(0, 0);
+            this.purchaseDetailsView.Name = "purchaseDetailsView";
+            this.purchaseDetailsView.Size = new System.Drawing.Size(645, 248);
+            this.purchaseDetailsView.TabIndex = 0;
             // 
-            // shippingInformationTab
+            // inventoryReceivingTab
             // 
-            this.shippingInformationTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.shippingInformationTab.Controls.Add(this.dataGridView2);
-            this.shippingInformationTab.Location = new System.Drawing.Point(4, 22);
-            this.shippingInformationTab.Name = "shippingInformationTab";
-            this.shippingInformationTab.Padding = new System.Windows.Forms.Padding(3);
-            this.shippingInformationTab.Size = new System.Drawing.Size(645, 248);
-            this.shippingInformationTab.TabIndex = 1;
-            this.shippingInformationTab.Text = "Shipping Information";
+            this.inventoryReceivingTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.inventoryReceivingTab.Controls.Add(this.inventoryReceivingView);
+            this.inventoryReceivingTab.Location = new System.Drawing.Point(4, 22);
+            this.inventoryReceivingTab.Name = "inventoryReceivingTab";
+            this.inventoryReceivingTab.Padding = new System.Windows.Forms.Padding(3);
+            this.inventoryReceivingTab.Size = new System.Drawing.Size(645, 248);
+            this.inventoryReceivingTab.TabIndex = 1;
+            this.inventoryReceivingTab.Text = "Inventory Receiving";
             // 
-            // dataGridView2
+            // inventoryReceivingView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(645, 248);
-            this.dataGridView2.TabIndex = 1;
+            this.inventoryReceivingView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inventoryReceivingView.Location = new System.Drawing.Point(0, 0);
+            this.inventoryReceivingView.Name = "inventoryReceivingView";
+            this.inventoryReceivingView.Size = new System.Drawing.Size(645, 248);
+            this.inventoryReceivingView.TabIndex = 1;
             // 
             // paymentInformation
             // 
             this.paymentInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.paymentInformation.Controls.Add(this.comboBox4);
-            this.paymentInformation.Controls.Add(this.textBox11);
-            this.paymentInformation.Controls.Add(this.textBox12);
-            this.paymentInformation.Controls.Add(this.label14);
-            this.paymentInformation.Controls.Add(this.label15);
-            this.paymentInformation.Controls.Add(this.label16);
+            this.paymentInformation.Controls.Add(this.paymentTypeBox);
+            this.paymentInformation.Controls.Add(this.orderNotesBox);
+            this.paymentInformation.Controls.Add(this.paymentDateBox);
+            this.paymentInformation.Controls.Add(this.orderNotesLabel);
+            this.paymentInformation.Controls.Add(this.paymentDateLabel);
+            this.paymentInformation.Controls.Add(this.paymentTypeLabel);
             this.paymentInformation.Location = new System.Drawing.Point(4, 22);
             this.paymentInformation.Name = "paymentInformation";
             this.paymentInformation.Size = new System.Drawing.Size(645, 248);
             this.paymentInformation.TabIndex = 2;
             this.paymentInformation.Text = "Payment Information";
             // 
-            // comboBox4
+            // paymentTypeBox
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(145, 17);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(153, 21);
-            this.comboBox4.TabIndex = 19;
+            this.paymentTypeBox.FormattingEnabled = true;
+            this.paymentTypeBox.Location = new System.Drawing.Point(145, 17);
+            this.paymentTypeBox.Name = "paymentTypeBox";
+            this.paymentTypeBox.Size = new System.Drawing.Size(153, 21);
+            this.paymentTypeBox.TabIndex = 19;
             // 
-            // textBox11
+            // orderNotesBox
             // 
-            this.textBox11.Location = new System.Drawing.Point(145, 71);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(473, 53);
-            this.textBox11.TabIndex = 21;
+            this.orderNotesBox.Location = new System.Drawing.Point(145, 71);
+            this.orderNotesBox.Multiline = true;
+            this.orderNotesBox.Name = "orderNotesBox";
+            this.orderNotesBox.Size = new System.Drawing.Size(473, 53);
+            this.orderNotesBox.TabIndex = 21;
             // 
-            // textBox12
+            // paymentDateBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(145, 45);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(153, 20);
-            this.textBox12.TabIndex = 20;
+            this.paymentDateBox.Location = new System.Drawing.Point(145, 45);
+            this.paymentDateBox.Name = "paymentDateBox";
+            this.paymentDateBox.Size = new System.Drawing.Size(153, 20);
+            this.paymentDateBox.TabIndex = 20;
             // 
-            // label14
+            // orderNotesLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.label14.Location = new System.Drawing.Point(11, 74);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 30);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Payment/Order\r\nNotes\r\n";
+            this.orderNotesLabel.AutoSize = true;
+            this.orderNotesLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderNotesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.orderNotesLabel.Location = new System.Drawing.Point(11, 74);
+            this.orderNotesLabel.Name = "orderNotesLabel";
+            this.orderNotesLabel.Size = new System.Drawing.Size(89, 30);
+            this.orderNotesLabel.TabIndex = 8;
+            this.orderNotesLabel.Text = "Payment/Order\r\nNotes\r\n";
             // 
-            // label15
+            // paymentDateLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.label15.Location = new System.Drawing.Point(11, 47);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 15);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "Payment Date";
+            this.paymentDateLabel.AutoSize = true;
+            this.paymentDateLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentDateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.paymentDateLabel.Location = new System.Drawing.Point(11, 47);
+            this.paymentDateLabel.Name = "paymentDateLabel";
+            this.paymentDateLabel.Size = new System.Drawing.Size(84, 15);
+            this.paymentDateLabel.TabIndex = 7;
+            this.paymentDateLabel.Text = "Payment Date";
             // 
-            // label16
+            // paymentTypeLabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.label16.Location = new System.Drawing.Point(11, 19);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(83, 15);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Payment Type";
+            this.paymentTypeLabel.AutoSize = true;
+            this.paymentTypeLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentTypeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.paymentTypeLabel.Location = new System.Drawing.Point(11, 19);
+            this.paymentTypeLabel.Name = "paymentTypeLabel";
+            this.paymentTypeLabel.Size = new System.Drawing.Size(83, 15);
+            this.paymentTypeLabel.TabIndex = 6;
+            this.paymentTypeLabel.Text = "Payment Type";
             // 
             // PurchaseOrderForm
             // 
@@ -485,7 +490,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(674, 492);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.homeHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -500,11 +505,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.orderDetailsTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.shippingInformationTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabControl.ResumeLayout(false);
+            this.purchaseDetailsTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.purchaseDetailsView)).EndInit();
+            this.inventoryReceivingTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryReceivingView)).EndInit();
             this.paymentInformation.ResumeLayout(false);
             this.paymentInformation.PerformLayout();
             this.ResumeLayout(false);
@@ -517,25 +522,25 @@
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.PictureBox headerImage;
         private System.Windows.Forms.Label headerTitle;
-        private System.Windows.Forms.LinkLabel closeLabel;
-        private System.Windows.Forms.LinkLabel completeOrder;
-        private System.Windows.Forms.LinkLabel shipOrderLabel;
-        private System.Windows.Forms.LinkLabel createInvoiceLabel;
+        private System.Windows.Forms.LinkLabel saveLink;
+        private System.Windows.Forms.LinkLabel cancelPurchaseLink;
+        private System.Windows.Forms.LinkLabel approvePurchaseLink;
+        private System.Windows.Forms.LinkLabel submitForApprovalLink;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage orderDetailsTab;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabPage shippingInformationTab;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage purchaseDetailsTab;
+        private System.Windows.Forms.DataGridView purchaseDetailsView;
+        private System.Windows.Forms.TabPage inventoryReceivingTab;
         private System.Windows.Forms.TabPage paymentInformation;
         private System.Windows.Forms.Label createdByLabel;
         private System.Windows.Forms.Label supplierLabel;
         private System.Windows.Forms.ComboBox supplierBox;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox paymentTypeBox;
+        private System.Windows.Forms.TextBox orderNotesBox;
+        private System.Windows.Forms.TextBox paymentDateBox;
+        private System.Windows.Forms.Label orderNotesLabel;
+        private System.Windows.Forms.Label paymentDateLabel;
+        private System.Windows.Forms.Label paymentTypeLabel;
         private System.Windows.Forms.TextBox approvedDateBox;
         private System.Windows.Forms.TextBox submittedDateBox;
         private System.Windows.Forms.TextBox creationDateBox;
@@ -549,6 +554,6 @@
         private System.Windows.Forms.ComboBox createdByBox;
         private System.Windows.Forms.Label approvedByLabel;
         private System.Windows.Forms.Label submittedByLabel;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView inventoryReceivingView;
     }
 }
