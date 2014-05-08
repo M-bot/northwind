@@ -59,15 +59,55 @@ namespace Northwind
         public void loadOrder(Int32 id)
         {
             if (!dataLoaded) loadData();
+
             if (id < 1)
             {
+                headerTitle.Text = "Purchase Order # (New)";
                 
+                supplierBox.SelectedIndex = -1;
+                createdByBox.SelectedIndex = -1;
+                submittedByBox.SelectedIndex = -1;
+                approvedByBox.SelectedIndex = -1;
+
+                expectedDateBox.Text = "";
+                creationDateBox.Text = "";
+                submittedDateBox.Text = "";
+                approvedDateBox.Text = "";
+
+                paymentDateBox.Text = "";
+                paymentTypeBox.SelectedIndex = -1;
+                orderNotesBox.Text = "";
 
                 newOrder = true;
             }
             else
             {
+                headerTitle.Text = "Purchase Order # (New)";
+                currentOrder = Home.NorthwindDatabase.Context
+                    .Sql("SELECT * FROM `purchase orders` WHERE `PurchaseOrderID`=" + id)
+                    .QuerySingle<PurchaseOrder>();
 
+                int x = -1;
+                foreach (Supplier s in supplierBox.Items)
+                {
+                    x++;
+                    if(s.ID == currentOrder.SupplierID)
+                        break;
+                }
+                supplierBox.SelectedIndex = x;
+
+                createdByBox.SelectedIndex = -1;
+                submittedByBox.SelectedIndex = -1;
+                approvedByBox.SelectedIndex = -1;
+
+                expectedDateBox.Text = currentOrder.ExpectedDate.ToString();
+                creationDateBox.Text = currentOrder.CreationDate.ToString();
+                submittedDateBox.Text = currentOrder.SubmittedDate.ToString();
+                approvedDateBox.Text = currentOrder.ApprovedDate.ToString();
+
+                paymentDateBox.Text = "";
+                paymentTypeBox.SelectedIndex = -1;
+                orderNotesBox.Text = "";
 
                 newOrder = false;
             }
