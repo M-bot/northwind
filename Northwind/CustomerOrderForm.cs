@@ -53,9 +53,15 @@ namespace Northwind
                 .QueryMany<ShipperCompany>())
                 .ToArray());
 
+            productColumn.Items.AddRange((Home.NorthwindDatabase.Context
+                .Sql("SELECT * FROM products ORDER BY ProductName ASC")
+                .QueryMany<Product>())
+                .ToArray());
+
             paymentTypeBox.Items.AddRange(new string[] { "Credit Card", "Check", "Cash" });
             dataLoaded = true;
         }
+
 
         public void loadOrder(Int32 id)
         {
@@ -145,19 +151,10 @@ namespace Northwind
                 paymentTypeBox.Text = currentOrder.PaymentType;
                 orderNotesBox.Text = currentOrder.Notes;
 
-                DataTable temp = Home.NorthwindDatabase.Context
+                DataTable orderDetailsData = Home.NorthwindDatabase.Context
                     .Sql("CALL `northwind`.`order details for #`(" + id + ");")
                     .QuerySingle<DataTable>(); ;
 
-                DataGridViewComboBoxColumn d = new DataGridViewComboBoxColumn();
-                d.Items.AddRange(Home.NorthwindDatabase.Context
-                    .Sql("SELECT * FROM products")
-                    .QueryMany<Product>()
-                    .ToArray());
-                d.Name = "Product";
-                d.DataSource = temp.Columns[0].Container;
-                orderDetailsView.Columns.Add(d);
-                orderDetailsView.DataSource = temp;
                 
 
                 newOrder = false;

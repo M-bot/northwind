@@ -41,6 +41,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.orderDetailsTab = new System.Windows.Forms.TabPage();
             this.orderDetailsView = new System.Windows.Forms.DataGridView();
+            this.productColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.quantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shippingInformationTab = new System.Windows.Forms.TabPage();
             this.clearAddressButton = new System.Windows.Forms.Button();
             this.addressPanel = new System.Windows.Forms.Panel();
@@ -209,11 +215,54 @@
             // 
             this.orderDetailsView.AllowUserToOrderColumns = true;
             this.orderDetailsView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.orderDetailsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orderDetailsView.Location = new System.Drawing.Point(0, 0);
+            this.orderDetailsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productColumn,
+            this.quantityColumn,
+            this.unitPriceColumn,
+            this.discountColumn,
+            this.totalPriceColumn,
+            this.statusColumn});
+            this.orderDetailsView.Location = new System.Drawing.Point(0, -1);
             this.orderDetailsView.Name = "orderDetailsView";
             this.orderDetailsView.Size = new System.Drawing.Size(717, 295);
             this.orderDetailsView.TabIndex = 0;
+            // 
+            // productColumn
+            // 
+            this.productColumn.HeaderText = "Product";
+            this.productColumn.Name = "productColumn";
+            this.productColumn.Width = 50;
+            // 
+            // quantityColumn
+            // 
+            this.quantityColumn.HeaderText = "Qty";
+            this.quantityColumn.Name = "quantityColumn";
+            this.quantityColumn.Width = 48;
+            // 
+            // unitPriceColumn
+            // 
+            this.unitPriceColumn.HeaderText = "Unit Price";
+            this.unitPriceColumn.Name = "unitPriceColumn";
+            this.unitPriceColumn.Width = 78;
+            // 
+            // discountColumn
+            // 
+            this.discountColumn.HeaderText = "Discount";
+            this.discountColumn.Name = "discountColumn";
+            this.discountColumn.Width = 74;
+            // 
+            // totalPriceColumn
+            // 
+            this.totalPriceColumn.HeaderText = "Total Price";
+            this.totalPriceColumn.Name = "totalPriceColumn";
+            this.totalPriceColumn.Width = 83;
+            // 
+            // statusColumn
+            // 
+            this.statusColumn.HeaderText = "Status";
+            this.statusColumn.Name = "statusColumn";
+            this.statusColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.statusColumn.Width = 62;
             // 
             // shippingInformationTab
             // 
@@ -729,5 +778,11 @@
         private System.Windows.Forms.Label orderNotesLabel;
         private System.Windows.Forms.Label paymentDateLabel;
         private System.Windows.Forms.Label paymentTypeLabel;
+        private System.Windows.Forms.DataGridViewComboBoxColumn productColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discountColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusColumn;
     }
 }
