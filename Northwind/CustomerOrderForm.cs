@@ -151,11 +151,15 @@ namespace Northwind
                 paymentTypeBox.Text = currentOrder.PaymentType;
                 orderNotesBox.Text = currentOrder.Notes;
 
+                orderDetailsView.AutoGenerateColumns = false;
                 DataTable orderDetailsData = Home.NorthwindDatabase.Context
                     .Sql("CALL `northwind`.`order details for #`(" + id + ");")
-                    .QuerySingle<DataTable>(); ;
-
-                
+                    .QuerySingle<DataTable>();
+                foreach(DataRow drow in orderDetailsData.Rows)
+                {
+                    int index = orderDetailsView.Rows.Add();
+                    
+                }
 
                 newOrder = false;
             }
@@ -213,6 +217,11 @@ namespace Northwind
                     .Where(x => x.OrderID)
                     .Execute();
             }
+        }
+
+        private void customerLabel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("" + orderDetailsView.Rows[0].Cells[0].Value);
         }
     }
 }

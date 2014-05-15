@@ -188,6 +188,7 @@
             this.customerLabel.Size = new System.Drawing.Size(62, 15);
             this.customerLabel.TabIndex = 9;
             this.customerLabel.Text = "Customer";
+            this.customerLabel.Click += new System.EventHandler(this.customerLabel_Click);
             // 
             // tabControl1
             // 
@@ -229,36 +230,42 @@
             // 
             // productColumn
             // 
+            this.productColumn.DataPropertyName = "ID";
             this.productColumn.HeaderText = "Product";
             this.productColumn.Name = "productColumn";
             this.productColumn.Width = 50;
             // 
             // quantityColumn
             // 
+            this.quantityColumn.DataPropertyName = "Qty";
             this.quantityColumn.HeaderText = "Qty";
             this.quantityColumn.Name = "quantityColumn";
             this.quantityColumn.Width = 48;
             // 
             // unitPriceColumn
             // 
+            this.unitPriceColumn.DataPropertyName = "Unit Price";
             this.unitPriceColumn.HeaderText = "Unit Price";
             this.unitPriceColumn.Name = "unitPriceColumn";
             this.unitPriceColumn.Width = 78;
             // 
             // discountColumn
             // 
+            this.discountColumn.DataPropertyName = "Discount";
             this.discountColumn.HeaderText = "Discount";
             this.discountColumn.Name = "discountColumn";
             this.discountColumn.Width = 74;
             // 
             // totalPriceColumn
             // 
+            this.totalPriceColumn.DataPropertyName = "Total Price";
             this.totalPriceColumn.HeaderText = "Total Price";
             this.totalPriceColumn.Name = "totalPriceColumn";
             this.totalPriceColumn.Width = 83;
             // 
             // statusColumn
             // 
+            this.statusColumn.DataPropertyName = "Status";
             this.statusColumn.HeaderText = "Status";
             this.statusColumn.Name = "statusColumn";
             this.statusColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
