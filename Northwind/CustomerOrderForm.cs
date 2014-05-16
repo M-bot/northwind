@@ -34,9 +34,17 @@ namespace Northwind
 
         private bool dataLoaded = false;
         private bool newOrder = false;
+        Product[] products;
 
         public void loadData()
         {
+            stateProvinceBox.DataSource = Home.NorthwindDatabase.Context
+                .Sql("SELECT * FROM `subregion` WHERE `RegionID` = 1 ORDER BY `Name` ASC;")
+                .QueryMany<Subregion>();
+
+            countryRegionBox.DataSource = Home.NorthwindDatabase.Context
+                .Sql("SELECT * FROM `region` ORDER BY `Name` ASC")
+                .QueryMany<Objects.Region>();
 
             customerBox.Items.AddRange((Home.NorthwindDatabase.Context
                 .Sql("SELECT * FROM customers ORDER BY Company ASC")
@@ -53,10 +61,11 @@ namespace Northwind
                 .QueryMany<ShipperCompany>())
                 .ToArray());
 
-            productColumn.Items.AddRange((Home.NorthwindDatabase.Context
+            products = (Home.NorthwindDatabase.Context
                 .Sql("SELECT * FROM products ORDER BY ProductName ASC")
                 .QueryMany<Product>())
-                .ToArray());
+                .ToArray();
+            productColumn.Items.AddRange(products);
 
             paymentTypeBox.Items.AddRange(new string[] { "Credit Card", "Check", "Cash" });
             dataLoaded = true;
@@ -99,39 +108,17 @@ namespace Northwind
                     .QuerySingle<Order>();
                 headerTitle.Text = "Order #" + id;
 
-                int x = -1;
-                foreach(Customer c in customerBox.Items)
-                {
-                    x++;
-                    if (c.ID == currentOrder.CustomerID)
-                    {
+                for (int x = 0; x < customerBox.Items.Count; x++)
+                    if (((Customer)customerBox.Items[x]).ID == currentOrder.CustomerID)
                         customerBox.SelectedIndex = x;
-                        break;
-                    }
-                }
-                
-                x = -1;
-                foreach (Employee e in salespersonBox.Items)
-                {
-                    x++;
-                    if (e.ID == currentOrder.EmployeeID)
-                    {
-                        salespersonBox.SelectedIndex = x;
-                        break;
-                    }
-                }
-                
 
-                x = -1;
-                foreach (Shipper s in shippingCompanyBox.Items)
-                {
-                    x++;
-                    if (s.ID == currentOrder.ShipperID)
-                    {
-                        shippingCompanyBox.SelectedIndex = x;
-                        break;
-                    }
-                }
+                for (int x = 0; x < salespersonBox.Items.Count; x++)
+                    if (((Employee)salespersonBox.Items[x]).ID == currentOrder.EmployeeID)
+                        salespersonBox.SelectedIndex = x;
+
+                for (int x = 0; x < shippingCompanyBox.Items.Count; x++)
+                    if (((Customer)customerBox.Items[x]).ID == currentOrder.CustomerID)
+                        customerBox.SelectedIndex = x;
                 
 
                 emailAddressBox.Text = ((Customer)customerBox.SelectedItem).EmailAddress;
@@ -151,14 +138,20 @@ namespace Northwind
                 paymentTypeBox.Text = currentOrder.PaymentType;
                 orderNotesBox.Text = currentOrder.Notes;
 
-                orderDetailsView.AutoGenerateColumns = false;
+                orderDetailsView.Rows.Clear();
                 DataTable orderDetailsData = Home.NorthwindDatabase.Context
                     .Sql("CALL `northwind`.`order details for #`(" + id + ");")
                     .QuerySingle<DataTable>();
                 foreach(DataRow drow in orderDetailsData.Rows)
                 {
-                    int index = orderDetailsView.Rows.Add();
-                    
+                    object[] array = new object[drow.ItemArray.Length-1];
+                    Array.Copy(drow.ItemArray,2,array,1,drow.ItemArray.Length-2);
+                    foreach(Product p in products)
+                    {
+                        if (p.ID == (Int32)drow.ItemArray[0])
+                            array[0] = p;
+                    }
+                    orderDetailsView.Rows.Add(array);
                 }
 
                 newOrder = false;
@@ -170,9 +163,7 @@ namespace Northwind
             shipAddressBox.Text = "";
             shipNameBox.Text = "";
             cityBox.Text = "";
-            stateProvinceBox.Text = "";
             zipPostalBox.Text = "";
-            countryRegionBox.Text = "";
         }
 
         private void saveLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -190,7 +181,7 @@ namespace Northwind
             currentOrder.PaymentType = paymentTypeBox.Text;
             currentOrder.ShipAddress = shipAddressBox.Text;
             currentOrder.ShipCity = cityBox.Text;
-            currentOrder.ShipCountry_Region = countryRegionBox.Text;
+            currentOrder.ShipCountry_Region = ((Objects.Region)countryRegionBox.SelectedItem).ID;
             currentOrder.ShipName = shipNameBox.Text;
             temp = new DateTime();
             DateTime.TryParse(shipDateBox.Text, out temp);
@@ -198,7 +189,7 @@ namespace Northwind
             Double temp2 = 0;
             Double.TryParse(shippingFeeBox.Text.Contains("$") ? shippingFeeBox.Text.Substring(1) : shippingFeeBox.Text, out temp2);
             currentOrder.ShippingFee = temp2;
-            currentOrder.ShipState_Province = stateProvinceBox.Text;
+            currentOrder.ShipState_Province = ((Northwind.Objects.Subregion)stateProvinceBox.SelectedItem).ID;
             currentOrder.ShipZIP_PostalCode = zipPostalBox.Text;
             if(shippingCompanyBox.SelectedItem != null)
                 currentOrder.ShipperID = ((Shipper)shippingCompanyBox.SelectedItem).ID;

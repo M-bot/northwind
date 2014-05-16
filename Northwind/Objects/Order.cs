@@ -17,9 +17,9 @@ namespace Northwind.Objects
         public string ShipName { get; set; }
         public string ShipAddress { get; set; }
         public string ShipCity { get; set; }
-        public string ShipState_Province { get; set; }
+        public int ShipState_Province { get; set; }
         public string ShipZIP_PostalCode { get; set; }
-        public string ShipCountry_Region { get; set; }
+        public int ShipCountry_Region { get; set; }
         public double ShippingFee { get; set; }
         public double Taxes { get; set; }
         public string PaymentType { get; set; }

@@ -41,18 +41,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.orderDetailsTab = new System.Windows.Forms.TabPage();
             this.orderDetailsView = new System.Windows.Forms.DataGridView();
-            this.productColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.quantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shippingInformationTab = new System.Windows.Forms.TabPage();
             this.clearAddressButton = new System.Windows.Forms.Button();
             this.addressPanel = new System.Windows.Forms.Panel();
-            this.countryRegionBox = new System.Windows.Forms.TextBox();
             this.zipPostalBox = new System.Windows.Forms.TextBox();
-            this.stateProvinceBox = new System.Windows.Forms.TextBox();
             this.cityBox = new System.Windows.Forms.TextBox();
             this.shipAddressBox = new System.Windows.Forms.TextBox();
             this.shipNameBox = new System.Windows.Forms.TextBox();
@@ -85,6 +77,14 @@
             this.statusLabel = new System.Windows.Forms.Label();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.headerTitle = new System.Windows.Forms.Label();
+            this.productColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.quantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateProvinceBox = new System.Windows.Forms.ComboBox();
+            this.countryRegionBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.orderDetailsTab.SuspendLayout();
@@ -228,49 +228,6 @@
             this.orderDetailsView.Size = new System.Drawing.Size(717, 295);
             this.orderDetailsView.TabIndex = 0;
             // 
-            // productColumn
-            // 
-            this.productColumn.DataPropertyName = "ID";
-            this.productColumn.HeaderText = "Product";
-            this.productColumn.Name = "productColumn";
-            this.productColumn.Width = 50;
-            // 
-            // quantityColumn
-            // 
-            this.quantityColumn.DataPropertyName = "Qty";
-            this.quantityColumn.HeaderText = "Qty";
-            this.quantityColumn.Name = "quantityColumn";
-            this.quantityColumn.Width = 48;
-            // 
-            // unitPriceColumn
-            // 
-            this.unitPriceColumn.DataPropertyName = "Unit Price";
-            this.unitPriceColumn.HeaderText = "Unit Price";
-            this.unitPriceColumn.Name = "unitPriceColumn";
-            this.unitPriceColumn.Width = 78;
-            // 
-            // discountColumn
-            // 
-            this.discountColumn.DataPropertyName = "Discount";
-            this.discountColumn.HeaderText = "Discount";
-            this.discountColumn.Name = "discountColumn";
-            this.discountColumn.Width = 74;
-            // 
-            // totalPriceColumn
-            // 
-            this.totalPriceColumn.DataPropertyName = "Total Price";
-            this.totalPriceColumn.HeaderText = "Total Price";
-            this.totalPriceColumn.Name = "totalPriceColumn";
-            this.totalPriceColumn.Width = 83;
-            // 
-            // statusColumn
-            // 
-            this.statusColumn.DataPropertyName = "Status";
-            this.statusColumn.HeaderText = "Status";
-            this.statusColumn.Name = "statusColumn";
-            this.statusColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.statusColumn.Width = 62;
-            // 
             // shippingInformationTab
             // 
             this.shippingInformationTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
@@ -300,8 +257,8 @@
             // 
             this.addressPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addressPanel.Controls.Add(this.countryRegionBox);
-            this.addressPanel.Controls.Add(this.zipPostalBox);
             this.addressPanel.Controls.Add(this.stateProvinceBox);
+            this.addressPanel.Controls.Add(this.zipPostalBox);
             this.addressPanel.Controls.Add(this.cityBox);
             this.addressPanel.Controls.Add(this.shipAddressBox);
             this.addressPanel.Controls.Add(this.shipNameBox);
@@ -316,26 +273,12 @@
             this.addressPanel.Size = new System.Drawing.Size(689, 202);
             this.addressPanel.TabIndex = 13;
             // 
-            // countryRegionBox
-            // 
-            this.countryRegionBox.Location = new System.Drawing.Point(162, 175);
-            this.countryRegionBox.Name = "countryRegionBox";
-            this.countryRegionBox.Size = new System.Drawing.Size(514, 20);
-            this.countryRegionBox.TabIndex = 22;
-            // 
             // zipPostalBox
             // 
             this.zipPostalBox.Location = new System.Drawing.Point(162, 149);
             this.zipPostalBox.Name = "zipPostalBox";
             this.zipPostalBox.Size = new System.Drawing.Size(514, 20);
             this.zipPostalBox.TabIndex = 21;
-            // 
-            // stateProvinceBox
-            // 
-            this.stateProvinceBox.Location = new System.Drawing.Point(162, 122);
-            this.stateProvinceBox.Name = "stateProvinceBox";
-            this.stateProvinceBox.Size = new System.Drawing.Size(514, 20);
-            this.stateProvinceBox.TabIndex = 20;
             // 
             // cityBox
             // 
@@ -697,6 +640,65 @@
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Order # (New)";
             // 
+            // productColumn
+            // 
+            this.productColumn.DataPropertyName = "Product";
+            this.productColumn.HeaderText = "Product";
+            this.productColumn.Name = "productColumn";
+            this.productColumn.Width = 50;
+            // 
+            // quantityColumn
+            // 
+            this.quantityColumn.DataPropertyName = "Qty";
+            this.quantityColumn.HeaderText = "Qty";
+            this.quantityColumn.Name = "quantityColumn";
+            this.quantityColumn.Width = 48;
+            // 
+            // unitPriceColumn
+            // 
+            this.unitPriceColumn.DataPropertyName = "Unit Price";
+            this.unitPriceColumn.HeaderText = "Unit Price";
+            this.unitPriceColumn.Name = "unitPriceColumn";
+            this.unitPriceColumn.Width = 78;
+            // 
+            // discountColumn
+            // 
+            this.discountColumn.DataPropertyName = "Discount";
+            this.discountColumn.HeaderText = "Discount";
+            this.discountColumn.Name = "discountColumn";
+            this.discountColumn.Width = 74;
+            // 
+            // totalPriceColumn
+            // 
+            this.totalPriceColumn.DataPropertyName = "Total Price";
+            this.totalPriceColumn.HeaderText = "Total Price";
+            this.totalPriceColumn.Name = "totalPriceColumn";
+            this.totalPriceColumn.Width = 83;
+            // 
+            // statusColumn
+            // 
+            this.statusColumn.DataPropertyName = "Status";
+            this.statusColumn.HeaderText = "Status";
+            this.statusColumn.Name = "statusColumn";
+            this.statusColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.statusColumn.Width = 62;
+            // 
+            // stateProvinceBox
+            // 
+            this.stateProvinceBox.FormattingEnabled = true;
+            this.stateProvinceBox.Location = new System.Drawing.Point(162, 120);
+            this.stateProvinceBox.Name = "stateProvinceBox";
+            this.stateProvinceBox.Size = new System.Drawing.Size(514, 21);
+            this.stateProvinceBox.TabIndex = 22;
+            // 
+            // countryRegionBox
+            // 
+            this.countryRegionBox.FormattingEnabled = true;
+            this.countryRegionBox.Location = new System.Drawing.Point(162, 172);
+            this.countryRegionBox.Name = "countryRegionBox";
+            this.countryRegionBox.Size = new System.Drawing.Size(514, 21);
+            this.countryRegionBox.TabIndex = 23;
+            // 
             // CustomerOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,9 +772,7 @@
         private System.Windows.Forms.TextBox emailAddressBox;
         private System.Windows.Forms.ComboBox salespersonBox;
         private System.Windows.Forms.ComboBox customerBox;
-        private System.Windows.Forms.TextBox countryRegionBox;
         private System.Windows.Forms.TextBox zipPostalBox;
-        private System.Windows.Forms.TextBox stateProvinceBox;
         private System.Windows.Forms.TextBox cityBox;
         private System.Windows.Forms.TextBox shipAddressBox;
         private System.Windows.Forms.TextBox shipNameBox;
@@ -791,5 +791,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn discountColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusColumn;
+        private System.Windows.Forms.ComboBox countryRegionBox;
+        private System.Windows.Forms.ComboBox stateProvinceBox;
     }
 }
