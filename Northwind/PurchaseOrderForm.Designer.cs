@@ -76,6 +76,10 @@
             this.orderNotesLabel = new System.Windows.Forms.Label();
             this.paymentDateLabel = new System.Windows.Forms.Label();
             this.paymentTypeLabel = new System.Windows.Forms.Label();
+            this.productColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateRecievedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addToInventory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.homeHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).BeginInit();
             this.panel1.SuspendLayout();
@@ -493,7 +497,13 @@
             // 
             // inventoryReceivingView
             // 
+            this.inventoryReceivingView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.inventoryReceivingView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inventoryReceivingView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productColumn2,
+            this.quantityColumn2,
+            this.dateRecievedColumn,
+            this.addToInventory});
             this.inventoryReceivingView.Location = new System.Drawing.Point(0, 0);
             this.inventoryReceivingView.Name = "inventoryReceivingView";
             this.inventoryReceivingView.Size = new System.Drawing.Size(645, 248);
@@ -569,6 +579,30 @@
             this.paymentTypeLabel.Size = new System.Drawing.Size(83, 15);
             this.paymentTypeLabel.TabIndex = 6;
             this.paymentTypeLabel.Text = "Payment Type";
+            // 
+            // productColumn2
+            // 
+            this.productColumn2.HeaderText = "Product";
+            this.productColumn2.Name = "productColumn2";
+            this.productColumn2.Width = 69;
+            // 
+            // quantityColumn2
+            // 
+            this.quantityColumn2.HeaderText = "Qty";
+            this.quantityColumn2.Name = "quantityColumn2";
+            this.quantityColumn2.Width = 48;
+            // 
+            // dateRecievedColumn
+            // 
+            this.dateRecievedColumn.HeaderText = "Date Recieved";
+            this.dateRecievedColumn.Name = "dateRecievedColumn";
+            this.dateRecievedColumn.Width = 104;
+            // 
+            // addToInventory
+            // 
+            this.addToInventory.HeaderText = "Add To Inventory";
+            this.addToInventory.Name = "addToInventory";
+            this.addToInventory.Width = 95;
             // 
             // PurchaseOrderForm
             // 
@@ -647,5 +681,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitCostColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateRecievedColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn addToInventory;
     }
 }

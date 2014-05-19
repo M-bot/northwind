@@ -166,7 +166,8 @@ namespace Northwind
 
         private void saveLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (newOrder) currentOrder = new PurchaseOrder();
+            if (newOrder)
+                currentOrder = new PurchaseOrder();
             DateTime temp = new DateTime();
             if(currentOrder.StatusID == 0)
             {

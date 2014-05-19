@@ -71,6 +71,7 @@
     <Compile Include="CheckBoxComboBox\PopupComboBox.designer.cs">
       <DependentUpon>PopupComboBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objects\InventoryTransaction.cs" />
     <Compile Include="Objects\OrderDetails.cs" />
     <Compile Include="Objects\PurchaseOrder.cs" />
     <Compile Include="CheckBoxComboBox\Selection Wrappers\ListSelectionWrapper.cs" />
