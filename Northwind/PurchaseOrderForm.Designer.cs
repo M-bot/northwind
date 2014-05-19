@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseOrderForm));
             this.homeHeader = new System.Windows.Forms.Panel();
+            this.statusText = new System.Windows.Forms.Label();
             this.saveLink = new System.Windows.Forms.LinkLabel();
             this.cancelPurchaseLink = new System.Windows.Forms.LinkLabel();
             this.approvePurchaseLink = new System.Windows.Forms.LinkLabel();
@@ -57,6 +62,11 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.purchaseDetailsTab = new System.Windows.Forms.TabPage();
             this.purchaseDetailsView = new System.Windows.Forms.DataGridView();
+            this.productColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.quantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventoryReceivingTab = new System.Windows.Forms.TabPage();
             this.inventoryReceivingView = new System.Windows.Forms.DataGridView();
             this.paymentInformation = new System.Windows.Forms.TabPage();
@@ -83,6 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
+            this.homeHeader.Controls.Add(this.statusText);
             this.homeHeader.Controls.Add(this.saveLink);
             this.homeHeader.Controls.Add(this.cancelPurchaseLink);
             this.homeHeader.Controls.Add(this.approvePurchaseLink);
@@ -94,6 +105,17 @@
             this.homeHeader.Name = "homeHeader";
             this.homeHeader.Size = new System.Drawing.Size(672, 72);
             this.homeHeader.TabIndex = 10;
+            // 
+            // statusText
+            // 
+            this.statusText.AutoSize = true;
+            this.statusText.BackColor = System.Drawing.Color.Transparent;
+            this.statusText.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusText.ForeColor = System.Drawing.Color.White;
+            this.statusText.Location = new System.Drawing.Point(70, 50);
+            this.statusText.Name = "statusText";
+            this.statusText.Size = new System.Drawing.Size(0, 16);
+            this.statusText.TabIndex = 14;
             // 
             // saveLink
             // 
@@ -125,6 +147,7 @@
             this.cancelPurchaseLink.TabIndex = 11;
             this.cancelPurchaseLink.TabStop = true;
             this.cancelPurchaseLink.Text = "Cancel Purchase";
+            this.cancelPurchaseLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.cancelPurchaseLink_LinkClicked);
             // 
             // approvePurchaseLink
             // 
@@ -140,6 +163,7 @@
             this.approvePurchaseLink.TabIndex = 10;
             this.approvePurchaseLink.TabStop = true;
             this.approvePurchaseLink.Text = "Approve Purchase";
+            this.approvePurchaseLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.approvePurchaseLink_LinkClicked);
             // 
             // submitForApprovalLink
             // 
@@ -155,6 +179,7 @@
             this.submitForApprovalLink.TabIndex = 9;
             this.submitForApprovalLink.TabStop = true;
             this.submitForApprovalLink.Text = "Submit For Approval";
+            this.submitForApprovalLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.submitForApprovalLink_LinkClicked);
             // 
             // statusLabel
             // 
@@ -220,6 +245,7 @@
             // 
             this.approvedDateBox.Location = new System.Drawing.Point(497, 85);
             this.approvedDateBox.Name = "approvedDateBox";
+            this.approvedDateBox.ReadOnly = true;
             this.approvedDateBox.Size = new System.Drawing.Size(139, 20);
             this.approvedDateBox.TabIndex = 29;
             // 
@@ -227,6 +253,7 @@
             // 
             this.submittedDateBox.Location = new System.Drawing.Point(497, 57);
             this.submittedDateBox.Name = "submittedDateBox";
+            this.submittedDateBox.ReadOnly = true;
             this.submittedDateBox.Size = new System.Drawing.Size(139, 20);
             this.submittedDateBox.TabIndex = 28;
             // 
@@ -234,6 +261,7 @@
             // 
             this.creationDateBox.Location = new System.Drawing.Point(497, 30);
             this.creationDateBox.Name = "creationDateBox";
+            this.creationDateBox.ReadOnly = true;
             this.creationDateBox.Size = new System.Drawing.Size(139, 20);
             this.creationDateBox.TabIndex = 27;
             // 
@@ -290,6 +318,7 @@
             // 
             // approvedByBox
             // 
+            this.approvedByBox.Enabled = false;
             this.approvedByBox.FormattingEnabled = true;
             this.approvedByBox.Location = new System.Drawing.Point(121, 85);
             this.approvedByBox.Name = "approvedByBox";
@@ -298,6 +327,7 @@
             // 
             // submittedByBox
             // 
+            this.submittedByBox.Enabled = false;
             this.submittedByBox.FormattingEnabled = true;
             this.submittedByBox.Location = new System.Drawing.Point(121, 57);
             this.submittedByBox.Name = "submittedByBox";
@@ -306,6 +336,7 @@
             // 
             // createdByBox
             // 
+            this.createdByBox.Enabled = false;
             this.createdByBox.FormattingEnabled = true;
             this.createdByBox.Location = new System.Drawing.Point(121, 30);
             this.createdByBox.Name = "createdByBox";
@@ -388,11 +419,66 @@
             // 
             // purchaseDetailsView
             // 
-            this.purchaseDetailsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.purchaseDetailsView.AllowUserToOrderColumns = true;
+            this.purchaseDetailsView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.purchaseDetailsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productColumn,
+            this.quantityColumn,
+            this.unitCostColumn,
+            this.totalPriceColumn,
+            this.ID});
             this.purchaseDetailsView.Location = new System.Drawing.Point(0, 0);
             this.purchaseDetailsView.Name = "purchaseDetailsView";
-            this.purchaseDetailsView.Size = new System.Drawing.Size(645, 248);
-            this.purchaseDetailsView.TabIndex = 0;
+            this.purchaseDetailsView.Size = new System.Drawing.Size(646, 248);
+            this.purchaseDetailsView.TabIndex = 1;
+            this.purchaseDetailsView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.purchaseDetailsView_CellEndEdit);
+            this.purchaseDetailsView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.purchaseDetailsView_DataError);
+            // 
+            // productColumn
+            // 
+            this.productColumn.DataPropertyName = "Product";
+            dataGridViewCellStyle1.NullValue = "None";
+            this.productColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.productColumn.HeaderText = "Product";
+            this.productColumn.Name = "productColumn";
+            this.productColumn.Width = 58;
+            // 
+            // quantityColumn
+            // 
+            this.quantityColumn.DataPropertyName = "Qty";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.quantityColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.quantityColumn.HeaderText = "Qty";
+            this.quantityColumn.Name = "quantityColumn";
+            this.quantityColumn.Width = 48;
+            // 
+            // unitCostColumn
+            // 
+            this.unitCostColumn.DataPropertyName = "Unit Cost";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.unitCostColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.unitCostColumn.HeaderText = "Unit Cost";
+            this.unitCostColumn.Name = "unitCostColumn";
+            this.unitCostColumn.Width = 75;
+            // 
+            // totalPriceColumn
+            // 
+            this.totalPriceColumn.DataPropertyName = "Total Price";
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.totalPriceColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.totalPriceColumn.HeaderText = "Total Price";
+            this.totalPriceColumn.Name = "totalPriceColumn";
+            this.totalPriceColumn.Width = 83;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 43;
             // 
             // inventoryReceivingTab
             // 
@@ -529,7 +615,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage purchaseDetailsTab;
-        private System.Windows.Forms.DataGridView purchaseDetailsView;
         private System.Windows.Forms.TabPage inventoryReceivingTab;
         private System.Windows.Forms.TabPage paymentInformation;
         private System.Windows.Forms.Label createdByLabel;
@@ -555,5 +640,12 @@
         private System.Windows.Forms.Label approvedByLabel;
         private System.Windows.Forms.Label submittedByLabel;
         private System.Windows.Forms.DataGridView inventoryReceivingView;
+        private System.Windows.Forms.DataGridView purchaseDetailsView;
+        private System.Windows.Forms.Label statusText;
+        private System.Windows.Forms.DataGridViewComboBoxColumn productColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitCostColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

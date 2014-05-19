@@ -71,8 +71,6 @@ namespace Northwind
                 .QueryMany<EmployeeLoginDialog>())
                 .ToArray());
 
-            //SELECT Inventory.* FROM Inventory WHERE (((Inventory.[Current Level])<[Reorder Level]));
-
             inventoryToReorderView.DataSource = NorthwindDatabase.Context
                 .Sql("SELECT * FROM `inventory to reorder`;")
                 .QuerySingle<DataTable>(); ;
@@ -186,7 +184,6 @@ namespace Northwind
                 MessageBox.Show("Product does not need restocking! Product is already at desired inventory level.");
         }
 
-
         private void newCustomerOrderLabel_Click(object sender, EventArgs e)
         {
             newCustomerOrderForm.loadOrder(0);
@@ -196,6 +193,7 @@ namespace Northwind
 
         private void newPurchaseOrderLabel_Click(object sender, EventArgs e)
         {
+            newPurchaseOrderForm.loadOrder(0);
             newPurchaseOrderForm.Show();
             newPurchaseOrderForm.Activate();
         }
@@ -334,6 +332,13 @@ namespace Northwind
             int id = 0;
             if (Int32.TryParse(purchaseOrderView.Rows[e.RowIndex].Cells["#"].Value.ToString(), out id))
                 newPurchaseOrderForm.loadOrder(id);
+            newPurchaseOrderForm.Show();
+            newPurchaseOrderForm.Activate();
+        }
+
+        private void addNewPurchaseLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newPurchaseOrderForm.loadOrder(0);
             newPurchaseOrderForm.Show();
             newPurchaseOrderForm.Activate();
         }

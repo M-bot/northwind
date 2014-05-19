@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.activeOrdersView = new System.Windows.Forms.DataGridView();
             this.inventoryToReorderView = new System.Windows.Forms.DataGridView();
@@ -49,20 +49,6 @@
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.homeTab = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.inventoryTab = new System.Windows.Forms.TabPage();
-            this.inventoryView = new System.Windows.Forms.DataGridView();
-            this.orderTab = new System.Windows.Forms.TabPage();
-            this.ordersView = new System.Windows.Forms.DataGridView();
-            this.customerTab = new System.Windows.Forms.TabPage();
-            this.customerView = new System.Windows.Forms.DataGridView();
-            this.purchaseOrderTab = new System.Windows.Forms.TabPage();
-            this.purchaseOrderView = new System.Windows.Forms.DataGridView();
-            this.supplierTab = new System.Windows.Forms.TabPage();
-            this.supplierView = new System.Windows.Forms.DataGridView();
-            this.employeeTab = new System.Windows.Forms.TabPage();
-            this.employeeView = new System.Windows.Forms.DataGridView();
-            this.shipperTab = new System.Windows.Forms.TabPage();
-            this.shipperView = new System.Windows.Forms.DataGridView();
             this.homeHeader = new System.Windows.Forms.Panel();
             this.newPurchaseOrderLabel = new System.Windows.Forms.LinkLabel();
             this.newCustomerOrderLabel = new System.Windows.Forms.LinkLabel();
@@ -70,77 +56,91 @@
             this.employeeBox = new System.Windows.Forms.ComboBox();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.headerTitle = new System.Windows.Forms.Label();
+            this.inventoryTab = new System.Windows.Forms.TabPage();
+            this.inventoryView = new System.Windows.Forms.DataGridView();
             this.inventoryHeader = new System.Windows.Forms.Panel();
             this.homeLabel = new System.Windows.Forms.LinkLabel();
             this.addProductLabel = new System.Windows.Forms.LinkLabel();
             this.inventoryImage = new System.Windows.Forms.PictureBox();
             this.inventoryLabel = new System.Windows.Forms.Label();
+            this.orderTab = new System.Windows.Forms.TabPage();
+            this.ordersView = new System.Windows.Forms.DataGridView();
             this.header2 = new System.Windows.Forms.Panel();
+            this.homeLink = new System.Windows.Forms.LinkLabel();
             this.viewInvoiceLink = new System.Windows.Forms.LinkLabel();
             this.addNewOrderLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.customerTab = new System.Windows.Forms.TabPage();
+            this.customerView = new System.Windows.Forms.DataGridView();
             this.header3 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.viewInvoiceLink2 = new System.Windows.Forms.LinkLabel();
             this.newCustomerLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.purchaseOrderTab = new System.Windows.Forms.TabPage();
+            this.purchaseOrderView = new System.Windows.Forms.DataGridView();
             this.header4 = new System.Windows.Forms.Panel();
-            this.asd = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.addNewPurchaseLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.supplierTab = new System.Windows.Forms.TabPage();
+            this.supplierView = new System.Windows.Forms.DataGridView();
             this.header5 = new System.Windows.Forms.Panel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.newSupplierLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.employeeTab = new System.Windows.Forms.TabPage();
+            this.employeeView = new System.Windows.Forms.DataGridView();
             this.header6 = new System.Windows.Forms.Panel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.newEmployeeLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.shipperTab = new System.Windows.Forms.TabPage();
+            this.shipperView = new System.Windows.Forms.DataGridView();
             this.header7 = new System.Windows.Forms.Panel();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.newShipperLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.homeLink = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.activeOrdersView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryToReorderView)).BeginInit();
             this.quickLinksPanel.SuspendLayout();
             this.mainTabControl.SuspendLayout();
             this.homeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.inventoryTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryView)).BeginInit();
-            this.orderTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersView)).BeginInit();
-            this.customerTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerView)).BeginInit();
-            this.purchaseOrderTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaseOrderView)).BeginInit();
-            this.supplierTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierView)).BeginInit();
-            this.employeeTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeView)).BeginInit();
-            this.shipperTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.shipperView)).BeginInit();
             this.homeHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).BeginInit();
+            this.inventoryTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryView)).BeginInit();
             this.inventoryHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryImage)).BeginInit();
+            this.orderTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersView)).BeginInit();
             this.header2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.customerTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerView)).BeginInit();
             this.header3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.purchaseOrderTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.purchaseOrderView)).BeginInit();
             this.header4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.supplierTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierView)).BeginInit();
             this.header5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.employeeTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeView)).BeginInit();
             this.header6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.shipperTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shipperView)).BeginInit();
             this.header7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
@@ -402,215 +402,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart1.BorderlineColor = System.Drawing.Color.Black;
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea6.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea6.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea6.AxisY.Title = "Total Revenue";
-            chartArea6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
+            chartArea2.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea2.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea2.AxisY.Title = "Total Revenue";
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Location = new System.Drawing.Point(12, 323);
             this.chart1.Name = "chart1";
-            series6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series6.ChartArea = "ChartArea1";
-            series6.IsVisibleInLegend = false;
-            series6.Name = "Series1";
-            dataPoint6.IsEmpty = true;
-            series6.Points.Add(dataPoint6);
-            this.chart1.Series.Add(series6);
+            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series2.ChartArea = "ChartArea1";
+            series2.IsVisibleInLegend = false;
+            series2.Name = "Series1";
+            dataPoint2.IsEmpty = true;
+            series2.Points.Add(dataPoint2);
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(1055, 259);
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
-            // 
-            // inventoryTab
-            // 
-            this.inventoryTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.inventoryTab.Controls.Add(this.inventoryView);
-            this.inventoryTab.Controls.Add(this.inventoryHeader);
-            this.inventoryTab.Location = new System.Drawing.Point(4, 22);
-            this.inventoryTab.Name = "inventoryTab";
-            this.inventoryTab.Size = new System.Drawing.Size(1074, 591);
-            this.inventoryTab.TabIndex = 2;
-            this.inventoryTab.Text = "Inventory List";
-            // 
-            // inventoryView
-            // 
-            this.inventoryView.AllowUserToAddRows = false;
-            this.inventoryView.AllowUserToDeleteRows = false;
-            this.inventoryView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.inventoryView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.inventoryView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inventoryView.Location = new System.Drawing.Point(0, 72);
-            this.inventoryView.Name = "inventoryView";
-            this.inventoryView.ReadOnly = true;
-            this.inventoryView.Size = new System.Drawing.Size(1074, 519);
-            this.inventoryView.TabIndex = 11;
-            this.inventoryView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryView_CellClick);
-            this.inventoryView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryView_CellDoubleClick);
-            this.inventoryView.VisibleChanged += new System.EventHandler(this.inventoryView_VisibleChanged);
-            // 
-            // orderTab
-            // 
-            this.orderTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.orderTab.Controls.Add(this.ordersView);
-            this.orderTab.Controls.Add(this.header2);
-            this.orderTab.Location = new System.Drawing.Point(4, 22);
-            this.orderTab.Name = "orderTab";
-            this.orderTab.Size = new System.Drawing.Size(1074, 591);
-            this.orderTab.TabIndex = 3;
-            this.orderTab.Text = "Order List";
-            // 
-            // ordersView
-            // 
-            this.ordersView.AllowUserToAddRows = false;
-            this.ordersView.AllowUserToDeleteRows = false;
-            this.ordersView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ordersView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.ordersView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ordersView.Location = new System.Drawing.Point(0, 72);
-            this.ordersView.Name = "ordersView";
-            this.ordersView.ReadOnly = true;
-            this.ordersView.Size = new System.Drawing.Size(1074, 519);
-            this.ordersView.TabIndex = 12;
-            this.ordersView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersView_CellDoubleClick);
-            // 
-            // customerTab
-            // 
-            this.customerTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.customerTab.Controls.Add(this.customerView);
-            this.customerTab.Controls.Add(this.header3);
-            this.customerTab.Location = new System.Drawing.Point(4, 22);
-            this.customerTab.Name = "customerTab";
-            this.customerTab.Size = new System.Drawing.Size(1074, 591);
-            this.customerTab.TabIndex = 4;
-            this.customerTab.Text = "Customer List";
-            // 
-            // customerView
-            // 
-            this.customerView.AllowUserToAddRows = false;
-            this.customerView.AllowUserToDeleteRows = false;
-            this.customerView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customerView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.customerView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerView.Location = new System.Drawing.Point(0, 72);
-            this.customerView.Name = "customerView";
-            this.customerView.ReadOnly = true;
-            this.customerView.Size = new System.Drawing.Size(1074, 519);
-            this.customerView.TabIndex = 14;
-            this.customerView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerView_CellDoubleClick);
-            // 
-            // purchaseOrderTab
-            // 
-            this.purchaseOrderTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.purchaseOrderTab.Controls.Add(this.purchaseOrderView);
-            this.purchaseOrderTab.Controls.Add(this.header4);
-            this.purchaseOrderTab.Location = new System.Drawing.Point(4, 22);
-            this.purchaseOrderTab.Name = "purchaseOrderTab";
-            this.purchaseOrderTab.Size = new System.Drawing.Size(1074, 591);
-            this.purchaseOrderTab.TabIndex = 5;
-            this.purchaseOrderTab.Text = "Purchase Order List";
-            // 
-            // purchaseOrderView
-            // 
-            this.purchaseOrderView.AllowUserToAddRows = false;
-            this.purchaseOrderView.AllowUserToDeleteRows = false;
-            this.purchaseOrderView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.purchaseOrderView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.purchaseOrderView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.purchaseOrderView.Location = new System.Drawing.Point(0, 72);
-            this.purchaseOrderView.Name = "purchaseOrderView";
-            this.purchaseOrderView.ReadOnly = true;
-            this.purchaseOrderView.Size = new System.Drawing.Size(1074, 519);
-            this.purchaseOrderView.TabIndex = 16;
-            this.purchaseOrderView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.purchaseOrderView_CellDoubleClick);
-            // 
-            // supplierTab
-            // 
-            this.supplierTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.supplierTab.Controls.Add(this.supplierView);
-            this.supplierTab.Controls.Add(this.header5);
-            this.supplierTab.Location = new System.Drawing.Point(4, 22);
-            this.supplierTab.Name = "supplierTab";
-            this.supplierTab.Size = new System.Drawing.Size(1074, 591);
-            this.supplierTab.TabIndex = 6;
-            this.supplierTab.Text = "Supplier List";
-            // 
-            // supplierView
-            // 
-            this.supplierView.AllowUserToAddRows = false;
-            this.supplierView.AllowUserToDeleteRows = false;
-            this.supplierView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.supplierView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.supplierView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.supplierView.Location = new System.Drawing.Point(0, 72);
-            this.supplierView.Name = "supplierView";
-            this.supplierView.ReadOnly = true;
-            this.supplierView.Size = new System.Drawing.Size(1074, 519);
-            this.supplierView.TabIndex = 16;
-            this.supplierView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.supplierView_CellDoubleClick);
-            // 
-            // employeeTab
-            // 
-            this.employeeTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.employeeTab.Controls.Add(this.employeeView);
-            this.employeeTab.Controls.Add(this.header6);
-            this.employeeTab.Location = new System.Drawing.Point(4, 22);
-            this.employeeTab.Name = "employeeTab";
-            this.employeeTab.Size = new System.Drawing.Size(1074, 591);
-            this.employeeTab.TabIndex = 7;
-            this.employeeTab.Text = "Employee List";
-            // 
-            // employeeView
-            // 
-            this.employeeView.AllowUserToAddRows = false;
-            this.employeeView.AllowUserToDeleteRows = false;
-            this.employeeView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.employeeView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.employeeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeView.Location = new System.Drawing.Point(0, 72);
-            this.employeeView.Name = "employeeView";
-            this.employeeView.ReadOnly = true;
-            this.employeeView.Size = new System.Drawing.Size(1074, 519);
-            this.employeeView.TabIndex = 16;
-            this.employeeView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeView_CellDoubleClick);
-            // 
-            // shipperTab
-            // 
-            this.shipperTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.shipperTab.Controls.Add(this.shipperView);
-            this.shipperTab.Controls.Add(this.header7);
-            this.shipperTab.Location = new System.Drawing.Point(4, 22);
-            this.shipperTab.Name = "shipperTab";
-            this.shipperTab.Size = new System.Drawing.Size(1074, 591);
-            this.shipperTab.TabIndex = 8;
-            this.shipperTab.Text = "Shipper List";
-            // 
-            // shipperView
-            // 
-            this.shipperView.AllowUserToAddRows = false;
-            this.shipperView.AllowUserToDeleteRows = false;
-            this.shipperView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.shipperView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.shipperView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.shipperView.Location = new System.Drawing.Point(0, 72);
-            this.shipperView.Name = "shipperView";
-            this.shipperView.ReadOnly = true;
-            this.shipperView.Size = new System.Drawing.Size(1074, 519);
-            this.shipperView.TabIndex = 16;
-            this.shipperView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.shipperView_CellDoubleClick);
             // 
             // homeHeader
             // 
@@ -711,6 +520,35 @@
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Northwind Traders";
             // 
+            // inventoryTab
+            // 
+            this.inventoryTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.inventoryTab.Controls.Add(this.inventoryView);
+            this.inventoryTab.Controls.Add(this.inventoryHeader);
+            this.inventoryTab.Location = new System.Drawing.Point(4, 22);
+            this.inventoryTab.Name = "inventoryTab";
+            this.inventoryTab.Size = new System.Drawing.Size(1074, 591);
+            this.inventoryTab.TabIndex = 2;
+            this.inventoryTab.Text = "Inventory List";
+            // 
+            // inventoryView
+            // 
+            this.inventoryView.AllowUserToAddRows = false;
+            this.inventoryView.AllowUserToDeleteRows = false;
+            this.inventoryView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inventoryView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.inventoryView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inventoryView.Location = new System.Drawing.Point(0, 72);
+            this.inventoryView.Name = "inventoryView";
+            this.inventoryView.ReadOnly = true;
+            this.inventoryView.Size = new System.Drawing.Size(1074, 519);
+            this.inventoryView.TabIndex = 11;
+            this.inventoryView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryView_CellClick);
+            this.inventoryView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryView_CellDoubleClick);
+            this.inventoryView.VisibleChanged += new System.EventHandler(this.inventoryView_VisibleChanged);
+            // 
             // inventoryHeader
             // 
             this.inventoryHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -786,6 +624,33 @@
             this.inventoryLabel.TabIndex = 7;
             this.inventoryLabel.Text = "Inventory List";
             // 
+            // orderTab
+            // 
+            this.orderTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.orderTab.Controls.Add(this.ordersView);
+            this.orderTab.Controls.Add(this.header2);
+            this.orderTab.Location = new System.Drawing.Point(4, 22);
+            this.orderTab.Name = "orderTab";
+            this.orderTab.Size = new System.Drawing.Size(1074, 591);
+            this.orderTab.TabIndex = 3;
+            this.orderTab.Text = "Order List";
+            // 
+            // ordersView
+            // 
+            this.ordersView.AllowUserToAddRows = false;
+            this.ordersView.AllowUserToDeleteRows = false;
+            this.ordersView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ordersView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.ordersView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ordersView.Location = new System.Drawing.Point(0, 72);
+            this.ordersView.Name = "ordersView";
+            this.ordersView.ReadOnly = true;
+            this.ordersView.Size = new System.Drawing.Size(1074, 519);
+            this.ordersView.TabIndex = 12;
+            this.ordersView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersView_CellDoubleClick);
+            // 
             // header2
             // 
             this.header2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -802,6 +667,24 @@
             this.header2.Name = "header2";
             this.header2.Size = new System.Drawing.Size(1082, 72);
             this.header2.TabIndex = 10;
+            // 
+            // homeLink
+            // 
+            this.homeLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.homeLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.homeLink.AutoSize = true;
+            this.homeLink.BackColor = System.Drawing.Color.Transparent;
+            this.homeLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeLink.ForeColor = System.Drawing.Color.White;
+            this.homeLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.homeLink.LinkColor = System.Drawing.Color.White;
+            this.homeLink.Location = new System.Drawing.Point(1016, 50);
+            this.homeLink.Name = "homeLink";
+            this.homeLink.Size = new System.Drawing.Size(34, 14);
+            this.homeLink.TabIndex = 11;
+            this.homeLink.TabStop = true;
+            this.homeLink.Text = "Home";
+            this.homeLink.Click += new System.EventHandler(this.homeLabel_Click);
             // 
             // viewInvoiceLink
             // 
@@ -860,6 +743,33 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Order List";
             // 
+            // customerTab
+            // 
+            this.customerTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.customerTab.Controls.Add(this.customerView);
+            this.customerTab.Controls.Add(this.header3);
+            this.customerTab.Location = new System.Drawing.Point(4, 22);
+            this.customerTab.Name = "customerTab";
+            this.customerTab.Size = new System.Drawing.Size(1074, 591);
+            this.customerTab.TabIndex = 4;
+            this.customerTab.Text = "Customer List";
+            // 
+            // customerView
+            // 
+            this.customerView.AllowUserToAddRows = false;
+            this.customerView.AllowUserToDeleteRows = false;
+            this.customerView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customerView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.customerView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerView.Location = new System.Drawing.Point(0, 72);
+            this.customerView.Name = "customerView";
+            this.customerView.ReadOnly = true;
+            this.customerView.Size = new System.Drawing.Size(1074, 519);
+            this.customerView.TabIndex = 14;
+            this.customerView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerView_CellDoubleClick);
+            // 
             // header3
             // 
             this.header3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -876,6 +786,24 @@
             this.header3.Name = "header3";
             this.header3.Size = new System.Drawing.Size(1082, 72);
             this.header3.TabIndex = 13;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.ForeColor = System.Drawing.Color.White;
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(1016, 50);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(34, 14);
+            this.linkLabel1.TabIndex = 12;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Home";
+            this.linkLabel1.Click += new System.EventHandler(this.homeLabel_Click);
             // 
             // viewInvoiceLink2
             // 
@@ -934,6 +862,33 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Customer List";
             // 
+            // purchaseOrderTab
+            // 
+            this.purchaseOrderTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.purchaseOrderTab.Controls.Add(this.purchaseOrderView);
+            this.purchaseOrderTab.Controls.Add(this.header4);
+            this.purchaseOrderTab.Location = new System.Drawing.Point(4, 22);
+            this.purchaseOrderTab.Name = "purchaseOrderTab";
+            this.purchaseOrderTab.Size = new System.Drawing.Size(1074, 591);
+            this.purchaseOrderTab.TabIndex = 5;
+            this.purchaseOrderTab.Text = "Purchase Order List";
+            // 
+            // purchaseOrderView
+            // 
+            this.purchaseOrderView.AllowUserToAddRows = false;
+            this.purchaseOrderView.AllowUserToDeleteRows = false;
+            this.purchaseOrderView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.purchaseOrderView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.purchaseOrderView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.purchaseOrderView.Location = new System.Drawing.Point(0, 72);
+            this.purchaseOrderView.Name = "purchaseOrderView";
+            this.purchaseOrderView.ReadOnly = true;
+            this.purchaseOrderView.Size = new System.Drawing.Size(1074, 519);
+            this.purchaseOrderView.TabIndex = 16;
+            this.purchaseOrderView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.purchaseOrderView_CellDoubleClick);
+            // 
             // header4
             // 
             this.header4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -942,7 +897,7 @@
             this.header4.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
             this.header4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.header4.Controls.Add(this.linkLabel2);
-            this.header4.Controls.Add(this.asd);
+            this.header4.Controls.Add(this.addNewPurchaseLink);
             this.header4.Controls.Add(this.pictureBox4);
             this.header4.Controls.Add(this.label10);
             this.header4.Location = new System.Drawing.Point(0, 0);
@@ -950,21 +905,40 @@
             this.header4.Size = new System.Drawing.Size(1082, 72);
             this.header4.TabIndex = 15;
             // 
-            // asd
+            // linkLabel2
             // 
-            this.asd.ActiveLinkColor = System.Drawing.Color.RosyBrown;
-            this.asd.AutoSize = true;
-            this.asd.BackColor = System.Drawing.Color.Transparent;
-            this.asd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.asd.ForeColor = System.Drawing.Color.White;
-            this.asd.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.asd.LinkColor = System.Drawing.Color.White;
-            this.asd.Location = new System.Drawing.Point(17, 50);
-            this.asd.Name = "asd";
-            this.asd.Size = new System.Drawing.Size(102, 14);
-            this.asd.TabIndex = 9;
-            this.asd.TabStop = true;
-            this.asd.Text = "Add New Purchase";
+            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.ForeColor = System.Drawing.Color.White;
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(1016, 50);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(34, 14);
+            this.linkLabel2.TabIndex = 12;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Home";
+            this.linkLabel2.Click += new System.EventHandler(this.homeLabel_Click);
+            // 
+            // addNewPurchaseLink
+            // 
+            this.addNewPurchaseLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.addNewPurchaseLink.AutoSize = true;
+            this.addNewPurchaseLink.BackColor = System.Drawing.Color.Transparent;
+            this.addNewPurchaseLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewPurchaseLink.ForeColor = System.Drawing.Color.White;
+            this.addNewPurchaseLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.addNewPurchaseLink.LinkColor = System.Drawing.Color.White;
+            this.addNewPurchaseLink.Location = new System.Drawing.Point(17, 50);
+            this.addNewPurchaseLink.Name = "addNewPurchaseLink";
+            this.addNewPurchaseLink.Size = new System.Drawing.Size(102, 14);
+            this.addNewPurchaseLink.TabIndex = 9;
+            this.addNewPurchaseLink.TabStop = true;
+            this.addNewPurchaseLink.Text = "Add New Purchase";
+            this.addNewPurchaseLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.addNewPurchaseLink_LinkClicked);
             // 
             // pictureBox4
             // 
@@ -990,6 +964,33 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "Purchase Orders";
             // 
+            // supplierTab
+            // 
+            this.supplierTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.supplierTab.Controls.Add(this.supplierView);
+            this.supplierTab.Controls.Add(this.header5);
+            this.supplierTab.Location = new System.Drawing.Point(4, 22);
+            this.supplierTab.Name = "supplierTab";
+            this.supplierTab.Size = new System.Drawing.Size(1074, 591);
+            this.supplierTab.TabIndex = 6;
+            this.supplierTab.Text = "Supplier List";
+            // 
+            // supplierView
+            // 
+            this.supplierView.AllowUserToAddRows = false;
+            this.supplierView.AllowUserToDeleteRows = false;
+            this.supplierView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.supplierView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.supplierView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.supplierView.Location = new System.Drawing.Point(0, 72);
+            this.supplierView.Name = "supplierView";
+            this.supplierView.ReadOnly = true;
+            this.supplierView.Size = new System.Drawing.Size(1074, 519);
+            this.supplierView.TabIndex = 16;
+            this.supplierView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.supplierView_CellDoubleClick);
+            // 
             // header5
             // 
             this.header5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1005,6 +1006,24 @@
             this.header5.Name = "header5";
             this.header5.Size = new System.Drawing.Size(1082, 72);
             this.header5.TabIndex = 15;
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.linkLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.ForeColor = System.Drawing.Color.White;
+            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel3.LinkColor = System.Drawing.Color.White;
+            this.linkLabel3.Location = new System.Drawing.Point(1016, 50);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(34, 14);
+            this.linkLabel3.TabIndex = 12;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Home";
+            this.linkLabel3.Click += new System.EventHandler(this.homeLabel_Click);
             // 
             // newSupplierLink
             // 
@@ -1047,6 +1066,33 @@
             this.label13.TabIndex = 7;
             this.label13.Text = "Supplier List";
             // 
+            // employeeTab
+            // 
+            this.employeeTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.employeeTab.Controls.Add(this.employeeView);
+            this.employeeTab.Controls.Add(this.header6);
+            this.employeeTab.Location = new System.Drawing.Point(4, 22);
+            this.employeeTab.Name = "employeeTab";
+            this.employeeTab.Size = new System.Drawing.Size(1074, 591);
+            this.employeeTab.TabIndex = 7;
+            this.employeeTab.Text = "Employee List";
+            // 
+            // employeeView
+            // 
+            this.employeeView.AllowUserToAddRows = false;
+            this.employeeView.AllowUserToDeleteRows = false;
+            this.employeeView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.employeeView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.employeeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeView.Location = new System.Drawing.Point(0, 72);
+            this.employeeView.Name = "employeeView";
+            this.employeeView.ReadOnly = true;
+            this.employeeView.Size = new System.Drawing.Size(1074, 519);
+            this.employeeView.TabIndex = 16;
+            this.employeeView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeView_CellDoubleClick);
+            // 
             // header6
             // 
             this.header6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1062,6 +1108,24 @@
             this.header6.Name = "header6";
             this.header6.Size = new System.Drawing.Size(1082, 72);
             this.header6.TabIndex = 15;
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.linkLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel4.ForeColor = System.Drawing.Color.White;
+            this.linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel4.LinkColor = System.Drawing.Color.White;
+            this.linkLabel4.Location = new System.Drawing.Point(1016, 50);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(34, 14);
+            this.linkLabel4.TabIndex = 12;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Home";
+            this.linkLabel4.Click += new System.EventHandler(this.homeLabel_Click);
             // 
             // newEmployeeLink
             // 
@@ -1104,6 +1168,33 @@
             this.label16.TabIndex = 7;
             this.label16.Text = "Employee List";
             // 
+            // shipperTab
+            // 
+            this.shipperTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.shipperTab.Controls.Add(this.shipperView);
+            this.shipperTab.Controls.Add(this.header7);
+            this.shipperTab.Location = new System.Drawing.Point(4, 22);
+            this.shipperTab.Name = "shipperTab";
+            this.shipperTab.Size = new System.Drawing.Size(1074, 591);
+            this.shipperTab.TabIndex = 8;
+            this.shipperTab.Text = "Shipper List";
+            // 
+            // shipperView
+            // 
+            this.shipperView.AllowUserToAddRows = false;
+            this.shipperView.AllowUserToDeleteRows = false;
+            this.shipperView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.shipperView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.shipperView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.shipperView.Location = new System.Drawing.Point(0, 72);
+            this.shipperView.Name = "shipperView";
+            this.shipperView.ReadOnly = true;
+            this.shipperView.Size = new System.Drawing.Size(1074, 519);
+            this.shipperView.TabIndex = 16;
+            this.shipperView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.shipperView_CellDoubleClick);
+            // 
             // header7
             // 
             this.header7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1119,6 +1210,24 @@
             this.header7.Name = "header7";
             this.header7.Size = new System.Drawing.Size(1082, 72);
             this.header7.TabIndex = 15;
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.linkLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel5.ForeColor = System.Drawing.Color.White;
+            this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel5.LinkColor = System.Drawing.Color.White;
+            this.linkLabel5.Location = new System.Drawing.Point(1016, 50);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(34, 14);
+            this.linkLabel5.TabIndex = 12;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "Home";
+            this.linkLabel5.Click += new System.EventHandler(this.homeLabel_Click);
             // 
             // newShipperLink
             // 
@@ -1161,114 +1270,6 @@
             this.label19.TabIndex = 7;
             this.label19.Text = "Shipper List";
             // 
-            // homeLink
-            // 
-            this.homeLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
-            this.homeLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.homeLink.AutoSize = true;
-            this.homeLink.BackColor = System.Drawing.Color.Transparent;
-            this.homeLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeLink.ForeColor = System.Drawing.Color.White;
-            this.homeLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.homeLink.LinkColor = System.Drawing.Color.White;
-            this.homeLink.Location = new System.Drawing.Point(1016, 50);
-            this.homeLink.Name = "homeLink";
-            this.homeLink.Size = new System.Drawing.Size(34, 14);
-            this.homeLink.TabIndex = 11;
-            this.homeLink.TabStop = true;
-            this.homeLink.Text = "Home";
-            this.homeLink.Click += new System.EventHandler(this.homeLabel_Click);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.RosyBrown;
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.ForeColor = System.Drawing.Color.White;
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(1016, 50);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(34, 14);
-            this.linkLabel1.TabIndex = 12;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Home";
-            this.linkLabel1.Click += new System.EventHandler(this.homeLabel_Click);
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.RosyBrown;
-            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.ForeColor = System.Drawing.Color.White;
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(1016, 50);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(34, 14);
-            this.linkLabel2.TabIndex = 12;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Home";
-            this.linkLabel2.Click += new System.EventHandler(this.homeLabel_Click);
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.ActiveLinkColor = System.Drawing.Color.RosyBrown;
-            this.linkLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.ForeColor = System.Drawing.Color.White;
-            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel3.LinkColor = System.Drawing.Color.White;
-            this.linkLabel3.Location = new System.Drawing.Point(1016, 50);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(34, 14);
-            this.linkLabel3.TabIndex = 12;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Home";
-            this.linkLabel3.Click += new System.EventHandler(this.homeLabel_Click);
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.ActiveLinkColor = System.Drawing.Color.RosyBrown;
-            this.linkLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.ForeColor = System.Drawing.Color.White;
-            this.linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel4.LinkColor = System.Drawing.Color.White;
-            this.linkLabel4.Location = new System.Drawing.Point(1016, 50);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(34, 14);
-            this.linkLabel4.TabIndex = 12;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Home";
-            this.linkLabel4.Click += new System.EventHandler(this.homeLabel_Click);
-            // 
-            // linkLabel5
-            // 
-            this.linkLabel5.ActiveLinkColor = System.Drawing.Color.RosyBrown;
-            this.linkLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel5.ForeColor = System.Drawing.Color.White;
-            this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel5.LinkColor = System.Drawing.Color.White;
-            this.linkLabel5.Location = new System.Drawing.Point(1016, 50);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(34, 14);
-            this.linkLabel5.TabIndex = 12;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Home";
-            this.linkLabel5.Click += new System.EventHandler(this.homeLabel_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1290,41 +1291,41 @@
             this.homeTab.ResumeLayout(false);
             this.homeTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.inventoryTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryView)).EndInit();
-            this.orderTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ordersView)).EndInit();
-            this.customerTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.customerView)).EndInit();
-            this.purchaseOrderTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.purchaseOrderView)).EndInit();
-            this.supplierTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.supplierView)).EndInit();
-            this.employeeTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.employeeView)).EndInit();
-            this.shipperTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.shipperView)).EndInit();
             this.homeHeader.ResumeLayout(false);
             this.homeHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).EndInit();
+            this.inventoryTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryView)).EndInit();
             this.inventoryHeader.ResumeLayout(false);
             this.inventoryHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryImage)).EndInit();
+            this.orderTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ordersView)).EndInit();
             this.header2.ResumeLayout(false);
             this.header2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.customerTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customerView)).EndInit();
             this.header3.ResumeLayout(false);
             this.header3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.purchaseOrderTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.purchaseOrderView)).EndInit();
             this.header4.ResumeLayout(false);
             this.header4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.supplierTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.supplierView)).EndInit();
             this.header5.ResumeLayout(false);
             this.header5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.employeeTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.employeeView)).EndInit();
             this.header6.ResumeLayout(false);
             this.header6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.shipperTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.shipperView)).EndInit();
             this.header7.ResumeLayout(false);
             this.header7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -1382,7 +1383,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView purchaseOrderView;
         private System.Windows.Forms.Panel header4;
-        private System.Windows.Forms.LinkLabel asd;
+        private System.Windows.Forms.LinkLabel addNewPurchaseLink;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView supplierView;

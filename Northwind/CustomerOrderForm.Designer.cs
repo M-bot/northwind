@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerOrderForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.orderDateBox = new System.Windows.Forms.TextBox();
@@ -44,6 +50,8 @@
             this.shippingInformationTab = new System.Windows.Forms.TabPage();
             this.clearAddressButton = new System.Windows.Forms.Button();
             this.addressPanel = new System.Windows.Forms.Panel();
+            this.countryRegionBox = new System.Windows.Forms.ComboBox();
+            this.stateProvinceBox = new System.Windows.Forms.ComboBox();
             this.zipPostalBox = new System.Windows.Forms.TextBox();
             this.cityBox = new System.Windows.Forms.TextBox();
             this.shipAddressBox = new System.Windows.Forms.TextBox();
@@ -77,14 +85,14 @@
             this.statusLabel = new System.Windows.Forms.Label();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.headerTitle = new System.Windows.Forms.Label();
+            this.statusText = new System.Windows.Forms.Label();
             this.productColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.quantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateProvinceBox = new System.Windows.Forms.ComboBox();
-            this.countryRegionBox = new System.Windows.Forms.ComboBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.orderDetailsTab.SuspendLayout();
@@ -222,11 +230,15 @@
             this.unitPriceColumn,
             this.discountColumn,
             this.totalPriceColumn,
-            this.statusColumn});
+            this.statusColumn,
+            this.ID});
             this.orderDetailsView.Location = new System.Drawing.Point(0, -1);
             this.orderDetailsView.Name = "orderDetailsView";
+            this.orderDetailsView.ReadOnly = true;
             this.orderDetailsView.Size = new System.Drawing.Size(717, 295);
             this.orderDetailsView.TabIndex = 0;
+            this.orderDetailsView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderDetailsView_CellEndEdit);
+            this.orderDetailsView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.orderDetailsView_DataError);
             // 
             // shippingInformationTab
             // 
@@ -272,6 +284,22 @@
             this.addressPanel.Name = "addressPanel";
             this.addressPanel.Size = new System.Drawing.Size(689, 202);
             this.addressPanel.TabIndex = 13;
+            // 
+            // countryRegionBox
+            // 
+            this.countryRegionBox.FormattingEnabled = true;
+            this.countryRegionBox.Location = new System.Drawing.Point(162, 172);
+            this.countryRegionBox.Name = "countryRegionBox";
+            this.countryRegionBox.Size = new System.Drawing.Size(514, 21);
+            this.countryRegionBox.TabIndex = 23;
+            // 
+            // stateProvinceBox
+            // 
+            this.stateProvinceBox.FormattingEnabled = true;
+            this.stateProvinceBox.Location = new System.Drawing.Point(162, 120);
+            this.stateProvinceBox.Name = "stateProvinceBox";
+            this.stateProvinceBox.Size = new System.Drawing.Size(514, 21);
+            this.stateProvinceBox.TabIndex = 22;
             // 
             // zipPostalBox
             // 
@@ -515,6 +543,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
+            this.homeHeader.Controls.Add(this.statusText);
             this.homeHeader.Controls.Add(this.saveLink);
             this.homeHeader.Controls.Add(this.deleteOrderLink);
             this.homeHeader.Controls.Add(this.completeOrderLink);
@@ -558,6 +587,7 @@
             this.deleteOrderLink.TabIndex = 12;
             this.deleteOrderLink.TabStop = true;
             this.deleteOrderLink.Text = "Delete Order";
+            this.deleteOrderLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.deleteOrderLink_LinkClicked);
             // 
             // completeOrderLink
             // 
@@ -573,6 +603,7 @@
             this.completeOrderLink.TabIndex = 11;
             this.completeOrderLink.TabStop = true;
             this.completeOrderLink.Text = "Complete Order";
+            this.completeOrderLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.completeOrderLink_LinkClicked);
             // 
             // shipOrderLink
             // 
@@ -588,6 +619,7 @@
             this.shipOrderLink.TabIndex = 10;
             this.shipOrderLink.TabStop = true;
             this.shipOrderLink.Text = "Ship Order";
+            this.shipOrderLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.shipOrderLink_LinkClicked);
             // 
             // createInvoiceLink
             // 
@@ -603,6 +635,7 @@
             this.createInvoiceLink.TabIndex = 9;
             this.createInvoiceLink.TabStop = true;
             this.createInvoiceLink.Text = "Create Invoice";
+            this.createInvoiceLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createInvoiceLink_LinkClicked);
             // 
             // statusLabel
             // 
@@ -640,64 +673,88 @@
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Order # (New)";
             // 
+            // statusText
+            // 
+            this.statusText.AutoSize = true;
+            this.statusText.BackColor = System.Drawing.Color.Transparent;
+            this.statusText.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusText.ForeColor = System.Drawing.Color.White;
+            this.statusText.Location = new System.Drawing.Point(74, 50);
+            this.statusText.Name = "statusText";
+            this.statusText.Size = new System.Drawing.Size(0, 16);
+            this.statusText.TabIndex = 15;
+            // 
             // productColumn
             // 
             this.productColumn.DataPropertyName = "Product";
+            dataGridViewCellStyle1.NullValue = "None";
+            this.productColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.productColumn.HeaderText = "Product";
             this.productColumn.Name = "productColumn";
-            this.productColumn.Width = 50;
+            this.productColumn.ReadOnly = true;
+            this.productColumn.Width = 58;
             // 
             // quantityColumn
             // 
             this.quantityColumn.DataPropertyName = "Qty";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.quantityColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.quantityColumn.HeaderText = "Qty";
             this.quantityColumn.Name = "quantityColumn";
+            this.quantityColumn.ReadOnly = true;
             this.quantityColumn.Width = 48;
             // 
             // unitPriceColumn
             // 
             this.unitPriceColumn.DataPropertyName = "Unit Price";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.unitPriceColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.unitPriceColumn.HeaderText = "Unit Price";
             this.unitPriceColumn.Name = "unitPriceColumn";
+            this.unitPriceColumn.ReadOnly = true;
             this.unitPriceColumn.Width = 78;
             // 
             // discountColumn
             // 
             this.discountColumn.DataPropertyName = "Discount";
+            dataGridViewCellStyle4.Format = "P2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.discountColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.discountColumn.HeaderText = "Discount";
             this.discountColumn.Name = "discountColumn";
+            this.discountColumn.ReadOnly = true;
             this.discountColumn.Width = 74;
             // 
             // totalPriceColumn
             // 
             this.totalPriceColumn.DataPropertyName = "Total Price";
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.totalPriceColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.totalPriceColumn.HeaderText = "Total Price";
             this.totalPriceColumn.Name = "totalPriceColumn";
+            this.totalPriceColumn.ReadOnly = true;
             this.totalPriceColumn.Width = 83;
             // 
             // statusColumn
             // 
             this.statusColumn.DataPropertyName = "Status";
+            dataGridViewCellStyle6.NullValue = "None";
+            this.statusColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.statusColumn.HeaderText = "Status";
             this.statusColumn.Name = "statusColumn";
+            this.statusColumn.ReadOnly = true;
             this.statusColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.statusColumn.Width = 62;
             // 
-            // stateProvinceBox
+            // ID
             // 
-            this.stateProvinceBox.FormattingEnabled = true;
-            this.stateProvinceBox.Location = new System.Drawing.Point(162, 120);
-            this.stateProvinceBox.Name = "stateProvinceBox";
-            this.stateProvinceBox.Size = new System.Drawing.Size(514, 21);
-            this.stateProvinceBox.TabIndex = 22;
-            // 
-            // countryRegionBox
-            // 
-            this.countryRegionBox.FormattingEnabled = true;
-            this.countryRegionBox.Location = new System.Drawing.Point(162, 172);
-            this.countryRegionBox.Name = "countryRegionBox";
-            this.countryRegionBox.Size = new System.Drawing.Size(514, 21);
-            this.countryRegionBox.TabIndex = 23;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 43;
             // 
             // CustomerOrderForm
             // 
@@ -715,7 +772,6 @@
             this.Name = "CustomerOrderForm";
             this.Text = "Order Details";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerOrderForm_FormClosing);
-            this.Load += new System.EventHandler(this.CustomerOrderForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -785,13 +841,15 @@
         private System.Windows.Forms.Label orderNotesLabel;
         private System.Windows.Forms.Label paymentDateLabel;
         private System.Windows.Forms.Label paymentTypeLabel;
+        private System.Windows.Forms.ComboBox countryRegionBox;
+        private System.Windows.Forms.ComboBox stateProvinceBox;
+        private System.Windows.Forms.Label statusText;
         private System.Windows.Forms.DataGridViewComboBoxColumn productColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn discountColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusColumn;
-        private System.Windows.Forms.ComboBox countryRegionBox;
-        private System.Windows.Forms.ComboBox stateProvinceBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }
