@@ -159,6 +159,22 @@ namespace Northwind
                     purchaseDetailsView.Rows.Add(array);
                 }
 
+                inventoryReceivingView.Rows.Clear();
+                DataTable inventoryReceivingData = Home.NorthwindDatabase.Context
+                    .Sql("CALL `northwind`.`inventory receiving for #`(" + id + ");")
+                    .QuerySingle<DataTable>();
+                foreach (DataRow drow in inventoryReceivingData.Rows)
+                {
+                    object[] array = new object[drow.ItemArray.Length];
+                    Array.Copy(drow.ItemArray, 0, array, 0, drow.ItemArray.Length);
+                    foreach (Product p in products)
+                    {
+                        if (p.ID == (Int32)drow.ItemArray[1])
+                            array[1] = p;
+                    }
+                    array[4] = (ulong)drow.ItemArray[4] == 1;
+                    inventoryReceivingView.Rows.Add(array);
+                }
 
                 newOrder = false;
             }
@@ -261,6 +277,18 @@ namespace Northwind
 
         }
 
+        private void inventoryReceivingView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable inventoryReceivingData = Home.NorthwindDatabase.Context
+                    .Sql("CALL `northwind`.`inventory receiving for #`(" + currentOrder.PurchaseOrderID + ");")
+                    .QuerySingle<DataTable>();
+            for (int x = 0; x < inventoryReceivingData.Rows.Count; x++)
+            {
+                if((ulong)inventoryReceivingData.Rows[x].ItemArray[4] == 0 && (bool)inventoryReceivingView[4,x].Value)
+                    MessageBox.Show("NEEDS UPDATE");
+            }
+        }
+
         private void submitForApprovalLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             PurchaseOrder order = Home.NorthwindDatabase.Context
@@ -301,5 +329,7 @@ namespace Northwind
         {
 
         }
+
+
     }
 }
