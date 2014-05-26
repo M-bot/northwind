@@ -48,6 +48,8 @@
             this.ClientSize = new System.Drawing.Size(739, 672);
             this.Controls.Add(this.reportBrowser);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(755, 10000);
+            this.MinimumSize = new System.Drawing.Size(755, 0);
             this.Name = "ReportViewer";
             this.Text = "Report";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportViewer_FormClosing);

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Northwind.Objects
 {
@@ -11,6 +13,11 @@ namespace Northwind.Objects
     {
         public InvoiceReport(Order o)
         {
+            if(o == null)
+            {
+                MessageBox.Show("Order does not exist!");
+                return;
+            }
             Subregion state1 = Home.NorthwindDatabase.Context
                 .Sql("SELECT * FROM `subregion` WHERE `ID`="+o.ShipState_Province)
                 .QuerySingle<Subregion>();
@@ -46,28 +53,31 @@ namespace Northwind.Objects
             DataRow totals = table.Rows[0];
 
             HTML = global::Northwind.Properties.Resources.InvoiceTemplate;
-            HTML = HTML.Replace("{{GeneratedDate}}", DateTime.Now.ToLongDateString());
-            HTML = HTML.Replace("{{ShipTo.FullName}}", o.ShipName);
-            HTML = HTML.Replace("{{ShipTo.Address}}", o.ShipAddress);
-            HTML = HTML.Replace("{{ShipTo.City}}",  o.ShipCity);
-            HTML = HTML.Replace("{{ShipTo.State}}",  state1.Name);
-            HTML = HTML.Replace("{{ShipTo.ZIP}}",  o.ShipZIP_PostalCode);
-            HTML = HTML.Replace("{{ShipTo.Country}}",  country1.Name);
-            HTML = HTML.Replace("{{Invoice#}}",  o.OrderID.ToString());
-            HTML = HTML.Replace("{{Order.Date}}",  o.OrderDate.ToShortDateString());
-            HTML = HTML.Replace("{{Order.Shipped}}",  o.ShippedDate.ToShortDateString());
-            HTML = HTML.Replace("{{Customer.Company}}",  cust.Company);
-            HTML = HTML.Replace("{{Customer.Address}}",  cust.Address);
-            HTML = HTML.Replace("{{Customer.City}}",  cust.City);
-            HTML = HTML.Replace("{{Customer.State}}",  state2.Name);
-            HTML = HTML.Replace("{{Customer.ZIP}}",  cust.ZIP_PostalCode);
-            HTML = HTML.Replace("{{Customer.Country}}", country2.Name);
-            HTML = HTML.Replace("{{Salesperson}}",  emp.FirstName + " " + emp.LastName);
-            HTML = HTML.Replace("{{Customer}}",  cust.Company);
-            HTML = HTML.Replace("{{Ship Via}}",  ship.Company);
-            HTML = HTML.Replace("{{Subtotal}}", ((double)totals["Sub Total"]).ToString("C"));
-            HTML = HTML.Replace("{{Freight}}", ((double)totals["ShippingFee"]).ToString("C"));
-            HTML = HTML.Replace("{{Total}}", ((double)totals["Order Total"]).ToString("C"));
+            replace("GeneratedDate", DateTime.Now.ToLongDateString());
+            replace("ShipTo.FullName", o.ShipName);
+            replace("ShipTo.Address", o.ShipAddress);
+            replace("ShipTo.City",  o.ShipCity);
+            if(state1 != null) replace("ShipTo.State",  state1.Name);
+            replace("ShipTo.ZIP",  o.ShipZIP_PostalCode);
+            if(country1 != null) replace("ShipTo.Country",  country1.Name);
+            replace("Invoice#",  o.OrderID.ToString());
+            replace("Order.Date",  o.OrderDate.ToShortDateString());
+            replace("Order.Shipped",  o.ShippedDate.ToShortDateString());
+            if (cust != null)
+            {
+                replace("Customer.Company", cust.Company);
+                replace("Customer.Address", cust.Address);
+                replace("Customer.ZIP", cust.ZIP_PostalCode);
+                replace("Customer.City", cust.City);
+                replace("Customer", cust.Company);
+            }
+            if(state2 != null) replace("Customer.State",  state2.Name);
+            if(country2 != null) replace("Customer.Country", country2.Name);
+            if(emp != null) replace("Salesperson",  emp.FirstName + " " + emp.LastName);
+            if(ship != null) replace("Ship Via",  ship.Company);
+            replace("Subtotal", ((double)totals["Sub Total"]).ToString("C"));
+            replace("Freight", ((double)totals["ShippingFee"]).ToString("C"));
+            replace("Total", ((double)totals["Order Total"]).ToString("C"));
 
             DataTable products = Home.NorthwindDatabase.Context
                 .Sql("CALL `northwind`.`order details for #`(" + o.OrderID + ");")
@@ -86,7 +96,8 @@ namespace Northwind.Objects
                 result += "</tr>";
             }
 
-            HTML = HTML.Replace("{{View}}",result);
+            replace("View",result);
+            HTML = Regex.Replace(HTML, "{{.+}}", "");
         }
     }
 }

@@ -190,6 +190,7 @@ namespace Northwind
                         if (p.ID == (Int32)drow.ItemArray[0])
                             array[0] = p.ID;
                     }
+
                     orderDetailsView.Rows.Add(array);
                 }
                 newOrder = false;
@@ -296,7 +297,7 @@ namespace Northwind
                 od.ProductID = p.ID;
                 od.Quantity = qty;
                 od.UnitPrice = p.ListPrice;
-                od.Discount = discount;
+                od.Discount = discount/100;
                 od.StatusID = od.StatusID < 2 ? qty > 0 ? 1 : 0 : od.StatusID;
 
                 int detail = Home.NorthwindDatabase.Context.Insert<OrderDetails>("`order details`", od)

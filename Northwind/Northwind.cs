@@ -349,10 +349,18 @@ namespace Northwind
 
         private void viewInvoiceLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //if(orderView.SelectedRows.)
-            newReportViewer.loadReport(new InvoiceReport(Home.NorthwindDatabase.Context
-                    .Sql("SELECT * FROM orders WHERE OrderID = " + ordersView.SelectedRows[0].Cells[0])
+            if (ordersView.SelectedCells.Count > 0)
+            {
+                newReportViewer.loadReport(new InvoiceReport(Home.NorthwindDatabase.Context
+                    .Sql("SELECT * FROM orders WHERE OrderID = " + ordersView[0,ordersView.SelectedCells[0].RowIndex].Value)
                     .QuerySingle<Order>()));
+            }
+            else
+            {
+                newReportViewer.loadReport(new InvoiceReport(Home.NorthwindDatabase.Context
+                    .Sql("SELECT TOP 1 * FROM orders")
+                    .QuerySingle<Order>()));
+            }
             newReportViewer.Show();
             newReportViewer.Activate();
         }

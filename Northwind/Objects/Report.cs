@@ -22,5 +22,11 @@ namespace Northwind.Objects
         {
             html = "";
         }
+
+        public void replace(string key, object o)
+        {
+            if (o == null) return;
+            HTML = HTML.Replace("{{"+key+"}}", o.ToString());
+        }
     }
 }
