@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.activeOrdersView = new System.Windows.Forms.DataGridView();
             this.inventoryToReorderView = new System.Windows.Forms.DataGridView();
@@ -402,21 +402,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart1.BorderlineColor = System.Drawing.Color.Black;
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea2.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea2.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea2.AxisY.Title = "Total Revenue";
-            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea1.AxisY.Title = "Total Revenue";
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(12, 323);
             this.chart1.Name = "chart1";
-            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series2.ChartArea = "ChartArea1";
-            series2.IsVisibleInLegend = false;
-            series2.Name = "Series1";
-            dataPoint2.IsEmpty = true;
-            series2.Points.Add(dataPoint2);
-            this.chart1.Series.Add(series2);
+            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series1.ChartArea = "ChartArea1";
+            series1.IsVisibleInLegend = false;
+            series1.Name = "Series1";
+            dataPoint1.IsEmpty = true;
+            series1.Points.Add(dataPoint1);
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(1055, 259);
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
@@ -701,6 +701,7 @@
             this.viewInvoiceLink.TabIndex = 10;
             this.viewInvoiceLink.TabStop = true;
             this.viewInvoiceLink.Text = "View Invoice";
+            this.viewInvoiceLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.viewInvoiceLink_LinkClicked);
             // 
             // addNewOrderLink
             // 

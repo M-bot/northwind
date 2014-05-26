@@ -72,6 +72,7 @@
       <DependentUpon>PopupComboBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\InventoryTransaction.cs" />
+    <Compile Include="Objects\InvoiceReport.cs" />
     <Compile Include="Objects\OrderDetails.cs" />
     <Compile Include="Objects\PurchaseOrder.cs" />
     <Compile Include="CheckBoxComboBox\Selection Wrappers\ListSelectionWrapper.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Objects\Product.cs" />
     <Compile Include="Objects\PurchaseOrderDetails.cs" />
     <Compile Include="Objects\Region.cs" />
+    <Compile Include="Objects\Report.cs" />
     <Compile Include="Objects\Shipper.cs" />
     <Compile Include="Objects\Status.cs" />
     <Compile Include="Objects\Subregion.cs" />
@@ -148,6 +150,12 @@
     </Compile>
     <Compile Include="PurchaseOrderForm.Designer.cs">
       <DependentUpon>PurchaseOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="ShipperFormDetails.cs">
       <SubType>Form</SubType>
@@ -193,6 +201,9 @@
     <EmbeddedResource Include="PurchaseOrderForm.resx">
       <DependentUpon>PurchaseOrderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShipperFormDetails.resx">
       <DependentUpon>ShipperFormDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,7 +227,10 @@
     <None Include="res\Logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\InvoiceTemplate.bmp" />
     <Content Include="res\InventoryHeader.png" />
+    <None Include="res\invoiceTemplateDemo.html" />
+    <None Include="res\invoiceTemplate.html" />
     <Content Include="res\PurchaseOrdersList.png" />
     <Content Include="res\StartupHeader.png" />
     <None Include="res\formLoginDialog1.png" />

@@ -87,13 +87,19 @@ namespace Northwind
                 faxNumberBox.Text = currentSupplier.FaxNumber;
                 streetBox.Text = currentSupplier.Address;
                 cityBox.Text = currentSupplier.City;
-                stateProvinceBox.Text = currentSupplier.State_Province;
                 zipPostalCodeBox.Text = currentSupplier.ZIP_PostalCode;
-                countryRegionBox.Text = currentSupplier.Country_Region;
                 emailBox.Text = currentSupplier.EmailAddress;
                 webPageBox.Text = currentSupplier.WebPage;
                 notesBox.Text = currentSupplier.Notes;
                 SupplierOrders.DataSource = null;
+
+                for (int x = 0; x < stateProvinceBox.Items.Count; x++)
+                    if (((Subregion)stateProvinceBox.Items[x]).ID == currentSupplier.State_Province)
+                        stateProvinceBox.SelectedIndex = x;
+
+                for (int x = 0; x < countryRegionBox.Items.Count; x++)
+                    if (((Objects.Region)countryRegionBox.Items[x]).ID == currentSupplier.Country_Region)
+                        countryRegionBox.SelectedIndex = x;
 
                 newSupplier = false;
             }
@@ -106,7 +112,8 @@ namespace Northwind
             currentSupplier.BusinessPhone = businessPhoneBox.Text;
             currentSupplier.City = cityBox.Text;
             currentSupplier.Company = companyBox.Text;
-            currentSupplier.Country_Region = countryRegionBox.Text;
+            if (countryRegionBox.SelectedItem != null)
+                currentSupplier.Country_Region = ((Objects.Region)countryRegionBox.SelectedItem).ID;
             currentSupplier.EmailAddress = emailBox.Text;
             currentSupplier.FaxNumber = faxNumberBox.Text;
             currentSupplier.FirstName = firstNameBox.Text;
@@ -114,7 +121,8 @@ namespace Northwind
             currentSupplier.LastName = lastNameBox.Text;
             currentSupplier.MobilePhone = mobilePhoneBox.Text;
             currentSupplier.Notes = notesBox.Text;
-            currentSupplier.State_Province = stateProvinceBox.Text;
+            if (stateProvinceBox.SelectedItem != null)
+                currentSupplier.State_Province = ((Northwind.Objects.Subregion)stateProvinceBox.SelectedItem).ID;
             currentSupplier.WebPage = webPageBox.Text;
             currentSupplier.ZIP_PostalCode = zipPostalCodeBox.Text;
 

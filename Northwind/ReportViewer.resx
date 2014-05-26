@@ -117,65 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LogoLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formLoginDialog2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OrderListIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formOrderList2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EmployeeDetailsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formEmployeeDetails2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PurchaseOrderDetailsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formPurchaseOrderDetails2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PortraitPlaceholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formCustomerDetailsAddFurigana3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SupplierDetailsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formSupplierDetails2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CustomerDetailsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formCustomerDetailsAddFurigana2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AttachmentPlaceholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formProductDetails3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OrderDetailsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formOrderDetails2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ProductDetailsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formInventoryList2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RefreshIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formHome3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LoginDialogBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formLoginDialog1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formHome2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ShipperDetailsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\formShipperDetails3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GenericHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\genericheader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InventoryHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\inventoryheader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StartupHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\startupheader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PurchaseOrdersList" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\purchaseorderslist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InvoiceTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\invoiceTemplate.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="InvoiceTemplateDemo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\invoiceTemplateDemo.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8Bt6KT/2NJNf9jSTX/Y0k1/2NJNf9jSTX/Y0k1/2NJNf9jSTX/Y0k1/2NJNf9jSTX/Y0k1/2NJ
+        Nf9jSTX/Y0k1/7eik//+/v7/6eTg/+nk4P/o39r/6NvU/+nYzv/o1Mb/6NC//+jNu//oyLX/6Mi1/+jI
+        tf/oyLX/3sOz/2NJNf+3opP//v7+///8+f//+PT///bw///z6///7+f//u3i//7p3f/+59n//uTU//7h
+        0P/938z//d/M/97Ds/9jSTX/t6KT//7+/v///Pn///r3///38///9O////Lr//7v5v+tiHT/lHZk/5By
+        Yf+Kbl3/hGpa//7hz//ew7P/Y0k1/7eik//+/v7//v7+///8+f/++fb//vfy//717v/+8ur/tox4/+PY
+        0f/r4tv/8+zm/4VrW//949P/3sOz/2NJNf+6pZb//////7yRfP+8kXz/sYp2/6GAbf+RdWT///Tt/7yR
+        fP+yinb/ooBt/5J2Zf+Gbl7//uXW/9/Iuv9jSTX/uqWW///////+/v7///37///7+f//+fX//vbx///0
+        7f/+8en//u7k//7r3//+6Nv//uXW//7l1v/fyLr/Y0k1/7qllv///////v7+///9+///+/n///n1//72
+        8f//9O3/rYdz/5R2ZP+QcmH/im5d/4RqWv/+5db/38i6/2NJNf++qZr///////7+/v///v7///37///7
+        +P//+PX//vbw/7aNeP/j2dD/6+Lb//Ls5v+Fa1v//efa/93OxP9jSTX/w66e//////+8kXz/vJF8/7CK
+        dv+gfmz/j3Ri//749P+8kXz/sYp2/6KBbv+SdmT/hW5d//7p3v/dzsT/Y0k1/8iyo////////v7+////
+        //////////39///7+v//+ff///jz//717//+8ur//vDm//7s4v/+7OL/3c7E/2NJNf/Mtqf/////////
+        /////////////////////v7///79///8+///+/n///n2//738v/+9O3//vPs//zw6f9jSTX/////AX5K
+        vv9+Sr7/fEm7/3tIuf93Rbb/dUSy/3JBrv9uP6n/bD2l/2g6of9lOJ3/YzaY/2M2mP9gNJX/XTOS////
+        /wHFs9//xbPf/8Kw3v+/q9z/u6fb/7eh2P+ymtf/rpPV/6mN0v+kh9H/oIDO/5x8zP+cfMz/mXfL/14z
+        kv////8BqozW/6qM1v+nh9T/ooHR/517zv+XdMv/km3H/4xnxP+GYMD/gVm9/3xTuf94Tbf/eE23/3RI
+        tf9xRbP/AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
   </data>
 </root>

@@ -19,9 +19,9 @@ namespace Northwind.Objects
         public string FaxNumber { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
-        public string State_Province { get; set; }
+        public int State_Province { get; set; }
         public string ZIP_PostalCode { get; set; }
-        public string Country_Region { get; set; }
+        public int Country_Region { get; set; }
         public string WebPage { get; set; }
         public string Notes { get; set; }
         public string Attachments { get; set; }

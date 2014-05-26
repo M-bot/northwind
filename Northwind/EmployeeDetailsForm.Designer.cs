@@ -36,9 +36,7 @@
             this.streetBox = new System.Windows.Forms.TextBox();
             this.webPageBox = new System.Windows.Forms.TextBox();
             this.emailBox = new System.Windows.Forms.TextBox();
-            this.countryRegionBox = new System.Windows.Forms.TextBox();
             this.zipPostalCodeBox = new System.Windows.Forms.TextBox();
-            this.stateProvinceBox = new System.Windows.Forms.TextBox();
             this.cityBox = new System.Windows.Forms.TextBox();
             this.faxNumberBox = new System.Windows.Forms.TextBox();
             this.mobilePhoneBox = new System.Windows.Forms.TextBox();
@@ -75,6 +73,8 @@
             this.goToLabel = new System.Windows.Forms.Label();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.headerTitle = new System.Windows.Forms.Label();
+            this.stateProvinceBox = new System.Windows.Forms.ComboBox();
+            this.countryRegionBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -97,14 +97,14 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
+            this.tabPage1.Controls.Add(this.countryRegionBox);
+            this.tabPage1.Controls.Add(this.stateProvinceBox);
             this.tabPage1.Controls.Add(this.homePhoneBox);
             this.tabPage1.Controls.Add(this.homePhoneLabel);
             this.tabPage1.Controls.Add(this.streetBox);
             this.tabPage1.Controls.Add(this.webPageBox);
             this.tabPage1.Controls.Add(this.emailBox);
-            this.tabPage1.Controls.Add(this.countryRegionBox);
             this.tabPage1.Controls.Add(this.zipPostalCodeBox);
-            this.tabPage1.Controls.Add(this.stateProvinceBox);
             this.tabPage1.Controls.Add(this.cityBox);
             this.tabPage1.Controls.Add(this.faxNumberBox);
             this.tabPage1.Controls.Add(this.mobilePhoneBox);
@@ -177,26 +177,12 @@
             this.emailBox.Size = new System.Drawing.Size(213, 20);
             this.emailBox.TabIndex = 50;
             // 
-            // countryRegionBox
-            // 
-            this.countryRegionBox.Location = new System.Drawing.Point(144, 454);
-            this.countryRegionBox.Name = "countryRegionBox";
-            this.countryRegionBox.Size = new System.Drawing.Size(219, 20);
-            this.countryRegionBox.TabIndex = 49;
-            // 
             // zipPostalCodeBox
             // 
             this.zipPostalCodeBox.Location = new System.Drawing.Point(144, 428);
             this.zipPostalCodeBox.Name = "zipPostalCodeBox";
             this.zipPostalCodeBox.Size = new System.Drawing.Size(219, 20);
             this.zipPostalCodeBox.TabIndex = 48;
-            // 
-            // stateProvinceBox
-            // 
-            this.stateProvinceBox.Location = new System.Drawing.Point(144, 403);
-            this.stateProvinceBox.Name = "stateProvinceBox";
-            this.stateProvinceBox.Size = new System.Drawing.Size(219, 20);
-            this.stateProvinceBox.TabIndex = 47;
             // 
             // cityBox
             // 
@@ -587,6 +573,22 @@
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Employee Name";
             // 
+            // stateProvinceBox
+            // 
+            this.stateProvinceBox.FormattingEnabled = true;
+            this.stateProvinceBox.Location = new System.Drawing.Point(144, 403);
+            this.stateProvinceBox.Name = "stateProvinceBox";
+            this.stateProvinceBox.Size = new System.Drawing.Size(219, 21);
+            this.stateProvinceBox.TabIndex = 55;
+            // 
+            // countryRegionBox
+            // 
+            this.countryRegionBox.FormattingEnabled = true;
+            this.countryRegionBox.Location = new System.Drawing.Point(144, 454);
+            this.countryRegionBox.Name = "countryRegionBox";
+            this.countryRegionBox.Size = new System.Drawing.Size(219, 21);
+            this.countryRegionBox.TabIndex = 56;
+            // 
             // EmployeeDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,9 +622,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox webPageBox;
         private System.Windows.Forms.TextBox emailBox;
-        private System.Windows.Forms.TextBox countryRegionBox;
         private System.Windows.Forms.TextBox zipPostalCodeBox;
-        private System.Windows.Forms.TextBox stateProvinceBox;
         private System.Windows.Forms.TextBox cityBox;
         private System.Windows.Forms.TextBox faxNumberBox;
         private System.Windows.Forms.TextBox mobilePhoneBox;
@@ -662,5 +662,7 @@
         private System.Windows.Forms.TextBox homePhoneBox;
         private System.Windows.Forms.Label homePhoneLabel;
         private System.Windows.Forms.TextBox streetBox;
+        private System.Windows.Forms.ComboBox countryRegionBox;
+        private System.Windows.Forms.ComboBox stateProvinceBox;
     }
 }

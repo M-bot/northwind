@@ -30,6 +30,14 @@ namespace Northwind
 
         private void loadData()
         {
+            stateProvinceBox.DataSource = Home.NorthwindDatabase.Context
+                .Sql("SELECT * FROM `subregion` WHERE `RegionID` = 1 ORDER BY `Name` ASC;")
+                .QueryMany<Subregion>();
+
+            countryRegionBox.DataSource = Home.NorthwindDatabase.Context
+                .Sql("SELECT * FROM `region` ORDER BY `Name` ASC")
+                .QueryMany<Objects.Region>();
+
             dataLoaded = true;
         }
 
@@ -79,13 +87,19 @@ namespace Northwind
                 faxNumberBox.Text = currentEmployee.FaxNumber;
                 streetBox.Text = currentEmployee.Address;
                 cityBox.Text = currentEmployee.City;
-                stateProvinceBox.Text = currentEmployee.State_Province;
                 zipPostalCodeBox.Text = currentEmployee.ZIP_PostalCode;
-                countryRegionBox.Text = currentEmployee.Country_Region;
                 emailBox.Text = currentEmployee.EmailAddress;
                 webPageBox.Text = currentEmployee.WebPage;
                 notesBox.Text = currentEmployee.Notes;
                 employeeOrders.DataSource = null;
+
+                for (int x = 0; x < stateProvinceBox.Items.Count; x++)
+                    if (((Subregion)stateProvinceBox.Items[x]).ID == currentEmployee.State_Province)
+                        stateProvinceBox.SelectedIndex = x;
+
+                for (int x = 0; x < countryRegionBox.Items.Count; x++)
+                    if (((Objects.Region)countryRegionBox.Items[x]).ID == currentEmployee.Country_Region)
+                        countryRegionBox.SelectedIndex = x;
 
                 newEmployee = false;
             }
@@ -98,7 +112,8 @@ namespace Northwind
             currentEmployee.Address = streetBox.Text;
             currentEmployee.BusinessPhone = businessPhoneBox.Text;
             currentEmployee.City = cityBox.Text;
-            currentEmployee.Country_Region = countryRegionBox.Text;
+            if (countryRegionBox.SelectedItem != null)
+                currentEmployee.Country_Region = ((Objects.Region)countryRegionBox.SelectedItem).ID;
             currentEmployee.EmailAddress = emailBox.Text;
             currentEmployee.FaxNumber = faxNumberBox.Text;
             currentEmployee.FirstName = firstNameBox.Text;
@@ -107,7 +122,8 @@ namespace Northwind
             currentEmployee.LastName = lastNameBox.Text;
             currentEmployee.MobilePhone = mobilePhoneBox.Text;
             currentEmployee.Notes = notesBox.Text;
-            currentEmployee.State_Province = stateProvinceBox.Text;
+            if (stateProvinceBox.SelectedItem != null)
+                currentEmployee.State_Province = ((Northwind.Objects.Subregion)stateProvinceBox.SelectedItem).ID;
             currentEmployee.WebPage = webPageBox.Text;
             currentEmployee.ZIP_PostalCode = zipPostalCodeBox.Text;
 

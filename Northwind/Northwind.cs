@@ -23,6 +23,7 @@ namespace Northwind
         private static SupplierDetailsForm newSupplierDetailsForm;
         private static EmployeeDetailsForm newEmployeeDetailsForm;
         private static ShipperDetailsForm newShipperDetailsForm;
+        private static ReportViewer newReportViewer;
 
         public Home()
         {
@@ -41,6 +42,9 @@ namespace Northwind
             newEmployeeDetailsForm.Hide();
             newShipperDetailsForm = new ShipperDetailsForm();
             newShipperDetailsForm.Hide();
+            newReportViewer = new ReportViewer();
+            newReportViewer.Hide();
+
             dialog.ShowDialog(this);
 
             InitializeComponent();
@@ -341,6 +345,16 @@ namespace Northwind
             newPurchaseOrderForm.loadOrder(0);
             newPurchaseOrderForm.Show();
             newPurchaseOrderForm.Activate();
+        }
+
+        private void viewInvoiceLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //if(orderView.SelectedRows.)
+            newReportViewer.loadReport(new InvoiceReport(Home.NorthwindDatabase.Context
+                    .Sql("SELECT * FROM orders WHERE OrderID = " + ordersView.SelectedRows[0].Cells[0])
+                    .QuerySingle<Order>()));
+            newReportViewer.Show();
+            newReportViewer.Activate();
         }
 
     }
