@@ -224,10 +224,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\Logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InvoiceTemplate.bmp" />
     <Content Include="res\InventoryHeader.png" />
     <None Include="res\invoiceTemplateDemo.html" />
     <None Include="res\invoiceTemplate.html" />
@@ -249,7 +245,6 @@
     <None Include="res\formInventoryList2.png" />
     <None Include="res\formShipperDetails3.png" />
     <Content Include="res\GenericHeader.png" />
-    <Content Include="res\Inventory List.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
