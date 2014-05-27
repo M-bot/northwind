@@ -363,6 +363,7 @@ namespace Northwind
             }
             newReportViewer.Show();
             newReportViewer.Activate();
+            new SalesReport().Show();
         }
 
     }
