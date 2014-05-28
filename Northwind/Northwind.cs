@@ -24,6 +24,7 @@ namespace Northwind
         private static EmployeeDetailsForm newEmployeeDetailsForm;
         private static ShipperDetailsForm newShipperDetailsForm;
         private static SalesReportFrom newSalesReportForm;
+        private static LookupTableMaintainer newLookupTableMaintainer;
         public static ReportViewer newReportViewer;
 
         public Home()
@@ -45,6 +46,8 @@ namespace Northwind
             newShipperDetailsForm.Hide();
             newSalesReportForm = new SalesReportFrom();
             newSalesReportForm.Hide();
+            newLookupTableMaintainer = new LookupTableMaintainer();
+            newLookupTableMaintainer.Hide();
             newReportViewer = new ReportViewer();
             newReportViewer.Hide();
 
@@ -367,6 +370,12 @@ namespace Northwind
             }
             newReportViewer.Show();
             newReportViewer.Activate();
+        }
+
+        private void lookupTableLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newLookupTableMaintainer.Show();
+            newLookupTableMaintainer.Activate();
         }
 
     }

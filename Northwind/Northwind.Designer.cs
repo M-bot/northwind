@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 1.2D);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.activeOrdersView = new System.Windows.Forms.DataGridView();
             this.inventoryToReorderView = new System.Windows.Forms.DataGridView();
             this.quickLinksPanel = new System.Windows.Forms.Panel();
+            this.lookupTableLink = new System.Windows.Forms.LinkLabel();
             this.salesReportLink = new System.Windows.Forms.LinkLabel();
             this.shippersLink = new System.Windows.Forms.LinkLabel();
             this.employeesLink = new System.Windows.Forms.LinkLabel();
@@ -48,7 +49,7 @@
             this.quickLinks = new System.Windows.Forms.Label();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.homeTab = new System.Windows.Forms.TabPage();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.graph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.homeHeader = new System.Windows.Forms.Panel();
             this.newPurchaseOrderLabel = new System.Windows.Forms.LinkLabel();
             this.newCustomerOrderLabel = new System.Windows.Forms.LinkLabel();
@@ -112,7 +113,7 @@
             this.quickLinksPanel.SuspendLayout();
             this.mainTabControl.SuspendLayout();
             this.homeTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graph)).BeginInit();
             this.homeHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).BeginInit();
             this.inventoryTab.SuspendLayout();
@@ -181,6 +182,7 @@
             this.quickLinksPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.quickLinksPanel.BackColor = System.Drawing.Color.White;
             this.quickLinksPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.quickLinksPanel.Controls.Add(this.lookupTableLink);
             this.quickLinksPanel.Controls.Add(this.salesReportLink);
             this.quickLinksPanel.Controls.Add(this.shippersLink);
             this.quickLinksPanel.Controls.Add(this.employeesLink);
@@ -196,6 +198,22 @@
             this.quickLinksPanel.Size = new System.Drawing.Size(170, 205);
             this.quickLinksPanel.TabIndex = 2;
             // 
+            // lookupTableLink
+            // 
+            this.lookupTableLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.lookupTableLink.AutoSize = true;
+            this.lookupTableLink.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookupTableLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.lookupTableLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lookupTableLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
+            this.lookupTableLink.Location = new System.Drawing.Point(13, 186);
+            this.lookupTableLink.Name = "lookupTableLink";
+            this.lookupTableLink.Size = new System.Drawing.Size(88, 15);
+            this.lookupTableLink.TabIndex = 8;
+            this.lookupTableLink.TabStop = true;
+            this.lookupTableLink.Text = "Lookup Tables";
+            this.lookupTableLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lookupTableLink_LinkClicked);
+            // 
             // salesReportLink
             // 
             this.salesReportLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
@@ -204,7 +222,7 @@
             this.salesReportLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
             this.salesReportLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.salesReportLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.salesReportLink.Location = new System.Drawing.Point(13, 181);
+            this.salesReportLink.Location = new System.Drawing.Point(13, 164);
             this.salesReportLink.Name = "salesReportLink";
             this.salesReportLink.Size = new System.Drawing.Size(79, 15);
             this.salesReportLink.TabIndex = 7;
@@ -220,7 +238,7 @@
             this.shippersLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
             this.shippersLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.shippersLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.shippersLink.Location = new System.Drawing.Point(13, 158);
+            this.shippersLink.Location = new System.Drawing.Point(13, 142);
             this.shippersLink.Name = "shippersLink";
             this.shippersLink.Size = new System.Drawing.Size(86, 15);
             this.shippersLink.TabIndex = 6;
@@ -236,7 +254,7 @@
             this.employeesLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
             this.employeesLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.employeesLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.employeesLink.Location = new System.Drawing.Point(13, 133);
+            this.employeesLink.Location = new System.Drawing.Point(13, 120);
             this.employeesLink.Name = "employeesLink";
             this.employeesLink.Size = new System.Drawing.Size(98, 15);
             this.employeesLink.TabIndex = 5;
@@ -252,7 +270,7 @@
             this.suppliersLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
             this.suppliersLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.suppliersLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.suppliersLink.Location = new System.Drawing.Point(13, 108);
+            this.suppliersLink.Location = new System.Drawing.Point(13, 98);
             this.suppliersLink.Name = "suppliersLink";
             this.suppliersLink.Size = new System.Drawing.Size(89, 15);
             this.suppliersLink.TabIndex = 4;
@@ -268,7 +286,7 @@
             this.purchaseOrdersLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
             this.purchaseOrdersLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.purchaseOrdersLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.purchaseOrdersLink.Location = new System.Drawing.Point(13, 83);
+            this.purchaseOrdersLink.Location = new System.Drawing.Point(13, 76);
             this.purchaseOrdersLink.Name = "purchaseOrdersLink";
             this.purchaseOrdersLink.Size = new System.Drawing.Size(130, 15);
             this.purchaseOrdersLink.TabIndex = 3;
@@ -284,7 +302,7 @@
             this.customersLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
             this.customersLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.customersLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.customersLink.Location = new System.Drawing.Point(13, 59);
+            this.customersLink.Location = new System.Drawing.Point(13, 54);
             this.customersLink.Name = "customersLink";
             this.customersLink.Size = new System.Drawing.Size(98, 15);
             this.customersLink.TabIndex = 2;
@@ -300,7 +318,7 @@
             this.ordersLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
             this.ordersLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.ordersLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(82)))), ((int)(((byte)(22)))));
-            this.ordersLink.Location = new System.Drawing.Point(13, 35);
+            this.ordersLink.Location = new System.Drawing.Point(13, 32);
             this.ordersLink.Name = "ordersLink";
             this.ordersLink.Size = new System.Drawing.Size(74, 15);
             this.ordersLink.TabIndex = 1;
@@ -380,7 +398,7 @@
             // homeTab
             // 
             this.homeTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
-            this.homeTab.Controls.Add(this.chart1);
+            this.homeTab.Controls.Add(this.graph);
             this.homeTab.Controls.Add(this.homeHeader);
             this.homeTab.Controls.Add(this.activeOrdersView);
             this.homeTab.Controls.Add(this.quickLinks);
@@ -395,31 +413,31 @@
             this.homeTab.TabIndex = 1;
             this.homeTab.Text = "Home";
             // 
-            // chart1
+            // graph
             // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.graph.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.chart1.BorderlineColor = System.Drawing.Color.Black;
-            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea1.AxisY.Title = "Total Revenue";
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Location = new System.Drawing.Point(12, 323);
-            this.chart1.Name = "chart1";
-            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series1.ChartArea = "ChartArea1";
-            series1.IsVisibleInLegend = false;
-            series1.Name = "Series1";
-            dataPoint1.IsEmpty = true;
-            series1.Points.Add(dataPoint1);
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1055, 259);
-            this.chart1.TabIndex = 10;
-            this.chart1.Text = "chart1";
+            this.graph.BorderlineColor = System.Drawing.Color.Black;
+            this.graph.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea3.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea3.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea3.AxisY.Title = "Total Revenue";
+            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            chartArea3.Name = "ChartArea1";
+            this.graph.ChartAreas.Add(chartArea3);
+            this.graph.Location = new System.Drawing.Point(12, 323);
+            this.graph.Name = "graph";
+            series3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series3.ChartArea = "ChartArea1";
+            series3.IsVisibleInLegend = false;
+            series3.Name = "Series1";
+            dataPoint3.IsEmpty = true;
+            series3.Points.Add(dataPoint3);
+            this.graph.Series.Add(series3);
+            this.graph.Size = new System.Drawing.Size(1055, 259);
+            this.graph.TabIndex = 10;
+            this.graph.Text = "chart1";
             // 
             // homeHeader
             // 
@@ -1291,7 +1309,7 @@
             this.mainTabControl.ResumeLayout(false);
             this.homeTab.ResumeLayout(false);
             this.homeTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graph)).EndInit();
             this.homeHeader.ResumeLayout(false);
             this.homeHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).EndInit();
@@ -1400,7 +1418,7 @@
         private System.Windows.Forms.LinkLabel newShipperLink;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart graph;
         private System.Windows.Forms.LinkLabel homeLabel;
         private System.Windows.Forms.LinkLabel addProductLabel;
         private System.Windows.Forms.LinkLabel newSupplierLink;
@@ -1411,6 +1429,7 @@
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel lookupTableLink;
     }
 }
 

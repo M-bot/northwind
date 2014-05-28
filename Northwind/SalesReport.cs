@@ -127,7 +127,7 @@ namespace Northwind
                             .QuerySingle<DataTable>();
 
                         string result = "";
-                        int total = 0;
+                        double total = 0;
                         foreach(DataRow drow in rows.Rows)
                         {
                             result += "<tr>";
@@ -135,12 +135,13 @@ namespace Northwind
                             result += "<td>" + "" + "</td>";
                             result += "<td>" + ((double)drow["Total"]).ToString("C") + "</td>";
                             result += "</tr>";
+                            total += ((double)drow["Total"]);
                         }
 
                         result += "<tr>";
                         result += "<td>" + "" + "</td>";
                         result += "<td>" + monthBox.SelectedItem + " Sales Total" + "</td>";
-                        result += "<td>" + total + "</td>";
+                        result += "<td>" + total.ToString("C") + "</td>";
                         result += "</tr>";
 
                         r.replace("Rows",result);

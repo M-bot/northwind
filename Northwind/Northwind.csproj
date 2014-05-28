@@ -71,8 +71,16 @@
     <Compile Include="CheckBoxComboBox\PopupComboBox.designer.cs">
       <DependentUpon>PopupComboBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="LookupTableMaintainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LookupTableMaintainer.Designer.cs">
+      <DependentUpon>LookupTableMaintainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\JobTitle.cs" />
     <Compile Include="Objects\InventoryTransaction.cs" />
     <Compile Include="Objects\InvoiceReport.cs" />
+    <Compile Include="Objects\Lookup.cs" />
     <Compile Include="Objects\OrderDetails.cs" />
     <Compile Include="Objects\PurchaseOrder.cs" />
     <Compile Include="CheckBoxComboBox\Selection Wrappers\ListSelectionWrapper.cs" />
@@ -189,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerOrderForm.resx">
       <DependentUpon>CustomerOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LookupTableMaintainer.resx">
+      <DependentUpon>LookupTableMaintainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Northwind.resx">
       <DependentUpon>Northwind.cs</DependentUpon>
