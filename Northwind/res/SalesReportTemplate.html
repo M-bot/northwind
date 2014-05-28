@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>Invoice #81</title>
+	<style>
+		body {
+			font-family: "Arial";
+			font-size: .8em;
+		}
+		dir {
+			width: 290px;
+		}
+		label {
+			width: 7em;
+			color: rgb(127,0,27);
+		}
+		h1 {
+			color: rgb(127,0,27);
+			font-style: normal;
+			font-weight: normal;
+			height: 65px;
+			margin-top: 20px;
+		}
+		th {
+			padding: 1px;
+			font-size: .75em;
+			display: block;
+			background: rgb(199,197,188);
+			color: white;
+		}
+		td {
+			background: white;
+			border-bottom: 1px solid rgb(231,231,226);
+			font-size: .75em;
+		}
+		.red {
+			color: rgb(127,0,27);
+			border-bottom: none;
+		}
+		.productID {
+			width:10%; text-align: right;
+		}
+		.productName {
+			width:41%; text-align: left;
+		}
+		.quantity {
+			width:11%; text-align: right;
+		}
+		.unitPrice {
+			width:12%; text-align: right;
+		}
+		.discount {
+			width:11%; text-align: right;
+		}
+		.price {
+			width:15%; text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<span style="float: right; color: rgb(127,0,27); margin-bottom: -20px; font-size: .9em">{{GeneratedDate}} {{GeneratedTime}}</span>
+	<h1 style="margin-bottom: -40px; padding: -10px;">{{SalesPeriod}} Sales Report</h1>
+	<h5 class="red">{{SalesTime}}</h5>
+	<span style="clear: both; width: 100%"></span>
+	<table style="width:100%;">
+		<tr>
+			{{Headers}}
+		</tr>
+		{{Rows}}
+	</table> 
+</body>
+</html>

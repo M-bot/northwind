@@ -1,6 +1,6 @@
 ﻿namespace Northwind
 {
-    partial class SalesReport
+    partial class SalesReportFrom
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Sales by Category");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Sales by Country");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesReport));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesReportFrom));
             this.homeHeader = new System.Windows.Forms.Panel();
-            this.shipOrderLink = new System.Windows.Forms.LinkLabel();
+            this.previewLink = new System.Windows.Forms.LinkLabel();
             this.createInvoiceLink = new System.Windows.Forms.LinkLabel();
             this.headerTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.salesTypeBox = new System.Windows.Forms.ListBox();
+            this.salesPeriodBox = new System.Windows.Forms.ListBox();
+            this.filterSalesBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.yearBox = new System.Windows.Forms.ComboBox();
+            this.quarterlyBox = new System.Windows.Forms.ComboBox();
+            this.monthBox = new System.Windows.Forms.ComboBox();
             this.homeHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +56,7 @@
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
             this.homeHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.homeHeader.Controls.Add(this.shipOrderLink);
+            this.homeHeader.Controls.Add(this.previewLink);
             this.homeHeader.Controls.Add(this.createInvoiceLink);
             this.homeHeader.Controls.Add(this.headerTitle);
             this.homeHeader.Location = new System.Drawing.Point(0, 0);
@@ -66,20 +64,21 @@
             this.homeHeader.Size = new System.Drawing.Size(518, 72);
             this.homeHeader.TabIndex = 11;
             // 
-            // shipOrderLink
+            // previewLink
             // 
-            this.shipOrderLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
-            this.shipOrderLink.AutoSize = true;
-            this.shipOrderLink.BackColor = System.Drawing.Color.Transparent;
-            this.shipOrderLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shipOrderLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.shipOrderLink.LinkColor = System.Drawing.Color.White;
-            this.shipOrderLink.Location = new System.Drawing.Point(57, 50);
-            this.shipOrderLink.Name = "shipOrderLink";
-            this.shipOrderLink.Size = new System.Drawing.Size(47, 14);
-            this.shipOrderLink.TabIndex = 13;
-            this.shipOrderLink.TabStop = true;
-            this.shipOrderLink.Text = "Preview";
+            this.previewLink.ActiveLinkColor = System.Drawing.Color.RosyBrown;
+            this.previewLink.AutoSize = true;
+            this.previewLink.BackColor = System.Drawing.Color.Transparent;
+            this.previewLink.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previewLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.previewLink.LinkColor = System.Drawing.Color.White;
+            this.previewLink.Location = new System.Drawing.Point(57, 50);
+            this.previewLink.Name = "previewLink";
+            this.previewLink.Size = new System.Drawing.Size(47, 14);
+            this.previewLink.TabIndex = 13;
+            this.previewLink.TabStop = true;
+            this.previewLink.Text = "Preview";
+            this.previewLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.previewLink_LinkClicked);
             // 
             // createInvoiceLink
             // 
@@ -118,33 +117,43 @@
             this.panel1.Size = new System.Drawing.Size(1, 240);
             this.panel1.TabIndex = 12;
             // 
-            // listView1
+            // salesTypeBox
             // 
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
-            this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(17, 116);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(250, 111);
-            this.listView1.TabIndex = 13;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.salesTypeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesTypeBox.ItemHeight = 16;
+            this.salesTypeBox.Items.AddRange(new object[] {
+            "Sales By Category",
+            "Sales By Country",
+            "Sales By Customer",
+            "Sales By Employee",
+            "Sales By Product"});
+            this.salesTypeBox.Location = new System.Drawing.Point(17, 116);
+            this.salesTypeBox.Name = "salesTypeBox";
+            this.salesTypeBox.Size = new System.Drawing.Size(250, 116);
+            this.salesTypeBox.TabIndex = 13;
+            this.salesTypeBox.SelectedIndexChanged += new System.EventHandler(this.salesTypeBox_SelectedIndexChanged);
             // 
-            // listView2
+            // salesPeriodBox
             // 
-            this.listView2.Location = new System.Drawing.Point(290, 116);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(216, 111);
-            this.listView2.TabIndex = 14;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.salesPeriodBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesPeriodBox.ItemHeight = 16;
+            this.salesPeriodBox.Items.AddRange(new object[] {
+            "Monthly Sales",
+            "Quarterly Sales",
+            "Yearly Sales"});
+            this.salesPeriodBox.Location = new System.Drawing.Point(290, 116);
+            this.salesPeriodBox.Name = "salesPeriodBox";
+            this.salesPeriodBox.Size = new System.Drawing.Size(216, 100);
+            this.salesPeriodBox.TabIndex = 14;
+            this.salesPeriodBox.SelectedIndexChanged += new System.EventHandler(this.salesPeriodBox_SelectedIndexChanged);
             // 
-            // comboBox1
+            // filterSalesBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 260);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 21);
-            this.comboBox1.TabIndex = 15;
+            this.filterSalesBox.FormattingEnabled = true;
+            this.filterSalesBox.Location = new System.Drawing.Point(17, 260);
+            this.filterSalesBox.Name = "filterSalesBox";
+            this.filterSalesBox.Size = new System.Drawing.Size(250, 21);
+            this.filterSalesBox.TabIndex = 15;
             // 
             // label1
             // 
@@ -212,53 +221,77 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Month";
             // 
-            // comboBox2
+            // yearBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(353, 236);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(153, 21);
-            this.comboBox2.TabIndex = 22;
+            this.yearBox.FormattingEnabled = true;
+            this.yearBox.Location = new System.Drawing.Point(353, 236);
+            this.yearBox.Name = "yearBox";
+            this.yearBox.Size = new System.Drawing.Size(153, 21);
+            this.yearBox.TabIndex = 22;
+            this.yearBox.SelectedIndexChanged += new System.EventHandler(this.yearBox_SelectedIndexChanged);
             // 
-            // comboBox3
+            // quarterlyBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(353, 262);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(153, 21);
-            this.comboBox3.TabIndex = 23;
+            this.quarterlyBox.FormattingEnabled = true;
+            this.quarterlyBox.Items.AddRange(new object[] {
+            "1st Quarter",
+            "2nd Quarter",
+            "3rd Quarter",
+            "4th Quarter"});
+            this.quarterlyBox.Location = new System.Drawing.Point(353, 262);
+            this.quarterlyBox.Name = "quarterlyBox";
+            this.quarterlyBox.Size = new System.Drawing.Size(153, 21);
+            this.quarterlyBox.TabIndex = 23;
             // 
-            // comboBox4
+            // monthBox
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(353, 289);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(153, 21);
-            this.comboBox4.TabIndex = 24;
+            this.monthBox.FormattingEnabled = true;
+            this.monthBox.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.monthBox.Location = new System.Drawing.Point(353, 289);
+            this.monthBox.Name = "monthBox";
+            this.monthBox.Size = new System.Drawing.Size(153, 21);
+            this.monthBox.TabIndex = 24;
             // 
-            // SalesReport
+            // SalesReportFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(518, 322);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.monthBox);
+            this.Controls.Add(this.quarterlyBox);
+            this.Controls.Add(this.yearBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.filterSalesBox);
+            this.Controls.Add(this.salesPeriodBox);
+            this.Controls.Add(this.salesTypeBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.homeHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "SalesReport";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "SalesReportFrom";
             this.Text = "Sales Reports Dialog";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SalesReportFrom_FormClosing);
+            this.Load += new System.EventHandler(this.SalesReportFrom_Load);
             this.homeHeader.ResumeLayout(false);
             this.homeHeader.PerformLayout();
             this.ResumeLayout(false);
@@ -270,20 +303,20 @@
 
         private System.Windows.Forms.Panel homeHeader;
         private System.Windows.Forms.Label headerTitle;
-        private System.Windows.Forms.LinkLabel shipOrderLink;
+        private System.Windows.Forms.LinkLabel previewLink;
         private System.Windows.Forms.LinkLabel createInvoiceLink;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox salesTypeBox;
+        private System.Windows.Forms.ListBox salesPeriodBox;
+        private System.Windows.Forms.ComboBox filterSalesBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox yearBox;
+        private System.Windows.Forms.ComboBox quarterlyBox;
+        private System.Windows.Forms.ComboBox monthBox;
     }
 }

@@ -237,6 +237,7 @@
     <None Include="res\invoiceTemplateDemo.html" />
     <None Include="res\invoiceTemplate.html" />
     <Content Include="res\PurchaseOrdersList.png" />
+    <None Include="res\SalesReportTemplate.html" />
     <Content Include="res\StartupHeader.png" />
     <None Include="res\formLoginDialog1.png" />
     <None Include="res\formLoginDialog2.png" />

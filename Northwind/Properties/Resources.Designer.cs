@@ -113,7 +113,7 @@ namespace Northwind.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;html&gt;
         ///&lt;head&gt;
-        ///	&lt;title&gt;Invoice #81&lt;/title&gt;
+        ///	&lt;title&gt;Invoice #{{Invoice#}}&lt;/title&gt;
         ///	&lt;style&gt;
         ///		body {
         ///			font-family: &quot;Arial&quot;;
@@ -142,7 +142,7 @@ namespace Northwind.Properties {
         ///		}
         ///		td {
         ///			background: white;
-        ///			border-bottom: 1px [rest of string was truncated]&quot;;.
+        ///			border-b [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string InvoiceTemplate {
             get {
@@ -287,6 +287,46 @@ namespace Northwind.Properties {
             get {
                 object obj = ResourceManager.GetObject("RefreshIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;html&gt;
+        ///&lt;head&gt;
+        ///	&lt;title&gt;Invoice #81&lt;/title&gt;
+        ///	&lt;style&gt;
+        ///		body {
+        ///			font-family: &quot;Arial&quot;;
+        ///			font-size: .8em;
+        ///		}
+        ///		dir {
+        ///			width: 290px;
+        ///		}
+        ///		label {
+        ///			width: 7em;
+        ///			color: rgb(127,0,27);
+        ///		}
+        ///		h1 {
+        ///			color: rgb(127,0,27);
+        ///			font-style: normal;
+        ///			font-weight: normal;
+        ///			height: 65px;
+        ///			margin-top: 20px;
+        ///		}
+        ///		th {
+        ///			padding: 1px;
+        ///			font-size: .75em;
+        ///			display: block;
+        ///			background: rgb(199,197,188);
+        ///			color: white;
+        ///		}
+        ///		td {
+        ///			background: white;
+        ///			border-bottom: 1px [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SalesReportTemplate {
+            get {
+                return ResourceManager.GetString("SalesReportTemplate", resourceCulture);
             }
         }
         

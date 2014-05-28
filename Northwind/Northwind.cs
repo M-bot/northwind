@@ -23,7 +23,8 @@ namespace Northwind
         private static SupplierDetailsForm newSupplierDetailsForm;
         private static EmployeeDetailsForm newEmployeeDetailsForm;
         private static ShipperDetailsForm newShipperDetailsForm;
-        private static ReportViewer newReportViewer;
+        private static SalesReportFrom newSalesReportForm;
+        public static ReportViewer newReportViewer;
 
         public Home()
         {
@@ -42,6 +43,8 @@ namespace Northwind
             newEmployeeDetailsForm.Hide();
             newShipperDetailsForm = new ShipperDetailsForm();
             newShipperDetailsForm.Hide();
+            newSalesReportForm = new SalesReportFrom();
+            newSalesReportForm.Hide();
             newReportViewer = new ReportViewer();
             newReportViewer.Hide();
 
@@ -152,7 +155,8 @@ namespace Northwind
 
         private void salesReportLink_Click(object sender, EventArgs e)
         {
-
+            newSalesReportForm.Show();
+            newSalesReportForm.Activate();
         }
 
         private void employeeBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -363,7 +367,6 @@ namespace Northwind
             }
             newReportViewer.Show();
             newReportViewer.Activate();
-            new SalesReport().Show();
         }
 
     }
