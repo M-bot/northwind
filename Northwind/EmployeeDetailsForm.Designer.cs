@@ -41,7 +41,7 @@
             this.faxNumberBox = new System.Windows.Forms.TextBox();
             this.mobilePhoneBox = new System.Windows.Forms.TextBox();
             this.businessPhoneBox = new System.Windows.Forms.TextBox();
-            this.jobTitleBox = new System.Windows.Forms.TextBox();
+            this.jobTitleBox = new System.Windows.Forms.ComboBox();
             this.lastNameBox = new System.Windows.Forms.TextBox();
             this.firstNameBox = new System.Windows.Forms.TextBox();
             this.webPageLabel = new System.Windows.Forms.Label();
@@ -627,7 +627,7 @@
         private System.Windows.Forms.TextBox faxNumberBox;
         private System.Windows.Forms.TextBox mobilePhoneBox;
         private System.Windows.Forms.TextBox businessPhoneBox;
-        private System.Windows.Forms.TextBox jobTitleBox;
+        private System.Windows.Forms.ComboBox jobTitleBox;
         private System.Windows.Forms.TextBox lastNameBox;
         private System.Windows.Forms.TextBox firstNameBox;
         private System.Windows.Forms.Label webPageLabel;

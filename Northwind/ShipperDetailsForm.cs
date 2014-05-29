@@ -45,7 +45,7 @@ namespace Northwind
 
         public void loadShipper(Int32 id)
         {
-            if (!dataLoaded) loadData();
+            loadData();
 
             companyBox.Text = "";
             firstNameBox.Text = "";
@@ -56,9 +56,7 @@ namespace Northwind
             faxNumberBox.Text = "";
             streetBox.Text = "";
             cityBox.Text = "";
-            stateProvinceBox.Text = "";
             zipPostalCodeBox.Text = "";
-            countryRegionBox.Text = "";
             emailBox.Text = "";
             webPageBox.Text = "";
             notesBox.Text = "";

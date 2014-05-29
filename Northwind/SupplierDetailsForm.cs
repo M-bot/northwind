@@ -26,7 +26,6 @@ namespace Northwind
             this.Hide();
         }
 
-        private bool dataLoaded;
 
         private void loadData()
         {
@@ -37,15 +36,13 @@ namespace Northwind
             countryRegionBox.DataSource = Home.NorthwindDatabase.Context
                 .Sql("SELECT * FROM `region` ORDER BY `Name` ASC")
                 .QueryMany<Objects.Region>();
-
-            dataLoaded = true;
         }
 
         private bool newSupplier;
 
         public void loadSupplier(Int32 id)
         {
-            if (!dataLoaded) loadData();
+            loadData();
 
             companyBox.Text = "";
             firstNameBox.Text = "";
@@ -56,9 +53,7 @@ namespace Northwind
             faxNumberBox.Text = "";
             streetBox.Text = "";
             cityBox.Text = "";
-            stateProvinceBox.Text = "";
             zipPostalCodeBox.Text = "";
-            countryRegionBox.Text = "";
             emailBox.Text = "";
             webPageBox.Text = "";
             notesBox.Text = "";

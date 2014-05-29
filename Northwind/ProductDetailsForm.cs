@@ -33,7 +33,7 @@ namespace Northwind
         private void loadData()
         {
             supplierBox.Items.AddRange(Home.NorthwindDatabase.Context
-                .Sql("SELECT * FROM suppliers  ORDER BY Company ASC")
+                .Sql("SELECT * FROM suppliers ORDER BY Company ASC")
                 .QueryMany<SupplierCompany>()
                 .ToArray());
 

@@ -12,7 +12,7 @@ namespace Northwind.Objects
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
-        public string JobTitle { get; set; }
+        public int JobTitle { get; set; }
         public string BusinessPhone { get; set; }
         public string HomePhone { get; set; }
         public string MobilePhone { get; set; }
@@ -31,7 +31,7 @@ namespace Northwind.Objects
     {
         public override string ToString()
         {
-            return FirstName + " " + LastName + " - " + JobTitle;
+            return FirstName + " " + LastName + " - " + Home.NorthwindDatabase.Context.Sql("SELECT `Name` FROM `jobtitle` WHERE `ID`="+JobTitle).QuerySingle<string>();
         }
     }
 

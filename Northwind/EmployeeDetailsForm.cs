@@ -26,7 +26,6 @@ namespace Northwind
             this.Hide();
         }
 
-        private bool dataLoaded;
 
         private void loadData()
         {
@@ -38,27 +37,27 @@ namespace Northwind
                 .Sql("SELECT * FROM `region` ORDER BY `Name` ASC")
                 .QueryMany<Objects.Region>();
 
-            dataLoaded = true;
+            jobTitleBox.DataSource = Home.NorthwindDatabase.Context
+                .Sql("SELECT * FROM `jobtitle` ORDER BY `Name` ASC")
+                .QueryMany<Objects.JobTitle>();
+
         }
 
         private bool newEmployee;
 
         public void loadEmployee(Int32 id)
         {
-            if (!dataLoaded) loadData();
+            loadData();
 
             firstNameBox.Text = "";
             lastNameBox.Text = "";
-            jobTitleBox.Text = "";
             businessPhoneBox.Text = "";
             mobilePhoneBox.Text = "";
             homePhoneBox.Text = "";
             faxNumberBox.Text = "";
             streetBox.Text = "";
             cityBox.Text = "";
-            stateProvinceBox.Text = "";
             zipPostalCodeBox.Text = "";
-            countryRegionBox.Text = "";
             emailBox.Text = "";
             webPageBox.Text = "";
             notesBox.Text = "";
@@ -80,7 +79,6 @@ namespace Northwind
                 headerTitle.Text = currentEmployee.FirstName + " " + currentEmployee.LastName;
                 firstNameBox.Text = currentEmployee.FirstName;
                 lastNameBox.Text = currentEmployee.LastName;
-                jobTitleBox.Text = currentEmployee.JobTitle;
                 businessPhoneBox.Text = currentEmployee.BusinessPhone;
                 mobilePhoneBox.Text = currentEmployee.MobilePhone;
                 homePhoneBox.Text = currentEmployee.HomePhone;
@@ -101,6 +99,10 @@ namespace Northwind
                     if (((Objects.Region)countryRegionBox.Items[x]).ID == currentEmployee.Country_Region)
                         countryRegionBox.SelectedIndex = x;
 
+                for (int x = 0; x < jobTitleBox.Items.Count; x++)
+                    if (((Objects.JobTitle)jobTitleBox.Items[x]).ID == currentEmployee.JobTitle)
+                        jobTitleBox.SelectedIndex = x;
+
                 newEmployee = false;
             }
         }
@@ -118,7 +120,8 @@ namespace Northwind
             currentEmployee.FaxNumber = faxNumberBox.Text;
             currentEmployee.FirstName = firstNameBox.Text;
             currentEmployee.HomePhone = homePhoneBox.Text;
-            currentEmployee.JobTitle = jobTitleBox.Text;
+            if (jobTitleBox.SelectedItem != null)
+                currentEmployee.JobTitle = ((Objects.JobTitle)jobTitleBox.SelectedItem).ID;
             currentEmployee.LastName = lastNameBox.Text;
             currentEmployee.MobilePhone = mobilePhoneBox.Text;
             currentEmployee.Notes = notesBox.Text;
