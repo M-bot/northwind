@@ -141,6 +141,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tablesBox);
             this.Controls.Add(this.homeHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "LookupTableMaintainer";
             this.Text = "Modify Lookup Tables";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LookupTableMaintainer_FormClosing);

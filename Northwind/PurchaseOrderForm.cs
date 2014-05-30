@@ -285,7 +285,9 @@ namespace Northwind
             for (int x = 0; x < inventoryReceivingData.Rows.Count; x++)
             {
                 if((ulong)inventoryReceivingData.Rows[x].ItemArray[4] == 0 && (bool)inventoryReceivingView[4,x].Value)
-                    MessageBox.Show("NEEDS UPDATE");
+                {
+
+                }
             }
         }
 
