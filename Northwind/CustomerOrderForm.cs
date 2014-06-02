@@ -91,7 +91,7 @@ namespace Northwind
             orderNotesBox.Text = "";
 
             orderDetailsView.Rows.Clear();
-            orderDetailsView.ReadOnly = false;
+            orderDetailsView.ReadOnly = true;
             orderDetailsView.AllowUserToAddRows = true;
             createInvoiceLink.Enabled = true;
             shipOrderLink.Enabled = true;
@@ -117,7 +117,7 @@ namespace Northwind
                     .Sql("SELECT * FROM `orders status` WHERE `ID` = " + currentOrder.StatusID)
                     .QuerySingle<Status>();
                 statusText.Text = stat.Name;
-
+                if (stat.ID == 0) orderDetailsView.ReadOnly = false;
                 if(stat.ID > 0)
                 {
                     createInvoiceLink.Enabled = false;
@@ -159,8 +159,8 @@ namespace Northwind
                     if (((Objects.Region)countryRegionBox.Items[x]).ID == currentOrder.ShipCountry_Region)
                         countryRegionBox.SelectedIndex = x;
                 
-
-                emailAddressBox.Text = ((Customer)customerBox.SelectedItem).EmailAddress;
+                if(customerBox.SelectedItem != null)
+                    emailAddressBox.Text = ((Customer)customerBox.SelectedItem).EmailAddress;
 
                 orderDateBox.Text = currentOrder.OrderDate.ToString();
 

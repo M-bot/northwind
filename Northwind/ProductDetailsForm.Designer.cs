@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductDetailsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.categoryBox = new System.Windows.Forms.ComboBox();
             this.supplierBox = new PresentationControls.CheckBoxComboBox();
             this.descriptionBox = new System.Windows.Forms.TextBox();
@@ -61,20 +62,20 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.historyView = new System.Windows.Forms.DataGridView();
             this.homeHeader = new System.Windows.Forms.Panel();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.productBox = new System.Windows.Forms.ComboBox();
             this.newLink = new System.Windows.Forms.LinkLabel();
             this.saveLink = new System.Windows.Forms.LinkLabel();
             this.goToProductLabel = new System.Windows.Forms.Label();
             this.headerImage = new System.Windows.Forms.PictureBox();
             this.headerTitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.historyView)).BeginInit();
             this.homeHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,6 +125,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Product Details";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::Northwind.Properties.Resources.AttachmentPlaceholder;
+            this.pictureBox1.Location = new System.Drawing.Point(386, 230);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(349, 265);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            // 
             // categoryBox
             // 
             this.categoryBox.FormattingEnabled = true;
@@ -166,6 +178,7 @@
             this.costBox.Name = "costBox";
             this.costBox.Size = new System.Drawing.Size(171, 20);
             this.costBox.TabIndex = 34;
+            this.costBox.TextChanged += new System.EventHandler(this.costBox_TextChanged);
             // 
             // priceBox
             // 
@@ -173,6 +186,7 @@
             this.priceBox.Name = "priceBox";
             this.priceBox.Size = new System.Drawing.Size(171, 20);
             this.priceBox.TabIndex = 33;
+            this.priceBox.TextChanged += new System.EventHandler(this.priceBox_TextChanged);
             // 
             // reorderBox
             // 
@@ -180,6 +194,7 @@
             this.reorderBox.Name = "reorderBox";
             this.reorderBox.Size = new System.Drawing.Size(171, 20);
             this.reorderBox.TabIndex = 32;
+            this.reorderBox.TextChanged += new System.EventHandler(this.reorderBox_TextChanged);
             // 
             // targetBox
             // 
@@ -187,6 +202,7 @@
             this.targetBox.Name = "targetBox";
             this.targetBox.Size = new System.Drawing.Size(171, 20);
             this.targetBox.TabIndex = 31;
+            this.targetBox.TextChanged += new System.EventHandler(this.targetBox_TextChanged);
             // 
             // defaultReorderBox
             // 
@@ -194,6 +210,7 @@
             this.defaultReorderBox.Name = "defaultReorderBox";
             this.defaultReorderBox.Size = new System.Drawing.Size(171, 20);
             this.defaultReorderBox.TabIndex = 30;
+            this.defaultReorderBox.TextChanged += new System.EventHandler(this.defaultReorderBox_TextChanged);
             // 
             // quantityBox
             // 
@@ -395,6 +412,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.homeHeader.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.homeHeader.BackgroundImage = global::Northwind.Properties.Resources.GenericHeader;
+            this.homeHeader.Controls.Add(this.statusLabel);
             this.homeHeader.Controls.Add(this.productBox);
             this.homeHeader.Controls.Add(this.newLink);
             this.homeHeader.Controls.Add(this.saveLink);
@@ -405,6 +423,18 @@
             this.homeHeader.Name = "homeHeader";
             this.homeHeader.Size = new System.Drawing.Size(771, 72);
             this.homeHeader.TabIndex = 11;
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.BackColor = System.Drawing.Color.Transparent;
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.ForeColor = System.Drawing.Color.White;
+            this.statusLabel.Location = new System.Drawing.Point(199, 50);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(41, 15);
+            this.statusLabel.TabIndex = 16;
+            this.statusLabel.Text = "Status";
             // 
             // productBox
             // 
@@ -483,17 +513,6 @@
             this.headerTitle.TabIndex = 7;
             this.headerTitle.Text = "Product Name";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = global::Northwind.Properties.Resources.AttachmentPlaceholder;
-            this.pictureBox1.Location = new System.Drawing.Point(386, 230);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(349, 265);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 40;
-            this.pictureBox1.TabStop = false;
-            // 
             // ProductDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,12 +531,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.historyView)).EndInit();
             this.homeHeader.ResumeLayout(false);
             this.homeHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.headerImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,5 +581,6 @@
         private PresentationControls.CheckBoxComboBox supplierBox;
         private System.Windows.Forms.ComboBox categoryBox;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label statusLabel;
     }
 }

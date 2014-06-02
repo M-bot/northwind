@@ -29,6 +29,7 @@ namespace Northwind
         }
 
         private bool dataLoaded;
+        private bool errorsInData;
 
         private void loadData()
         {
@@ -54,6 +55,7 @@ namespace Northwind
             foreach (CheckBoxComboBoxItem c in supplierBox.CheckBoxItems)
                 c.Checked = false;
 
+            statusLabel.Text = "";
             idBox.Text = "";
             codeBox.Text = "";
             nameBox.Text = "";
@@ -66,14 +68,18 @@ namespace Northwind
             discontinuedBox.Checked = false;
             defaultReorderBox.Text = "";
             historyView.DataSource = null;
+            defaultReorderBox.ForeColor = Color.Black;
+            priceBox.ForeColor = Color.Black;
+            reorderBox.ForeColor = Color.Black;
+            costBox.ForeColor = Color.Black;
+            targetBox.ForeColor = Color.Black;
 
             if(id < 1)
             {
                 newProduct = true;
-
                 headerTitle.Text = "Untitled";
                 idBox.Text = "(New)";
-
+                currentProduct = new Product();
             }
             else
             {
@@ -130,8 +136,6 @@ namespace Northwind
 
         private void saveLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            bool failure = false;
-            if (newProduct) currentProduct = new Product();
             currentProduct.SupplierIDs = "";
             foreach (CheckBoxComboBoxItem c in supplierBox.CheckBoxItems)
                 if (c.Checked)
@@ -141,54 +145,13 @@ namespace Northwind
             currentProduct.Category = ((Category)categoryBox.SelectedItem).ID;
             currentProduct.Description = descriptionBox.Text;
             currentProduct.Discontinued = discontinuedBox.Checked;
-
-            Double temp2 = 0;
-            if (!Double.TryParse(priceBox.Text.Contains("$") ? priceBox.Text.Substring(1) : priceBox.Text, out temp2))
-                priceBox.ForeColor = Color.Red;
-            else
-                priceBox.ForeColor = Color.Black;
-            currentProduct.ListPrice = temp2;
-
-            Int32 temp = 0;
-            if (!Int32.TryParse(defaultReorderBox.Text, out temp))
-                defaultReorderBox.ForeColor = Color.Red;
-            else
-                defaultReorderBox.ForeColor = Color.Black;
-            currentProduct.MinimumReorderQuantity = temp;
-
             currentProduct.ProductCode = codeBox.Text;
             currentProduct.ProductName = nameBox.Text;
             currentProduct.QuantityPerUnit = quantityBox.Text;
 
-            temp = 0;
-            if (!Int32.TryParse(reorderBox.Text, out temp))
-                reorderBox.ForeColor = Color.Red;
-            else
-                reorderBox.ForeColor = Color.Black;
-            currentProduct.ReorderLevel = temp;
-
-            temp2 = 0;
-            if (!Double.TryParse(costBox.Text.Contains("$") ? costBox.Text.Substring(1) : costBox.Text, out temp2))
-                costBox.ForeColor = Color.Red;
-            else
-                costBox.ForeColor = Color.Black;
-            currentProduct.StandardCost = temp2;
-
-            temp = 0;
-            if (!Int32.TryParse(targetBox.Text, out temp))
-                targetBox.ForeColor = Color.Red;
-            else
-                targetBox.ForeColor = Color.Black;
-            currentProduct.TargetLevel = temp;
-
-            failure |= !Double.TryParse(priceBox.Text.Contains("$") ? priceBox.Text.Substring(1) : priceBox.Text, out temp2);
-            failure |= !Int32.TryParse(defaultReorderBox.Text, out temp);
-            failure |= !Int32.TryParse(reorderBox.Text, out temp);
-            failure |= !Double.TryParse(costBox.Text.Contains("$") ? costBox.Text.Substring(1) : costBox.Text, out temp2);
-            failure |= !Int32.TryParse(targetBox.Text, out temp);
-            if(failure)
+            if(errorsInData)
             {
-                MessageBox.Show("Errors in data, please revise.");
+                statusLabel.Text = "Errors in data";
                 return;
             }
 
@@ -198,7 +161,7 @@ namespace Northwind
                     .AutoMap(x => x.ID)
                     .ExecuteReturnLastId<int>();
                 loadProduct(product);
-                MessageBox.Show("Created!");
+                statusLabel.Text = "Created";
             }
             else
             {
@@ -208,13 +171,98 @@ namespace Northwind
                     .Execute();
 
                 loadProduct(currentProduct.ID);
-                MessageBox.Show("Saved!");
+                statusLabel.Text = "Saved";
             }
         }
 
         private void newLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             loadProduct(0);
+        }
+
+        private bool costBoxError = false;
+        private void costBox_TextChanged(object sender, EventArgs e)
+        {
+            double temp = 0;
+            if (!double.TryParse(costBox.Text.Contains("$") ? costBox.Text.Substring(1) : costBox.Text, out temp))
+            {
+                costBox.ForeColor = Color.Red;
+            }
+            else
+            {
+                costBox.ForeColor = Color.Black;
+            }
+
+            if(currentProduct != null)
+                currentProduct.StandardCost = temp;
+        }
+
+        private bool priceBoxError = false;
+        private void priceBox_TextChanged(object sender, EventArgs e)
+        {
+            double temp = 0;
+            if (!double.TryParse(priceBox.Text.Contains("$") ? priceBox.Text.Substring(1) : priceBox.Text, out temp))
+            {
+                priceBox.ForeColor = Color.Red;
+            }
+            else
+            {
+                priceBox.ForeColor = Color.Black;
+            }
+
+            if(currentProduct != null)
+                currentProduct.ListPrice = temp;
+        }
+
+        private bool reorderBoxError = false;
+        private void reorderBox_TextChanged(object sender, EventArgs e)
+        {
+            int temp = 0;
+            if (!int.TryParse(reorderBox.Text, out temp))
+            {
+                reorderBox.ForeColor = Color.Red;
+            }
+            else
+            {
+                reorderBox.ForeColor = Color.Black;
+            }
+            
+            if(currentProduct != null)
+                currentProduct.ReorderLevel = temp;
+        }
+
+        private bool targetBoxError = false;
+        private void targetBox_TextChanged(object sender, EventArgs e)
+        {
+            int temp = 0;
+            if (!int.TryParse(targetBox.Text, out temp))
+            {
+                targetBox.ForeColor = Color.Red;
+            }
+            else
+            {
+                targetBox.ForeColor = Color.Black;
+            }
+
+            if(currentProduct != null)
+                currentProduct.TargetLevel = temp;
+        }
+
+        private bool defaultReorderError = false;
+        private void defaultReorderBox_TextChanged(object sender, EventArgs e)
+        {
+            int temp = 0;
+            if (!int.TryParse(defaultReorderBox.Text, out temp))
+            {
+                defaultReorderBox.ForeColor = Color.Red;
+            }
+            else
+            {
+                defaultReorderBox.ForeColor = Color.Black;
+            }
+
+            if(currentProduct != null)
+                currentProduct.MinimumReorderQuantity = temp;
         }
 
     }
