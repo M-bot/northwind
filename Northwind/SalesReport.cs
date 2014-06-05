@@ -108,56 +108,89 @@ namespace Northwind
 
         private void previewLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if(salesTypeBox.SelectedIndex == 3 && salesPeriodBox.SelectedIndex == 0)
+            Report r = new Report();
+            r.HTML = global::Northwind.Properties.Resources.SalesReportTemplate;
+            r.replace("GeneratedDate", DateTime.Now.ToLongDateString());
+            r.replace("GeneratedTime", DateTime.Now.ToLongTimeString());
+            r.replace("SalesPeriod", salesPeriodBox.SelectedItem);
+
+            switch(salesPeriodBox.SelectedIndex)
             {
-                Report r = new Report();
-                r.HTML = global::Northwind.Properties.Resources.SalesReportTemplate;
+                case 0:
+                    r.replace("SalesTime", monthBox.SelectedItem + ", " + yearBox.SelectedItem);
+                    string result = "";
+                    double total = 0;
+                    DataTable rows = null;
+                    switch(salesTypeBox.SelectedIndex)
+                    {
+                        case 0:
+                            r.replace("Headers", "<th>Country</th><th></th><th>Sales</th>");
+                            rows = Home.NorthwindDatabase.Context
+                                .Sql("SELECT category.`Name`, sum(`UnitPrice` * `Quantity`) as `Total` FROM `orders` JOIN `order list` ON `OrderID` = `#`"+
+                                "JOIN `order details` ON `orders`.`OrderID` = `order details`.`OrderID` JOIN products ON `order details`.`ProductID` = products.`ID`"+
+                                "JOIN category ON products.Category = category.ID WHERE monthname(`Order Date`) = '" + monthBox.SelectedItem + "' AND year(`Order Date`) =  '" + yearBox.SelectedItem + "' AND `Status` = 'Closed' GROUP BY category.`ID`;")
+                                .QuerySingle<DataTable>();
+                            break;
+                        case 1:
+                            r.replace("Headers", "<th>Country</th><th></th><th>Sales</th>");
+                            rows = Home.NorthwindDatabase.Context
+                                .Sql("SELECT `Name`, sum(`Total`) as `Total` FROM `orders` JOIN `order list` ON `OrderID` = `#` JOIN region ON `ID` = `ShipCountry_Region` WHERE monthname(`Order Date`) = '" + monthBox.SelectedItem + "'  AND year(`Order Date`) = '" + yearBox.SelectedItem + "' AND `Status` = 'Closed' GROUP BY `ID`;")
+                                .QuerySingle<DataTable>();
+                            break;
+                        case 2:
+                            r.replace("Headers", "<th>Customer</th><th></th><th>Sales</th>");
+                            rows = Home.NorthwindDatabase.Context
+                                .Sql("SELECT `Customer` as `Name`,sum(`Total`) as `Total` FROM `order list`  WHERE monthname(`Order Date`) = '" + monthBox.SelectedItem + "'  AND year(`Order Date`) = '" + yearBox.SelectedItem + "' AND `Status` = 'Closed' GROUP BY `Customer`;")
+                                .QuerySingle<DataTable>();
+                            break;
+                        case 3:
+                            r.replace("Headers", "<th>Employee</th><th></th><th>Sales</th>");
+                            rows = Home.NorthwindDatabase.Context
+                                .Sql("SELECT `Salesperson` as `Name` ,sum(`Total`) as `Total` FROM `order list` WHERE monthname(`Order Date`) = '" + monthBox.SelectedItem + "'  AND year(`Order Date`) = '" + yearBox.SelectedItem + "' AND `Status` = 'Closed' GROUP BY `Salesperson`;")
+                                .QuerySingle<DataTable>();
+                            break;
+                        case 4:
+                            r.replace("Headers", "<th>Product</th><th></th><th>Sales</th>");
+                            rows = Home.NorthwindDatabase.Context
+                                .Sql("SELECT `ProductName` as `Name`, sum(`UnitPrice` * `Quantity`) as `Total` FROM `orders` JOIN `order list` ON `OrderID` = `#` " +
+                                "JOIN `order details` ON `orders`.`OrderID` = `order details`.`OrderID` JOIN products ON `order details`.`ProductID` = products.`ID` " +
+                                "WHERE monthname(`Order Date`) = '" + monthBox.SelectedItem + "' AND year(`Order Date`) =  '" + yearBox.SelectedItem + "' AND `Status` = 'Closed' GROUP BY products.`ID`;")
+                                .QuerySingle<DataTable>();
+                            break;
+                    }
 
-                r.replace("GeneratedDate", DateTime.Now.ToLongDateString());
-                r.replace("GeneratedTime", DateTime.Now.ToLongTimeString());
-                r.replace("SalesPeriod", salesPeriodBox.SelectedItem);
-                
-                switch(salesPeriodBox.SelectedIndex)
-                {
-                    case 0:
-                        r.replace("SalesTime", monthBox.SelectedItem + ", " + yearBox.SelectedItem);
-                        r.replace("Headers", "<th>Employee</th><th></th><th>Sales</th>");
-                        DataTable rows = Home.NorthwindDatabase.Context
-                            .Sql("CALL `northwind`.`monthly sales report`(" + yearBox.SelectedItem + ", '" + monthBox.SelectedItem + "');")
-                            .QuerySingle<DataTable>();
-
-                        string result = "";
-                        double total = 0;
-                        foreach(DataRow drow in rows.Rows)
-                        {
-                            result += "<tr>";
-                            result += "<td>" + drow["Salesperson"] + "</td>";
-                            result += "<td>" + "" + "</td>";
-                            result += "<td>" + ((double)drow["Total"]).ToString("C") + "</td>";
-                            result += "</tr>";
-                            total += ((double)drow["Total"]);
-                        }
-
+                    foreach (DataRow drow in rows.Rows)
+                    {
                         result += "<tr>";
+                        result += "<td>" + drow["Name"] + "</td>";
                         result += "<td>" + "" + "</td>";
-                        result += "<td>" + monthBox.SelectedItem + " Sales Total" + "</td>";
-                        result += "<td>" + total.ToString("C") + "</td>";
+                        result += "<td>" + ((double)drow["Total"]).ToString("C") + "</td>";
                         result += "</tr>";
+                        total += ((double)drow["Total"]);
+                    }
 
-                        r.replace("Rows",result);
-                        break;
-                    case 1:
-                        r.replace("SalesTime", quarterlyBox.SelectedItem + ", " + yearBox.SelectedItem);
-                        break;
-                    case 2:
-                        r.replace("SalesTime", yearBox.SelectedItem);
-                        break;
-                }
+                    result += "<tr>";
+                    result += "<td>" + "" + "</td>";
+                    result += "<td>" + monthBox.SelectedItem + " Sales Total" + "</td>";
+                    result += "<td>" + total.ToString("C") + "</td>";
+                    result += "</tr>";
 
-                Home.newReportViewer.loadReport(r);
-                Home.newReportViewer.Show();
-                Home.newReportViewer.Activate();
+                    r.replace("Rows",result);
+                    break;
+                case 1:
+                    r.replace("SalesTime", quarterlyBox.SelectedItem + ", " + yearBox.SelectedItem);
+                    r.replace("Headers", "<th>Employee</th><th></th><th>Sales</th>");
+                            
+                    break;
+                case 2:
+                    r.replace("SalesTime", yearBox.SelectedItem);
+                    break;
             }
+
+
+            Home.newReportViewer.loadReport(r);
+            Home.newReportViewer.Show();
+            Home.newReportViewer.Activate();
         }
     }
 }
